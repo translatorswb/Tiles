@@ -1,18 +1,18 @@
 
 # System
 .DS_Store
-frontend/node_modules
-frontend/.nuxt
+node_modules
+.nuxt
 
 # local env files
 .env.local
 .env.*.local
 
 # Log files
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Editor directories and files
-frontend/yarn.lock
+yarn.lock
 
 .vscode
