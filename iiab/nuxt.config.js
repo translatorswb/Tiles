@@ -1,5 +1,6 @@
 import path from "path";
-import { content } from "./content";
+import { content, perPage } from "./content";
+const pages = [...Array(Math.ceil(content.length / perPage)).keys()].slice(2);
 
 export default {
   mode: "spa",
@@ -115,7 +116,7 @@ export default {
    */
   generate: {
     fallback: true,
-    routes: [].concat(content.map(title => `content/${title}`))
+    routes: [...content.map(title => `content/${title}`), ...pages.map(page => `info/${page}`)]
   },
   /*
    ** Handle external assets

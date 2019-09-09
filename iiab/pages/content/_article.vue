@@ -1,5 +1,5 @@
 <template>
-  <article class="article">
+  <article class="article markdown">
     <h1 class="article-title accent--text display-2 font-weight-bold">
       {{ article.attributes.title }}
     </h1>
@@ -14,7 +14,7 @@ export default {
   computed: {
     ...mapGetters(["getArticle"]),
     article() {
-      return this.getArticle(this.$route.params.slug);
+      return this.getArticle(this.$route.params.article);
     }
   }
 };
