@@ -64,11 +64,6 @@ export default {
 </script>
 
 <style scoped>
-.bordered-button {
-  border-left: 8px solid #e8991c !important;
-  background: #e8e3d9;
-}
-
 img {
   width: 417px;
   max-width: 100%;
