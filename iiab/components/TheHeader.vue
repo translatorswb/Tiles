@@ -1,7 +1,9 @@
 <template>
   <v-app-bar app dark color="primary">
     <v-toolbar-title v-if="!showBack"
-      ><nuxt-link to="/" class="white--text">IIAB</nuxt-link></v-toolbar-title
+      ><nuxt-link :to="localePath('info')" class="white--text px-4"
+        >IIAB</nuxt-link
+      ></v-toolbar-title
     >
     <v-toolbar-items v-else>
       <v-btn text @click="goBack"
@@ -11,11 +13,11 @@
     </v-toolbar-items>
     <div class="flex-grow-1"></div>
     <v-toolbar-items>
-      <v-btn text nuxt to="localePath('info')"
+      <v-btn text nuxt :to="localePath('info')"
         ><v-icon :left="showText">mdi-information</v-icon
         ><span v-if="showText">Information</span></v-btn
       >
-      <v-btn text nuxt to="localePath('feedback')"
+      <v-btn text nuxt :to="localePath('feedback')"
         ><v-icon :left="showText">mdi-pencil</v-icon
         ><span v-if="showText">Feedback</span></v-btn
       >
