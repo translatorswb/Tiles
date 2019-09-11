@@ -1,6 +1,7 @@
 import path from "path";
-import { content, perPage } from "./content";
-const pages = [...Array(Math.ceil(content.length / perPage)).keys()].slice(2);
+import { content } from "./content";
+import { langInfo, messages } from "./lang";
+const locales = Object.values(langInfo);
 
 export default {
   mode: "spa",
@@ -43,7 +44,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: "~plugins/i18n.js" }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -58,8 +59,24 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
-    "@nuxtjs/pwa"
+    "@nuxtjs/pwa",
+    "nuxt-i18n"
   ],
+  /*
+   ** nuxt-i18n module configuration
+   ** See https://nuxt-community.github.io/nuxt-i18n/options-reference.html
+   */
+  i18n: {
+    detectBrowserLanguage: false,
+    locales,
+    vueI18n: {
+      messages
+    },
+    parsePages: false,
+    pages: {
+      index: false
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -116,7 +133,7 @@ export default {
    */
   generate: {
     fallback: true,
-    routes: [...content.map(title => `content/${title}`), ...pages.map(page => `info/${page}`)]
+    routes: [...content.map(title => `content/${title}`)]
   },
   /*
    ** Handle external assets

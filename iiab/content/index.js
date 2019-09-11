@@ -1,4 +1,13 @@
-export const perPage = 6;
+export const categories = [
+  "food",
+  "shelter",
+  "nonfoodItems",
+  "health",
+  "waterSanitation",
+  "wellbeing",
+  "protection",
+  "education"
+];
 
 export const content = [
   "sed-dictum-orci-sed-elit-cursus-maximus",

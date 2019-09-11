@@ -1,4 +1,5 @@
-import { content, perPage } from "@/content";
+import { content, categories } from "@/content";
+import { langInfo } from "@/lang";
 
 const contentDict = {};
 function importAll(r) {
@@ -15,7 +16,8 @@ export const state = () => ({
     article.slug = title;
     return article;
   }),
-  perPage
+  langInfo,
+  categories
 });
 
 export const getters = {

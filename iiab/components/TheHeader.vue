@@ -11,17 +11,17 @@
     </v-toolbar-items>
     <div class="flex-grow-1"></div>
     <v-toolbar-items>
-      <v-btn text nuxt to="/"
+      <v-btn text nuxt to="localePath('info')"
         ><v-icon :left="showText">mdi-information</v-icon
         ><span v-if="showText">Information</span></v-btn
       >
-      <v-btn text nuxt to="/feedback"
+      <v-btn text nuxt to="localePath('feedback')"
         ><v-icon :left="showText">mdi-pencil</v-icon
         ><span v-if="showText">Feedback</span></v-btn
       >
-      <v-btn text
+      <v-btn text nuxt to="/"
         ><v-icon :left="showText">mdi-web</v-icon
-        ><span v-if="showText">English</span></v-btn
+        ><span v-if="showText">{{ currentLocaleName }}</span></v-btn
       >
     </v-toolbar-items>
   </v-app-bar>
@@ -34,7 +34,11 @@ export default {
       return this.$vuetify.breakpoint.smAndUp;
     },
     showBack() {
-      return this.$route.name === "content-slug";
+      const base = this.getRouteBaseName(this.$route);
+      return !["index", "info"].includes(base);
+    },
+    currentLocaleName() {
+      return this.$i18n.locales.find(i => i.code === this.$i18n.locale).name;
     }
   },
   methods: {
