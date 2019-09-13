@@ -10,7 +10,7 @@
         src="~/assets/images/TWB_Interim_Logo@2x.png"
       />
     </v-col>
-    <v-col v-if="$vuetify.breakpoint.smAndUp" cols="12">
+    <v-col cols="12">
       <div class="rotate-text-container">
         <div
           v-for="lang in Object.values(langInfo)"
@@ -26,9 +26,7 @@
       :key="lang.code"
       cols="12"
       sm="6"
-      md="4"
-      lg="3"
-      xl="2"
+      lg="4"
     >
       <VBorderedCard :to="localePath(path, lang.code)">
         <h2 class="display-1 accent--text">{{ lang.name }}</h2>
@@ -81,7 +79,7 @@ img {
   overflow: hidden;
   position: absolute;
   left: 50%;
-  animation: topToBottom 20s linear infinite 0s;
+  animation: topToBottom 18s linear infinite 0s;
 }
 
 .rotate-text:nth-child(2) {
@@ -116,10 +114,6 @@ img {
   animation-delay: 16s;
 }
 
-.rotate-text:nth-child(10) {
-  animation-delay: 18s;
-}
-
 @keyframes topToBottom {
   0% {
     opacity: 0;
@@ -129,11 +123,11 @@ img {
     opacity: 1;
     transform: translate(-50%, 0px);
   }
-  7% {
+  8% {
     opacity: 1;
     transform: translate(-50%, 0px);
   }
-  10% {
+  11% {
     opacity: 0;
     transform: translate(-50%, 30px);
   }

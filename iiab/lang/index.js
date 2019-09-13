@@ -1,13 +1,12 @@
-import hau from "./messages/hausa-hau.js";
-import kau from "./messages/kanuri-kau.js";
-import shu from "./messages/shuwa-shu.js";
-import shuAr from "./messages/shuwa-shu-ar.js";
-import mrt from "./messages/marghi-mrt.js";
-import bwr from "./messages/bura-bwr.js";
-import mfi from "./messages/mandara-mfi.js";
-import ful from "./messages/fulfulde-ful.js";
-import ckl from "./messages/kibaku-ckl.js";
-import wja from "./messages/waha-wja.js";
+import hau from "./messages/hausa.js";
+import kau from "./messages/kanuri.js";
+import shu from "./messages/shuwa.js";
+import mrt from "./messages/marghi.js";
+import bwr from "./messages/bura.js";
+import mfi from "./messages/mandara.js";
+import ful from "./messages/fulfulde.js";
+import ckl from "./messages/kibaku.js";
+import wja from "./messages/waha.js";
 
 export const langInfo = {
   hau: {
@@ -21,14 +20,9 @@ export const langInfo = {
     code: "kau"
   },
   shu: {
-    name: "Shuwa",
+    name: "Shuwa Arab شُوَ أرَب",
     rtl: false,
     code: "shu"
-  },
-  "shu-ar": {
-    name: "لهجة تشادية",
-    rtl: true,
-    code: "shu-ar"
   },
   mrt: {
     name: "Marghi",
@@ -36,7 +30,7 @@ export const langInfo = {
     code: "mrt"
   },
   bwr: {
-    name: "Bura",
+    name: "Bura or Pabər",
     rtl: false,
     code: "bwr"
   },
@@ -46,7 +40,7 @@ export const langInfo = {
     code: "mfi"
   },
   ful: {
-    name: "Fulfulde",
+    name: "Myar Marghi",
     rtl: false,
     code: "ful"
   },
@@ -67,7 +61,6 @@ export const messages = {
   hau,
   kau,
   shu,
-  "shu-ar": shuAr,
   mrt,
   bwr,
   mfi,
