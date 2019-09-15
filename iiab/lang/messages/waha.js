@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "GAMSA ABKLA GWAD LUWAGHA",
-  infoCategories: {
+  infoSectors: {
     food: "DAFFA",
     shelter: "GABEDE",
     nonfoodItems: "INAHA",

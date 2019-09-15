@@ -1,7 +1,5 @@
 ---
-title: "Vivamus maximus lobortis erat vel porta"
-description: "In lacus enim, malesuada vel ex in, lobortis placerat nisi…"
-date: "2019-08-20"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

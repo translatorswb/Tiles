@@ -1,7 +1,20 @@
 import path from "path";
-import { content } from "./content";
 import { langInfo, messages } from "./lang";
+import { content } from "./content";
+
 const locales = Object.values(langInfo);
+
+// Dynamic routes
+const sectors = content.map(s => s.sector);
+const articles = [].concat(...content.map(s => s.articles));
+let routes = [];
+locales.forEach(l => {
+  routes = routes.concat(
+    `${l.code}/info`,
+    [...sectors.map(s => `${l.code}/info/${s}`)],
+    [...articles.map(id => `${l.code}/${id}`)]
+  );
+});
 
 export default {
   mode: "spa",
@@ -133,7 +146,7 @@ export default {
    */
   generate: {
     fallback: true,
-    routes: [...content.map(title => `content/${title}`)]
+    routes: routes
   },
   /*
    ** Handle external assets

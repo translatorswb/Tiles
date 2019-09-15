@@ -1,7 +1,5 @@
 ---
-title: "Mauris auctor hendrerit neque et cursus"
-description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque a tempus mauris, non sollicitudin sapien…"
-date: "2019-08-04"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

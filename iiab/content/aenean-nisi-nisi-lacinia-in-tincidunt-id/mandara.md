@@ -1,7 +1,5 @@
 ---
-title: "Curabitur molestie suscipit vehicula"
-description: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam euismod fermentum turpis…"
-date: "2019-08-29"
+title: "Aenean nisi nisi, lacinia in tincidunt id, pretium et ipsum"
 ---
 
 ## Sed blandit, felis eget placerat maximus

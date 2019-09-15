@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "ALBARAK AZIL LUGGATAK ألبرك أزِل لُغتَكْ",
-  infoCategories: {
+  infoSectors: {
     food: "EYSH عَيشْ",
     shelter: "BAYT بيْت",
     nonfoodItems: "SHU'UL ALMI HANA AKIL شُعُول المي هن أكِل",

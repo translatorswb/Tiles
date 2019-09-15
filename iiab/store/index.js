@@ -1,25 +1,18 @@
-import { content, categories } from "@/content";
+import { contentDict } from "./importContent";
+import { content } from "@/content";
 import { langInfo } from "@/lang";
 
-const contentDict = {};
-function importAll(r) {
-  r.keys().forEach(key => {
-    contentDict[key] = r(key);
-  });
-}
-importAll(require.context("@/content/", false, /\.md$/));
-
 export const state = () => ({
-  content: content.map(title => {
-    const article = contentDict[`./${title}.md`];
-    article.attributes.link = `content/${title}`;
-    article.slug = title;
-    return article;
-  }),
   langInfo,
-  categories
+  content,
+  sectors: content.map(d => d.sector),
+  contentDict
 });
 
 export const getters = {
-  getArticle: state => slug => state.content.find(d => d.slug === slug)
+  getSectorArticles: state => (locale, sector) =>
+    state.content
+      .find(d => d.sector === sector)
+      .articles.map(id => state.contentDict[locale][id]),
+  getArticle: state => (locale, id) => state.contentDict[locale][id]
 };

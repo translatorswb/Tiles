@@ -1,7 +1,5 @@
 ---
-title: "Suspendisse ut ligula luctus, posuere augue in, lobortis ligula"
-description: "Aenean pharetra ut lacus eget auctor. Cras tristique varius lacus, consequat sagittis ex egestas interdum. Aliquam aliquet non turpis a finibus…"
-date: "2019-08-16"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

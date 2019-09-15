@@ -1,7 +1,5 @@
 ---
 title: "Aenean nisi nisi, lacinia in tincidunt id, pretium et ipsum"
-description: "Nunc ornare rhoncus sapien, in mattis arcu varius non. Integer turpis mi, scelerisque aliquet consequat in, cursus eu mi…"
-date: "2019-08-02"
 ---
 
 ## Sed blandit, felis eget placerat maximus

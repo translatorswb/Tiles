@@ -1,7 +1,5 @@
 ---
-title: "Etiam convallis nibh eget imperdiet ultrices"
-description: "In cursus augue id mi varius, at imperdiet ligula auctor. Aliquam erat volutpat…"
-date: "2019-08-15"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

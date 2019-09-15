@@ -1,11 +1,11 @@
 <template>
   <v-row>
-    <v-col v-for="category in categories" :key="category" cols="12" sm="6">
+    <v-col v-for="sector in sectors" :key="sector" cols="12" sm="6">
       <VBorderedCard
-        :to="localePath({ name: 'info-category', params: { category } })"
+        :to="localePath({ name: 'info-sector', params: { sector } })"
       >
         <h2 class="display-1 accent--text">
-          {{ $t(`infoCategories.${category}`) }}
+          {{ $t(`infoSectors.${sector}`) }}
         </h2>
       </VBorderedCard>
     </v-col>
@@ -20,7 +20,7 @@ export default {
     VBorderedCard
   },
   computed: {
-    ...mapState(["categories"])
+    ...mapState(["sectors"])
   }
 };
 </script>

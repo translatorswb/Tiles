@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "MARTƎNE TƎLAMNƎN KARNE",
-  infoCategories: {
+  infoSectors: {
     food: "KƎMBU",
     shelter: "NAPTƎRAM",
     nonfoodItems: "KAREWA KƎMBUN-NGURONSO FATON NOTOBE",

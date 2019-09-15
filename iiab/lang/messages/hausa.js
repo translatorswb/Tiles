@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "ZABI YARENKA",
-  infoCategories: {
+  infoSectors: {
     food: "ABINCI",
     shelter: "MATSUGUNI",
     nonfoodItems: "KAYAN AIKIN GIDA",

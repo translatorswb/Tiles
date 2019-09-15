@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "CARƁƏLA MYA NGƏ BU",
-  infoCategories: {
+  infoSectors: {
     food: "SUSƏM",
     shelter: "VƏI NDZI",
     nonfoodItems: "KARI KƏTHLƏR AR KUTA KƏI",

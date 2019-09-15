@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "USI CAƊIBA MYA GINYI",
-  infoCategories: {
+  infoSectors: {
     food: "SUR SIM",
     shelter: "SHANGUDI",
     nonfoodItems: "KARI AI SUR SIM MAI",

@@ -6,10 +6,7 @@
       ></v-toolbar-title
     >
     <v-toolbar-items v-else>
-      <v-btn text @click="goBack"
-        ><v-icon :left="showText">mdi-chevron-left</v-icon
-        ><span>Back</span></v-btn
-      >
+      <v-btn text @click="goBack"><v-icon>mdi-chevron-left</v-icon></v-btn>
     </v-toolbar-items>
     <div class="flex-grow-1"></div>
     <v-toolbar-items>

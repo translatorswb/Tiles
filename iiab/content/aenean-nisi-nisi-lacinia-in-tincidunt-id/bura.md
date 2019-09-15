@@ -1,7 +1,5 @@
 ---
-title: "Quisque tempor lectus metus, quis iaculis ligula cursus at. Sed quis purus ipsum"
-description: "Mauris a nulla nulla. Duis blandit lobortis lorem eu tristique. Nulla vel augue rhoncus, vehicula lorem at, mollis tortor…"
-date: "2019-08-10"
+title: "Aenean nisi nisi, lacinia in tincidunt id, pretium et ipsum"
 ---
 
 ## Sed blandit, felis eget placerat maximus

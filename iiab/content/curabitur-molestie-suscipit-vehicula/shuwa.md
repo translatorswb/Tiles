@@ -1,7 +1,5 @@
 ---
-title: "Maecenas eleifend faucibus aliquam"
-description: "Sed egestas ex vitae leo ornare, eget eleifend nisl tristique. Curabitur eget lorem a ipsum luctus feugiat. Cras in arcu dictum libero vehicula consectetur…"
-date: "2019-08-24"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

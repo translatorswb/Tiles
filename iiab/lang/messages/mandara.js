@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "TASLEŊA TUDUƊE NAZA NARAŊA",
-  infoCategories: {
+  infoSectors: {
     food: "ƊAFA",
     shelter: "ŊA",
     nonfoodItems: "NAZA MAGA SLERAAHA ƁA",

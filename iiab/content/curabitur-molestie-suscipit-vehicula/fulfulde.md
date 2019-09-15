@@ -1,7 +1,5 @@
 ---
-title: "Praesent aliquet massa ac tellus interdum porta"
-description: "Aliquam ullamcorper mi eu dictum bibendum. Morbi quis pretium justo. Donec rutrum orci quis dui fringilla, nec varius ipsum ullamcorper…"
-date: "2019-08-07"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

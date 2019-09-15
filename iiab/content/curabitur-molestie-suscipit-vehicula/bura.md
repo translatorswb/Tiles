@@ -1,7 +1,5 @@
 ---
-title: "Nunc rhoncus in ligula sed vulputate"
-description: "Phasellus mattis arcu id augue tristique, non molestie est sagittis. Sed pretium, purus ac feugiat elementum…"
-date: "2019-08-10"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

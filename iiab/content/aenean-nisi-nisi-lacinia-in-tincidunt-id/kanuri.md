@@ -1,7 +1,5 @@
 ---
-title: "Sed dictum orci sed elit cursus maximus"
-description: "Nullam cursus tortor quis mauris luctus convallis. Duis auctor tortor sed elit aliquam gravida. Pellentesque imperdiet…"
-date: "2019-09-02"
+title: "Aenean nisi nisi, lacinia in tincidunt id, pretium et ipsum"
 ---
 
 ## Sed blandit, felis eget placerat maximus

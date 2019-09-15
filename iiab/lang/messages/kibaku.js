@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "TSARBA NYAR NGƐ",
-  infoCategories: {
+  infoSectors: {
     food: "SƎR SƎMƐ",
     shelter: "DƎRI",
     nonfoodItems: "KARIYIR KƎTHLƎRƎR KUI",

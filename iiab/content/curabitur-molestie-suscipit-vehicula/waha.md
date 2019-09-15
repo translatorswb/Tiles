@@ -1,7 +1,5 @@
 ---
-title: "Phasellus id metus at ex laoreet aliquet"
-description: "Praesent congue posuere est, eget iaculis arcu faucibus ut. Aenean pharetra eleifend feugiat. Sed iaculis ligula ut torto…"
-date: "2019-09-02"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

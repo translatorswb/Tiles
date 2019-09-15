@@ -1,6 +1,6 @@
 export default {
   selectLanguage: "USSENI A SUƁA ƊEMNGAL MA",
-  infoCategories: {
+  infoSectors: {
     food: "NYAAMDU",
     shelter: "BUKKAARU",
     nonfoodItems: "KARE KILLANTA KO LAATAY NYAAMDU",

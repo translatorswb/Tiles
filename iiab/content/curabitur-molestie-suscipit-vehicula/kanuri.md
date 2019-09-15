@@ -1,7 +1,5 @@
 ---
-title: "Mauris tincidunt lorem at maximus consequat."
-description: "Vestibulum et risus tempus, iaculis nisl quis, semper sapien. Suspendisse potenti. Orci varius natoque penatibus et magnis dis parturient montes…"
-date: "2019-08-04"
+title: "Curabitur molestie suscipit vehicula"
 ---
 
 ## Sed blandit, felis eget placerat maximus

@@ -1,7 +1,5 @@
 ---
-title: "Donec ut mattis magna, quis faucibus quam"
-description: "In hac habitasse platea dictumst. Cras nec nulla a nulla varius fermentum. In mattis, magna eu pellentesque porta, nisi elit sodales magna, in fermentum tellus erat vitae dui…"
-date: "2019-08-20"
+title: "Aenean nisi nisi, lacinia in tincidunt id, pretium et ipsum"
 ---
 
 ## Sed blandit, felis eget placerat maximus

@@ -9,47 +9,47 @@ import ckl from "./messages/kibaku.js";
 import wja from "./messages/waha.js";
 
 export const langInfo = {
-  hau: {
+  hausa: {
     name: "Hausa",
     rtl: false,
     code: "hau"
   },
-  kau: {
+  kanuri: {
     name: "Kanuri",
     rtl: false,
     code: "kau"
   },
-  shu: {
+  shuwa: {
     name: "Shuwa Arab شُوَ أرَب",
     rtl: false,
     code: "shu"
   },
-  mrt: {
+  marghi: {
     name: "Marghi",
     rtl: false,
     code: "mrt"
   },
-  bwr: {
+  bura: {
     name: "Bura or Pabər",
     rtl: false,
     code: "bwr"
   },
-  mfi: {
+  mandara: {
     name: "Mandara",
     rtl: false,
     code: "mfi"
   },
-  ful: {
+  fulfulde: {
     name: "Myar Marghi",
     rtl: false,
     code: "ful"
   },
-  ckl: {
+  kibaku: {
     name: "Kibaku",
     rtl: false,
     code: "ckl"
   },
-  wja: {
+  waha: {
     name: "Waha",
     rtl: false,
     code: "wja",
