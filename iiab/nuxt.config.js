@@ -1,20 +1,20 @@
 import path from "path";
 import { langInfo, messages } from "./lang";
-import { content } from "./content";
+// import { content } from "./content";
 
 const locales = Object.values(langInfo);
 
 // Dynamic routes
-const sectors = content.map(s => s.sector);
-const articles = [].concat(...content.map(s => s.articles));
-let routes = [];
-locales.forEach(l => {
-  routes = routes.concat(
-    `${l.code}/info`,
-    [...sectors.map(s => `${l.code}/info/${s}`)],
-    [...articles.map(id => `${l.code}/${id}`)]
-  );
-});
+// const sectors = content.map(s => s.sector);
+// const articles = [].concat(...content.map(s => s.articles));
+// let routes = [];
+// locales.forEach(l => {
+//   routes = routes.concat(
+//     `${l.code}/info`,
+//     [...sectors.map(s => `${l.code}/info/${s}`)],
+//     [...articles.map(id => `${l.code}/${id}`)]
+//   );
+// });
 
 export default {
   mode: "spa",
@@ -103,7 +103,7 @@ export default {
     customVariables: ["@/assets/scss/variables.scss"],
     defaultAssets: false,
     icons: {
-      iconfont: "mdi" // default - only for display purposes
+      iconfont: "mdiSvg"
     },
     theme: {
       themes: {
@@ -144,33 +144,27 @@ export default {
   /*
    ** Generate dynamic routes
    */
-  generate: {
-    fallback: true,
-    routes: routes
-  },
+  // generate: {
+  //   fallback: true
+  //   // routes: routes
+  // },
   /*
    ** Handle external assets
    */
   workbox: {
     runtimeCaching: [
-      {
-        urlPattern: "https://fonts.googleapis.com/.*",
-        handler: "cacheFirst",
-        method: "GET",
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-      },
-      {
-        urlPattern: "https://fonts.gstatic.com/.*",
-        handler: "cacheFirst",
-        method: "GET",
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-      },
-      {
-        urlPattern: "https://cdn.jsdelivr.net/.*",
-        handler: "cacheFirst",
-        method: "GET",
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-      }
+      // {
+      //   urlPattern: "https://fonts.googleapis.com/.*",
+      //   handler: "cacheFirst",
+      //   method: "GET",
+      //   strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      // },
+      // {
+      //   urlPattern: "https://fonts.gstatic.com/.*",
+      //   handler: "cacheFirst",
+      //   method: "GET",
+      //   strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      // }
     ]
   }
 };

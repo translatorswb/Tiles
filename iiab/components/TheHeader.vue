@@ -6,20 +6,20 @@
       ></v-toolbar-title
     >
     <v-toolbar-items v-else>
-      <v-btn text @click="goBack"><v-icon>mdi-chevron-left</v-icon></v-btn>
+      <v-btn text @click="goBack"
+        ><v-icon>{{ icon.chevronLeft }}</v-icon></v-btn
+      >
     </v-toolbar-items>
     <div class="flex-grow-1"></div>
     <v-toolbar-items>
       <v-btn text nuxt :to="localePath('info')"
-        ><v-icon :left="showText">mdi-information</v-icon
-        ><span v-if="showText">Information</span></v-btn
+        ><v-icon>{{ icon.information }}</v-icon></v-btn
       >
       <v-btn text nuxt :to="localePath('feedback')"
-        ><v-icon :left="showText">mdi-pencil</v-icon
-        ><span v-if="showText">Feedback</span></v-btn
+        ><v-icon>{{ icon.pencil }}</v-icon></v-btn
       >
       <v-btn text nuxt to="/"
-        ><v-icon :left="showText">mdi-web</v-icon
+        ><v-icon :left="showText">{{ icon.web }}</v-icon
         ><span v-if="showText">{{ currentLocaleName }}</span></v-btn
       >
     </v-toolbar-items>
@@ -27,7 +27,18 @@
 </template>
 
 <script>
+import { mdiChevronLeft, mdiInformation, mdiPencil, mdiWeb } from "@mdi/js";
 export default {
+  data() {
+    return {
+      icon: {
+        chevronLeft: mdiChevronLeft,
+        information: mdiInformation,
+        pencil: mdiPencil,
+        web: mdiWeb
+      }
+    };
+  },
   computed: {
     showText() {
       return this.$vuetify.breakpoint.smAndUp;
