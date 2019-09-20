@@ -1,4 +1,4 @@
-build site:
+build:
   image: node:10
   stage: build
   script:
@@ -12,7 +12,7 @@ build site:
   artifacts:
     expire_in: 1 week
     paths:
-      - dist
+      - frontend/dist
 
 deploy:
   stage: deploy
@@ -25,6 +25,6 @@ deploy:
     - pip install awscli
     - aws s3 rm s3://twb-iiab/ --recursive
     - cd frontend
-    - aws s3 cp ./dist s3://twb-iiab/ --recursive --include "*"
+    - aws s3 cp dist s3://twb-iiab/ --recursive --include "*"
   only:
     - master
