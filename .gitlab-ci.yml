@@ -1,0 +1,28 @@
+build site:
+  image: node:10
+  stage: build
+  script:
+    - cd frontend
+    - hash=`git describe --always`
+    - echo "\"$hash\"" > assets/gitHash.json
+    - yarn install
+    - yarn generate
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist
+
+deploy:
+  stage: deploy
+  environment: development
+  image: python:latest
+  script:
+    - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
+    - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
+    - export AWS_REGION=eu-central-1
+    - pip install awscli
+    - cd frontend
+    - aws s3 rm s3://twb-iiab/ --recursive
+    - aws s3 cp ./dist s3://twb-iiab/
+  only:
+    - master
