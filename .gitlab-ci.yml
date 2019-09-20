@@ -7,6 +7,8 @@ build site:
     - echo "\"$hash\"" > assets/gitHash.json
     - yarn install
     - yarn generate
+  only:
+    - master
   artifacts:
     expire_in: 1 week
     paths:
@@ -21,8 +23,8 @@ deploy:
     - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
     - export AWS_REGION=eu-central-1
     - pip install awscli
-    - cd frontend
     - aws s3 rm s3://twb-iiab/ --recursive
-    - aws s3 cp ./dist s3://twb-iiab/
+    - cd frontend
+    - aws s3 cp ./dist s3://twb-iiab/ --recursive --include "*"
   only:
     - master
