@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheLanguageSwitcher :from="from" />
+    <TheLanguageSwitcher />
   </div>
 </template>
 
@@ -10,17 +10,6 @@ export default {
   components: {
     TheLanguageSwitcher
   },
-  data() {
-    return {
-      from: { name: "info", params: {} }
-    };
-  },
-  layout: "welcome",
-  beforeRouteEnter(to, from, next) {
-    next(vm => {
-      if (from.name) vm.from = from;
-      vm.$vuetify.rtl = false;
-    });
-  }
+  layout: "welcome"
 };
 </script>
