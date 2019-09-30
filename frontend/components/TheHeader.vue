@@ -1,23 +1,13 @@
 <template>
   <v-app-bar app dark color="primary">
-    <v-toolbar-title v-if="!showBack"
-      ><nuxt-link :to="localePath('info')" class="white--text px-4"
-        >IIAB</nuxt-link
+    <v-toolbar-title v-if="showGoHomeButton"
+      ><nuxt-link :to="localePath('welcome')" class="white--text px-4"
+        >Home</nuxt-link
       ></v-toolbar-title
     >
-    <v-toolbar-items v-else>
-      <v-btn text @click="goBack"
-        ><v-icon>{{ icon.chevronLeft }}</v-icon></v-btn
-      >
-    </v-toolbar-items>
+
     <div class="flex-grow-1"></div>
     <v-toolbar-items>
-      <v-btn text nuxt :to="localePath('info')"
-        ><v-icon>{{ icon.information }}</v-icon></v-btn
-      >
-      <v-btn text nuxt :to="localePath('feedback')"
-        ><v-icon>{{ icon.pencil }}</v-icon></v-btn
-      >
       <v-btn text nuxt to="/"
         ><v-icon :left="showText">{{ icon.web }}</v-icon
         ><span v-if="showText">{{ currentLocaleName }}</span></v-btn
@@ -49,6 +39,9 @@ export default {
     },
     currentLocaleName() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale).name;
+    },
+    showGoHomeButton() {
+      return this.getRouteBaseName(this.$route) != "welcome";
     }
   },
   methods: {

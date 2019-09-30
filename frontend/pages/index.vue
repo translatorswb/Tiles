@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      from: { name: "info", params: {} }
+      from: { name: "welcome", params: {} }
     };
   },
   layout: "welcome",
