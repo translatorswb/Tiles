@@ -7,6 +7,7 @@ import mfi from "./messages/mandara.js";
 import ful from "./messages/fulfulde.js";
 import ckl from "./messages/kibaku.js";
 import wja from "./messages/waha.js";
+import en from "./messages/en.js";
 
 export const langInfo = {
   hausa: {
@@ -28,6 +29,11 @@ export const langInfo = {
     name: "Marghi",
     rtl: false,
     code: "mrt"
+  },
+  en: {
+    name: "English",
+    rtl: false,
+    code: "en"
   },
   bura: {
     name: "Bura or Pabər",
@@ -66,5 +72,6 @@ export const messages = {
   mfi,
   ful,
   ckl,
-  wja
+  wja,
+  en
 };

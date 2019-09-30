@@ -43,6 +43,7 @@ export default {
     VBorderedCard
   },
   props: {
+    // is used for sending the user to the next page, not sure why it's called from
     from: {
       type: Object,
       required: true
@@ -53,7 +54,7 @@ export default {
     path() {
       const base = this.getRouteBaseName(this.from);
       return {
-        name: base || "info",
+        name: base || "welcome",
         params: this.from ? this.from.params : {}
       };
     }
