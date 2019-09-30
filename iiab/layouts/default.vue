@@ -2,7 +2,7 @@
   <v-app>
     <TheHeader />
     <v-content>
-      <v-container class="px-8 container" fluid>
+      <v-container class="px-8 main-container fill-height" fluid>
         <nuxt />
       </v-container>
     </v-content>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.main-container {
   max-width: 1280px;
 }
 </style>

@@ -16,7 +16,7 @@
         ><v-icon>{{ icon.information }}</v-icon></v-btn
       >
       <v-btn text nuxt :to="localePath('feedback')"
-        ><v-icon>{{ icon.pencil }}</v-icon></v-btn
+        ><v-icon>{{ icon.microphone }}</v-icon></v-btn
       >
       <v-btn text nuxt to="/"
         ><v-icon :left="showText">{{ icon.web }}</v-icon
@@ -27,14 +27,14 @@
 </template>
 
 <script>
-import { mdiChevronLeft, mdiInformation, mdiPencil, mdiWeb } from "@mdi/js";
+import { mdiChevronLeft, mdiInformation, mdiMicrophone, mdiWeb } from "@mdi/js";
 export default {
   data() {
     return {
       icon: {
         chevronLeft: mdiChevronLeft,
         information: mdiInformation,
-        pencil: mdiPencil,
+        microphone: mdiMicrophone,
         web: mdiWeb
       }
     };

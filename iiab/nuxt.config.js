@@ -33,18 +33,18 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap&subset=latin-ext"
-      },
-      {
-        rel: "stylesheet",
-        href:
-          "https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css"
-      }
-    ]
+    // link: [
+    //   {
+    //     rel: "stylesheet",
+    //     href:
+    //       "https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap&subset=latin-ext"
+    //   },
+    //   {
+    //     rel: "stylesheet",
+    //     href:
+    //       "https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css"
+    //   }
+    // ]
   },
   /*
    ** Customize the progress-bar color
