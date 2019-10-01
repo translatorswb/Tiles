@@ -13,11 +13,7 @@
       </p>
     </v-col>
     <v-col cols="12" class="my-auto text-center">
-      <TheVisualizer
-        v-if="stream"
-        :is-recording="isRecording"
-        :stream="stream"
-      />
+      <TheVisualizer :is-recording="isRecording" :stream="stream" />
     </v-col>
     <v-col cols="12" class="text-center">
       <v-btn
@@ -108,35 +104,45 @@ export default {
   mounted() {
     this.isRecordingSupported =
       navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
-    navigator.mediaDevices
-      .getUserMedia({ audio: true })
-      .then(this.onSuccess, this.onError);
   },
   methods: {
-    onSuccess(stream) {
-      this.stream = stream;
-      this.mediaRecorder = new MediaRecorder(stream);
-      this.mediaRecorder.onstop = this.onStop;
-      this.mediaRecorder.ondataavailable = this.onDataAvailable;
+    getStream() {
+      return navigator.mediaDevices.getUserMedia({ audio: true });
     },
     onStop(e) {
       // const blob = new Blob(this.chunks, { type: "audio/ogg; codecs=opus" });
       this.chunks = [];
     },
     onDataAvailable(e) {
-      this.chunks.push(e.data);
-    },
-    onError(err) {
-      this.error = err;
+      if (e.data && e.data.size > 0) {
+        this.chunks.push(e.data);
+      }
     },
     toggleRecording() {
       this.isRecording = !this.isRecording;
+      this.error = null;
       if (this.isRecording) {
-        this.mediaRecorder.start();
+        this.startRecording();
       } else {
-        this.mediaRecorder.stop();
+        this.stopRecording();
         this.modal = true;
       }
+    },
+    async startRecording() {
+      try {
+        this.stream = await this.getStream();
+        this.mediaRecorder = new MediaRecorder(this.stream);
+        this.mediaRecorder.onstop = this.onStop;
+        this.mediaRecorder.ondataavailable = this.onDataAvailable;
+        this.mediaRecorder.start();
+      } catch (err) {
+        this.error = err;
+      }
+    },
+    stopRecording() {
+      this.mediaRecorder.stop();
+      this.stream.getTracks().forEach(track => track.stop());
+      this.stream = null;
     },
     cancelFeedback() {
       this.modal = false;
@@ -146,8 +152,10 @@ export default {
       this.submitted = true;
     },
     submittedFeedback() {
-      this.submitted = false;
       this.modal = false;
+      setTimeout(() => {
+        this.submitted = false;
+      }, 500);
     }
   }
 };
