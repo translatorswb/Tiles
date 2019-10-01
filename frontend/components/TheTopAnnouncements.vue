@@ -25,7 +25,7 @@
         </v-list-item-content>
         <v-list-item-avatar>
           <v-btn fab dark small color="primary">
-            <v-icon>mdi-volume-high</v-icon>
+            <v-icon>{{ icon.recording }}</v-icon>
           </v-btn>
         </v-list-item-avatar>
       </v-list-item>
@@ -37,9 +37,17 @@
 ></template>
 
 <script>
+import { mdiVolumeHigh } from "@mdi/js";
 import { mapGetters, mapState } from "vuex";
 
 export default {
+  data() {
+    return {
+      icon: {
+        recording: mdiVolumeHigh
+      }
+    };
+  },
   computed: {
     ...mapState(["announcements"]),
     ...mapGetters(["getDisplayMonth"])
@@ -52,5 +60,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
