@@ -1,8 +1,8 @@
 <template>
   <div v-resize="onResize">
     <canvas
-      class="visualizer-canvas"
       ref="canvas"
+      class="visualizer-canvas"
       :width="width"
       :height="height"
     />
@@ -15,10 +15,6 @@ export default {
     stream: {
       type: MediaStream,
       default: null
-    },
-    isRecording: {
-      type: Boolean,
-      default: false
     }
   },
   data() {
@@ -34,10 +30,10 @@ export default {
     };
   },
   watch: {
-    stream(value) {
-      if (value) {
+    stream(stream) {
+      if (stream) {
         this.audioCtx.resume();
-        this.source = this.audioCtx.createMediaStreamSource(value);
+        this.source = this.audioCtx.createMediaStreamSource(stream);
         this.analyser = this.audioCtx.createAnalyser();
         this.analyser.fftSize = 2048;
         this.bufferLength = this.analyser.frequencyBinCount;
@@ -68,12 +64,12 @@ export default {
       this.canvasCtx.beginPath();
       this.canvasCtx.moveTo(0, this.height / 2);
       requestAnimationFrame(this.draw);
-      if (this.stream && this.isRecording) {
+      if (this.stream) {
         this.analyser.getByteTimeDomainData(this.dataArray);
         const sliceWidth = (this.width * 1.0) / this.bufferLength;
         let x = 0;
         for (let i = 0; i < this.bufferLength; i++) {
-          const v = this.isRecording ? this.dataArray[i] / 128.0 : 1;
+          const v = this.dataArray[i] / 128.0;
           const y = (v * this.height) / 2;
           if (i === 0) {
             this.canvasCtx.moveTo(x, y);

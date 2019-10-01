@@ -1,5 +1,5 @@
 import { contentDict } from "./importContent";
-import {announcements} from "./importAnnouncements"
+import { announcements } from "./importAnnouncements";
 import { content } from "@/content";
 import { langInfo } from "@/lang";
 
@@ -32,5 +32,5 @@ export const getters = {
       .find(d => d.sector === sector)
       .articles.map(id => state.contentDict[locale][id]),
   getArticle: state => (locale, id) => state.contentDict[locale][id],
-  getDisplayMonth: (state) => (date) => months[date.getMonth()]
+  getDisplayMonth: state => date => months[date.getMonth()]
 };

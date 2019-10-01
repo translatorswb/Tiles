@@ -12,7 +12,7 @@
         consequuntur.
       </p>
       <v-btn block color="primary" dark :to="localePath('info')"
-        >Learn more <v-icon right>mdi-book-open</v-icon>
+        >Learn more <v-icon right>{{ icon.learnMore }}</v-icon>
       </v-btn>
     </div>
     <div class="pt-10">
@@ -25,18 +25,27 @@
         consequuntur.
       </p>
       <v-btn block color="primary" dark :to="localePath('feedback')"
-        >Leave feedback <v-icon right>mdi-voice</v-icon></v-btn
+        >Leave feedback <v-icon right>{{ icon.leaveFeedback }}</v-icon></v-btn
       >
     </div>
   </div>
 </template>
 
 <script>
+import { mdiVoice, mdiBookOpen } from "@mdi/js";
 import TheTopAnnouncements from "@/components/TheTopAnnouncements";
 
 export default {
   components: {
     TheTopAnnouncements
+  },
+  data() {
+    return {
+      icon: {
+        learnMore: mdiBookOpen,
+        leaveFeedback: mdiVoice
+      }
+    };
   }
 };
 </script>

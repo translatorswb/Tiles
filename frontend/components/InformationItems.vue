@@ -66,16 +66,15 @@ export default {
   },
   methods: {
     getIconType(name) {
-      return name == "Announcement"
+      return name === "Announcement"
         ? mdiBullhornOutline
         : mdiInformationOutline;
     },
     getColor(name) {
-      return name == "Announcement" ? "primary" : "blue";
+      return name === "Announcement" ? "primary" : "blue";
     }
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>

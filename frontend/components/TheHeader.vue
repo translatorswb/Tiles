@@ -41,7 +41,7 @@ export default {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale).name;
     },
     showGoHomeButton() {
-      return this.getRouteBaseName(this.$route) != "welcome";
+      return this.getRouteBaseName(this.$route) !== "welcome";
     }
   },
   methods: {
