@@ -8,19 +8,31 @@
         })
       "
     >
-      <div class="announcement-item d-flex">
+      <div
+        class="announcement-item d-flex"
+        :class="$vuetify.breakpoint.xs ? 'flex-column' : ''"
+      >
         <div class="announcement-item-icon">
           <v-icon x-large color="primary">{{ icon.icon }}</v-icon>
         </div>
-        <div class="announcement-item-main flex-grow-1 mx-4">
-          <div class="announcement-item-title accent--text headline mb-2">
+        <div
+          class="announcement-item-main flex-grow-1"
+          :class="$vuetify.breakpoint.xs ? '' : 'mx-4'"
+        >
+          <div
+            class="announcement-item-title accent--text headline mb-2"
+            :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
+          >
             {{ item.title }}
           </div>
           <div class="announcement-item-date black--text">
             {{ $tc("day", fromNow(item.date)) }}
           </div>
         </div>
-        <div class="announcement-item-audio">
+        <div
+          class="announcement-item-audio"
+          :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
+        >
           <v-btn
             class="mx-2"
             fab

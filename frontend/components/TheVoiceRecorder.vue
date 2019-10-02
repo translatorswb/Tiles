@@ -123,8 +123,6 @@ export default {
       this.$_mediaRecorder.addEventListener(
         "stop",
         () => {
-          console.log(this.mimeType);
-          debugger;
           const blobData = new Blob(this.chunks, { type: this.mimeType });
           if (blobData.size > 0) {
             this.$emit("result", blobData);

@@ -1,7 +1,11 @@
 <template>
   <v-app>
     <v-content>
-      <v-container class="px-8 main-container" fluid>
+      <v-container
+        class="main-container"
+        :class="$vuetify.breakpoint.xs ? 'px-4' : 'px-8'"
+        fluid
+      >
         <nuxt />
       </v-container>
     </v-content>

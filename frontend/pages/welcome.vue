@@ -44,7 +44,8 @@
     <v-row>
       <v-col cols="12">
         <div
-          class="display-3 text-center py-6 font-weight-bold accent--text text-uppercase"
+          class="text-center py-6 font-weight-bold accent--text text-uppercase"
+          :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-3'"
         >
           Welcome
         </div>
