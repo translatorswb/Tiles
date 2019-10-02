@@ -1,10 +1,24 @@
 ---
-title: "Curabitur molestie suscipit vehicula"
+title: "Example 1"
+author: "TWB"
+category: "food"
 ---
 
 ## Sed blandit, felis eget placerat maximus
 
 Mauris accumsan tincidunt nulla sed tristique. Aliquam fermentum augue sit amet eros facilisis, eget auctor ex tempor. Sed varius leo vitae libero pulvinar, at condimentum est ultricies. Curabitur in cursus magna, vel dictum est. Donec sit amet cursus est, ac mattis augue. In ullamcorper consequat placerat. Pellentesque in convallis nibh. Sed blandit, felis eget placerat maximus, arcu est cursus nisl, in ultrices arcu nibh tempor ligula.
+
+| Tables    |      Are      |   Cool |
+| --------- | :-----------: | -----: |
+| col 3 is  | right-aligned | \$1600 |
+| col 2 is  |   centered    |   \$12 |
+| lorem ips |   are neat    |    \$1 |
+
+&nbsp;
+
+### Here is an image
+
+![alt text](/images/640x360.png)
 
 ## Ut porta est a leo tempor condimentum
 
