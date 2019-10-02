@@ -16,6 +16,7 @@
 
 <script>
 import { mdiMicrophone } from "@mdi/js";
+import MediaRecorderPolyfill from "audio-recorder-polyfill";
 export default {
   data() {
     return {
@@ -40,7 +41,9 @@ export default {
       );
       return;
     }
-
+    if (!window.MediaRecorder) {
+      window.MediaRecorder = MediaRecorderPolyfill;
+    }
     this.isSupported = true;
   },
   methods: {
@@ -81,8 +84,20 @@ export default {
         return;
       }
 
+      let mimeType;
+      if (MediaRecorder.isTypeSupported("audio/webm; codecs=opus")) {
+        // Chrome does not support ogg, but we convert on the server
+        mimeType = "audio/webm; codecs=opus";
+      } else if (MediaRecorder.isTypeSupported("audio/ogg; codecs=opus")) {
+        // firefox does all we need
+        mimeType = "audio/ogg; codecs=opus";
+      } else {
+        // Polyfill
+        mimeType = "audio/wav";
+      }
+
       this.$_mediaRecorder = new MediaRecorder(this.$_stream, {
-        mimeType: "audio/webm"
+        mimeType
       });
 
       this.$_mediaRecorder.ignoreMutedMedia = true;

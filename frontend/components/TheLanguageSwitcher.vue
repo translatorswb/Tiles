@@ -80,7 +80,7 @@ img {
   overflow: hidden;
   position: absolute;
   left: 50%;
-  animation: topToBottom 18s linear infinite 0s;
+  animation: topToBottom 20s linear infinite 0s;
 }
 
 .rotate-text:nth-child(2) {
@@ -115,12 +115,16 @@ img {
   animation-delay: 16s;
 }
 
+.rotate-text:nth-child(10) {
+  animation-delay: 18s;
+}
+
 @keyframes topToBottom {
   0% {
     opacity: 0;
     transform: translate(-50%, -30px);
   }
-  3% {
+  2% {
     opacity: 1;
     transform: translate(-50%, 0px);
   }
@@ -128,7 +132,7 @@ img {
     opacity: 1;
     transform: translate(-50%, 0px);
   }
-  11% {
+  10% {
     opacity: 0;
     transform: translate(-50%, 30px);
   }
