@@ -30,11 +30,11 @@ export default {
 
 .bordered-left {
   border-left: 8px solid #e8991c !important;
-  padding-left: 24px;
+  padding-left: 16px;
 }
 
 .bordered-right {
   border-right: 8px solid #e8991c !important;
-  padding-right: 24px;
+  padding-right: 16px;
 }
 </style>

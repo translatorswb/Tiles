@@ -8,13 +8,22 @@
         })
       "
     >
-      <div class="article-item d-flex">
+      <div
+        class="article-item d-flex"
+        :class="$vuetify.breakpoint.xs ? 'flex-column' : ''"
+      >
         <div class="article-item-main flex-grow-1">
-          <div class="article-item-title accent--text headline">
+          <div
+            class="article-item-title accent--text"
+            :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
+          >
             {{ item.attributes.title }}
           </div>
         </div>
-        <div class="article-item-audio">
+        <div
+          class="article-item-audio"
+          :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
+        >
           <v-btn
             class="mx-2"
             fab

@@ -1,7 +1,8 @@
 <template>
   <div class="feedback-container">
     <h1
-      class="display-3 font-weight-bold text-uppercase text-center accent--text my-12"
+      class="font-weight-bold text-uppercase text-center accent--text my-12"
+      :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-3'"
     >
       Feedback
     </h1>
