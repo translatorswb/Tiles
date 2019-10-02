@@ -1,5 +1,5 @@
 <template>
-  <article class="article markdown">
+  <article class="article markdown text-container">
     <h1 class="article-title accent--text display-2 font-weight-bold my-6">
       {{ article.attributes.title }}
     </h1>

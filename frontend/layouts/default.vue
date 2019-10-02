@@ -2,7 +2,7 @@
   <v-app>
     <TheHeader />
     <v-content>
-      <v-container class="px-8 main-container fill-height" fluid>
+      <v-container class="px-8 main-container" fluid>
         <nuxt />
       </v-container>
     </v-content>

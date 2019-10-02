@@ -30,11 +30,6 @@ export const langInfo = {
     rtl: false,
     code: "mrt"
   },
-  en: {
-    name: "English",
-    rtl: false,
-    code: "en"
-  },
   bura: {
     name: "Bura or Pabər",
     rtl: false,
@@ -58,8 +53,12 @@ export const langInfo = {
   waha: {
     name: "Waha",
     rtl: false,
-    code: "wja",
-    file: "waha-wja.js"
+    code: "wja"
+  },
+  en: {
+    name: "English",
+    rtl: false,
+    code: "en"
   }
 };
 

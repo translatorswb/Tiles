@@ -1,6 +1,10 @@
 <template>
-  <div class="fill-width">
-    <h1 class="display-3 text-center mb-12">Feedback</h1>
+  <div class="feedback-container">
+    <h1
+      class="display-3 font-weight-bold text-uppercase text-center accent--text my-12"
+    >
+      Feedback
+    </h1>
     <div class="text-container">
       <p>
         Here you can leave us audio feedback. Your feedback can be completely
