@@ -1,5 +1,5 @@
 ---
-title: "Example 1"
+title: "This is a sample information article"
 author: "TWB"
 category: "food"
 ---
