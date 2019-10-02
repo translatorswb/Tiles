@@ -25,7 +25,9 @@ export default {
       },
       isSupported: false,
       isRecording: false,
-      chunks: []
+      chunks: [],
+      polyfilled: false,
+      mimeType: null
     };
   },
   computed: {
@@ -42,6 +44,7 @@ export default {
       return;
     }
     if (!window.MediaRecorder) {
+      this.polyfilled = true;
       window.MediaRecorder = MediaRecorderPolyfill;
     }
     this.isSupported = true;
@@ -84,20 +87,21 @@ export default {
         return;
       }
 
-      let mimeType;
       if (MediaRecorder.isTypeSupported("audio/webm; codecs=opus")) {
         // Chrome does not support ogg, but we convert on the server
-        mimeType = "audio/webm; codecs=opus";
-      } else if (MediaRecorder.isTypeSupported("audio/ogg; codecs=opus")) {
+        this.mimeType = "audio/webm; codecs=opus";
+      }
+      if (MediaRecorder.isTypeSupported("audio/ogg; codecs=opus")) {
         // firefox does all we need
-        mimeType = "audio/ogg; codecs=opus";
-      } else {
+        this.mimeType = "audio/ogg; codecs=opus";
+      }
+      if (this.polyfilled) {
         // Polyfill
-        mimeType = "audio/wav";
+        this.mimeType = "audio/wav";
       }
 
       this.$_mediaRecorder = new MediaRecorder(this.$_stream, {
-        mimeType
+        mimeType: this.mimeType
       });
 
       this.$_mediaRecorder.ignoreMutedMedia = true;
@@ -119,7 +123,9 @@ export default {
       this.$_mediaRecorder.addEventListener(
         "stop",
         () => {
-          const blobData = new Blob(this.chunks);
+          console.log(this.mimeType);
+          debugger;
+          const blobData = new Blob(this.chunks, { type: this.mimeType });
           if (blobData.size > 0) {
             this.$emit("result", blobData);
           }
