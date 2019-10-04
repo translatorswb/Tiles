@@ -14,6 +14,36 @@ Vue.use(pouchVue, {
     fetch(url, opts) {
       opts.credentials = "include";
       return PouchDB.fetch(url, opts);
-    }
+    },
+    auto_compaction: true
   }
 });
+
+export default ({ store }) => {
+  const vm = store._vm;
+  const $pouch = vm.$pouch;
+  $pouch
+    .info() // Init remote db
+    .then(result => {
+      let rep = $pouch.push(
+        "recordings",
+        `${process.env.databaseBaseUrl}/recordings`
+      );
+      vm.$on("pouchdb-push-change", info => {
+        if (info.db === "recordings") {
+          console.log("Recordings pushed ", info.info);
+          rep.cancel();
+          $pouch.destroy("recordings");
+          console.log("Destroyed local recordings db ☠️");
+          console.log("Started a new local recordings db 🐣");
+          rep = $pouch.push(
+            "recordings",
+            `${process.env.databaseBaseUrl}/recordings`
+          );
+        }
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};

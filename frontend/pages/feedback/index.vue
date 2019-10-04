@@ -138,7 +138,7 @@ export default {
           }
         };
         const response = await this.$pouch.put(doc, {}, "recordings");
-        console.log(response);
+        console.log("New recording ", response);
 
         this.submitted = true;
         this.recording = null;
