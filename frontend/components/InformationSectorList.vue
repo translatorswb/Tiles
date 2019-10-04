@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panels multiple v-model="openedSectors">
+  <v-expansion-panels v-model="openedSectors" multiple>
     <InformationSectorListItem
       v-for="sector in sectors"
       :key="sector"

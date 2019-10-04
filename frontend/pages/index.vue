@@ -21,6 +21,9 @@ export default {
       if (from.name) vm.from = from;
       vm.$vuetify.rtl = false;
     });
+  },
+  created() {
+    this.$pouch.push("recordings", `${process.env.databaseBaseUrl}/recordings`);
   }
 };
 </script>
