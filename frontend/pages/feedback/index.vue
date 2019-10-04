@@ -38,55 +38,6 @@ import { generateDocId } from "@/utils/pouchdb-utils";
 import TheVoiceRecorder from "@/components/TheVoiceRecorder.vue";
 import TheVisualizer from "@/components/TheVisualizer.vue";
 
-// const localRecordingsDB = new PouchDB("recordings");
-// const remoteRecordingsDB = new PouchDB(
-//   "http://localhost:5984/recordings",
-//   {
-//     fetch(url, opts) {
-//       opts.credentials = "include";
-//       return PouchDB.fetch(url, opts);
-//     }
-//   }
-// );
-
-// localRecordings.replicate
-//   .to(remoteRecordings, {
-//     live: true,
-//     retry: true
-//   })
-//   .on("complete", function (info) {
-//     // yay, we're done!
-//     console.log("We have connected to the DB");
-//     console.log(info);
-//   })
-//   .on("error", function (err) {
-//     console.log("THis is fucked");
-//     console.log(err);
-//     // boo, something went wrong!
-//   });
-
-// sendToCouchDB(recordingBlob) {
-//   console.log(recordingBlob);
-//   console.log(recordingBlob.src);
-//   const doc = {
-//     _id: new Date().toISOString(),
-//     name: "testing"
-//     // _attachments:  'This is not working'
-//   };
-//   console.log("");
-//   console.log(doc);
-//   this.db
-//     .put(doc)
-//     .then(doc => {
-//       console.log("We wrote stuff to the local db");
-//       console.log(doc);
-//     })
-//     .catch(err => {
-//       console.log("ERROR");
-//       console.log(err);
-//     });
-// }
-
 export default {
   components: {
     TheVoiceRecorder,
@@ -126,7 +77,7 @@ export default {
         const docId = generateDocId();
         const contentType = this.blob.type;
         const extension = contentType.split(";")[0].slice(6);
-        const recordingName = `recording.${extension}`;
+        const recordingName = `${process.env.feedbackDataBaseName}.${extension}`;
 
         const doc = {
           _id: docId,
@@ -137,8 +88,12 @@ export default {
             }
           }
         };
-        const response = await this.$pouch.put(doc, {}, "recordings");
-        console.log(response);
+        const response = await this.$pouch.put(
+          doc,
+          {},
+          `${process.env.feedbackDataBaseName}`
+        );
+        console.log("New recording ", response);
 
         this.submitted = true;
         this.recording = null;
