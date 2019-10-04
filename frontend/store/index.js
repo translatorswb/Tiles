@@ -6,7 +6,7 @@ import { langInfo } from "@/lang";
 export const state = () => ({
   langInfo,
   content,
-  sectors: content.map(d => d.sector),
+  // sectors: content.map(d => d.sector),
   contentDict,
   announcements
 });

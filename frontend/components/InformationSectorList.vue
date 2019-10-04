@@ -1,9 +1,9 @@
 <template>
   <v-expansion-panels v-model="openedSectors" multiple>
     <InformationSectorListItem
-      v-for="sector in sectors"
-      :key="sector"
-      :item="sector"
+      v-for="(item, ii) in content"
+      :key="ii"
+      :item="item"
     />
   </v-expansion-panels>
 </template>
@@ -19,10 +19,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(["sectors"])
+    ...mapState(["content"])
   },
   created() {
-    this.openedSectors = [...Array(this.sectors.length).keys()].map(
+    this.openedSectors = [...Array(this.content.length).keys()].map(
       (k, i) => i
     );
   }
