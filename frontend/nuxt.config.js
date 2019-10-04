@@ -52,7 +52,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~plugins/i18n.js" }],
+  plugins: [
+    { src: "~plugins/i18n.js" },
+    { src: "~/plugins/pouchdb.js", mode: "client" }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -70,6 +73,12 @@ export default {
     "@nuxtjs/pwa",
     "nuxt-i18n"
   ],
+  /*
+   ** env
+   */
+  env: {
+    databaseBaseUrl: process.env.DATABASE_BASE_URL || "http://localhost:5984"
+  },
   /*
    ** nuxt-i18n module configuration
    ** See https://nuxt-community.github.io/nuxt-i18n/options-reference.html
