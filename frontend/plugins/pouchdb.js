@@ -24,22 +24,31 @@ export default ({ store }) => {
   const $pouch = vm.$pouch;
   $pouch
     .info() // Init remote db
-    .then(result => {
+    .then(() => {
       let rep = $pouch.push(
         "recordings",
-        `${process.env.databaseBaseUrl}/recordings`
+        `${process.env.databaseBaseUrl}/recordings`,
+        {
+          live: true,
+          retry: true
+        }
       );
       vm.$on("pouchdb-push-change", info => {
         if (info.db === "recordings") {
           console.log("Recordings pushed ", info.info);
           rep.cancel();
-          $pouch.destroy("recordings");
-          console.log("Destroyed local recordings db ☠️");
-          console.log("Started a new local recordings db 🐣");
-          rep = $pouch.push(
-            "recordings",
-            `${process.env.databaseBaseUrl}/recordings`
-          );
+          $pouch.destroy("recordings").then(() => {
+            console.log("Destroyed local recordings db ☠️");
+            console.log("Started a new local recordings db 🐣 ");
+            rep = $pouch.push(
+              "recordings",
+              `${process.env.databaseBaseUrl}/recordings`,
+              {
+                live: true,
+                retry: true
+              }
+            );
+          });
         }
       });
 
