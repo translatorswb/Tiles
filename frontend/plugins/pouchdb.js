@@ -26,7 +26,7 @@ export default ({ store }) => {
   $pouch
     .info() // Init remote db
     .then(() => {
-      // We create the initial local database which only pushs to the remote
+      // We create the initial local database which only pushes to the remote
       // https://github.com/MDSLKTR/pouch-vue/blob/master/src/index.js#L409
       // i.e. it doesn't get data from remote
       // @zhenmao Is there so way that we can make THIS...

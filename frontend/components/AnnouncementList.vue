@@ -1,23 +1,27 @@
 <template>
   <div>
     <AnnouncementListItem
-      v-for="(announcement, i) in announcements"
+      v-for="(article, i) in announcements"
       :key="i"
-      :item="announcement"
+      :item="article"
     />
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import AnnouncementListItem from "@/components/AnnouncementListItem.vue";
 
 export default {
   components: {
     AnnouncementListItem
   },
+
   computed: {
-    ...mapState(["announcements"])
+    ...mapGetters(["getAnnouncements"]),
+    announcements() {
+      return this.getAnnouncements(this.$i18n.locale);
+    }
   }
 };
 </script>
