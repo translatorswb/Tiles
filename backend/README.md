@@ -1,4 +1,16 @@
-# CouchDB v 2.3.1
+# Backend
+
+Create a new virtual environment:
+
+`virtualenv -p python2.7 env`
+
+create an admin user and password in couch, those values are hardcoded in the `__main__.py` file. I am using `admin`, `admin`
+
+from the project root run `python backend` or from the backend directory `python .`
+
+The announcements and recordings databases should be created from the content in the **content** directory.
+
+## CouchDB v 2.3.1
 
 We can add data to the cloud database through the use of python scripts. This will ensure our data has the same structure.
 
