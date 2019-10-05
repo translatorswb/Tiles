@@ -3,7 +3,7 @@
     <VBorderedCard
       :to="
         localePath({
-          name: 'article-id',
+          name: 'announcement-id',
           params: { id: item.id }
         })
       "
@@ -23,7 +23,7 @@
             class="announcement-item-title accent--text headline mb-2"
             :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
           >
-            {{ item.title }}
+            {{ item.attributes.title }}
           </div>
           <div class="announcement-item-date black--text">
             {{ $tc("day", fromNow(item.date)) }}

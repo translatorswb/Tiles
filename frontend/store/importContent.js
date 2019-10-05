@@ -14,6 +14,6 @@ function importAll(r) {
     contentDict[code][id] = article;
   });
 }
-importAll(require.context("@/content/", true, /\.md$/));
+importAll(require.context("@/content/categorizedArticles/", true, /\.md$/));
 
 export { contentDict };

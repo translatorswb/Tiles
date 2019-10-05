@@ -78,9 +78,9 @@ export default {
         const contentType = this.blob.type;
         const extension = contentType.split(";")[0].slice(6);
         const recordingName = `${process.env.feedbackDataBaseName}.${extension}`;
-
         const doc = {
           _id: docId,
+          locale: this.$i18n.locale,
           _attachments: {
             [recordingName]: {
               content_type: contentType,
