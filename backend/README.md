@@ -4,6 +4,14 @@ Create a new virtual environment:
 
 `virtualenv -p python2.7 env`
 
+Activate the newly created virtual environment:
+
+`source env/bin/activate`
+
+Install required modules:
+
+`pip install -r requirements.txt`
+
 create an admin user and password in couch, those values are hardcoded in the `__main__.py` file. I am using `admin`, `admin`
 
 from the project root run `python backend` or from the backend directory `python .`
@@ -29,13 +37,13 @@ This data is sent one way from the client to the the database each document is a
 
 ```json
 {
-  "_id": "2019-10-05T12:06:50.762Z",
-  "_rev": "1-76324b9a1bc834b05511de987aeb511b",
-  "_attachments": {
-    "recordings.webm": {
-      "content_type": "audio/webm; codecs=opus"
-    }
-  }
+	"_id": "2019-10-05T12:06:50.762Z",
+	"_rev": "1-76324b9a1bc834b05511de987aeb511b",
+	"_attachments": {
+		"recordings.webm": {
+			"content_type": "audio/webm; codecs=opus"
+		}
+	}
 }
 ```
 
@@ -50,17 +58,17 @@ For audio we could conditionally attach it only if the .md file is also present.
 
 ```json
 {
-  "_id": "2019-10-05T21:26:41.148508Z",
-  "_rev": "3-d72c906c58a1c90314f6ddb3aecd7723",
-  "name": "disposal_of_faeces",
-  "_attachments": {
-    "en.md": {
-      "content_type": "text/markdown;charset=utf-8"
-    },
-    "bura.md": {
-      "content_type": "text/markdown;charset=utf-8"
-    }
-  }
+	"_id": "2019-10-05T21:26:41.148508Z",
+	"_rev": "3-d72c906c58a1c90314f6ddb3aecd7723",
+	"name": "disposal_of_faeces",
+	"_attachments": {
+		"en.md": {
+			"content_type": "text/markdown;charset=utf-8"
+		},
+		"bura.md": {
+			"content_type": "text/markdown;charset=utf-8"
+		}
+	}
 }
 ```
 
@@ -70,29 +78,29 @@ Same idea as announcements but we don't need the date and also have the sector f
 
 ```json
 {
-  "_id": "2019-10-05T21:28:58.410329Z",
-  "_rev": "7-344e6afcdd1302bfcf92c7db212fc67d",
-  "sector": "waterSanitation",
-  "name": "safe_water_hygine",
-  "_attachments": {
-    "step5.png": {
-      "content_type": "image/png"
-    },
-    "step4.png": {
-      "content_type": "image/png"
-    },
-    "step3.png": {
-      "content_type": "image/png"
-    },
-    "en.md": {
-      "content_type": "text/markdown;charset=utf-8"
-    },
-    "step2.png": {
-      "content_type": "image/png"
-    },
-    "step1.png": {
-      "content_type": "image/png"
-    }
-  }
+	"_id": "2019-10-05T21:28:58.410329Z",
+	"_rev": "7-344e6afcdd1302bfcf92c7db212fc67d",
+	"sector": "waterSanitation",
+	"name": "safe_water_hygine",
+	"_attachments": {
+		"step5.png": {
+			"content_type": "image/png"
+		},
+		"step4.png": {
+			"content_type": "image/png"
+		},
+		"step3.png": {
+			"content_type": "image/png"
+		},
+		"en.md": {
+			"content_type": "text/markdown;charset=utf-8"
+		},
+		"step2.png": {
+			"content_type": "image/png"
+		},
+		"step1.png": {
+			"content_type": "image/png"
+		}
+	}
 }
 ```
