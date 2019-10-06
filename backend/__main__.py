@@ -11,12 +11,12 @@ URL = 'http://127.0.0.1:5984'
 CONTENT_FOLDER_NAME = os.path.join(
     os.path.dirname(os.path.realpath(__file__)), 'content')
 ANNOUNCEMENTS_DATABASE_NAME = 'announcements'
-CATEGORIZED_ARTICLES_DATABASE_NAME = 'categorized_articles'
+CATEGORIZED_ARTICLES_DATABASE_NAME = 'articles'
 
 
 def upload_announcements_to_db(client, db_name):
     """
-    All of the folders in the announcements directory become an anouncement there is no other metadata
+    All of the folders in the announcements directory become an announcement there is no other metadata
     """
     announcement_dirs = get_document_directories(
         os.path.join(CONTENT_FOLDER_NAME, db_name))
@@ -31,15 +31,15 @@ def upload_announcements_to_db(client, db_name):
         print('')
 
 
-def upload_categorized_articles_to_db(client, db_name):
+def upload_articles_to_db(client, db_name):
     """
     The directory is created so it is transformed as follows:
     name - sector
     """
-    categorized_articles_dirs = get_document_directories(
+    articles_dirs = get_document_directories(
         os.path.join(CONTENT_FOLDER_NAME, db_name))
     db = setup_database(client, db_name)
-    for article_dir_name in categorized_articles_dirs:
+    for article_dir_name in articles_dirs:
         name_sector = os.path.basename(
             os.path.normpath(article_dir_name)).split('-')
         data = {'_id': create_json_datetime_now(
@@ -53,8 +53,8 @@ def upload_categorized_articles_to_db(client, db_name):
 
 if __name__ == "__main__":
     client = connect_to_db(USERNAME, PASSWORD, URL)
-    # upload_announcements_to_db(client, ANNOUNCEMENTS_DATABASE_NAME)
-    upload_categorized_articles_to_db(
+    upload_announcements_to_db(client, ANNOUNCEMENTS_DATABASE_NAME)
+    upload_articles_to_db(
         client, CATEGORIZED_ARTICLES_DATABASE_NAME)
     print('All documents successfully made closing connection with CouchDB')
     client.disconnect()
