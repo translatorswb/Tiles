@@ -77,8 +77,7 @@ export default {
    ** env
    */
   env: {
-    databaseBaseUrl: process.env.DATABASE_BASE_URL || "http://localhost:5984",
-    feedbackDataBaseName: process.env.RECORDINGS_DATA_BASE_NAME || "recordings"
+    databaseBaseUrl: process.env.DATABASE_BASE_URL || "http://localhost:5984"
   },
   /*
    ** nuxt-i18n module configuration

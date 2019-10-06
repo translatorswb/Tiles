@@ -1,7 +1,7 @@
 <template>
   <div>
     <InformationArticleListItem
-      v-for="(article, i) in articles"
+      v-for="(article, i) in localeArticles"
       :key="i"
       :item="article"
     />
@@ -9,8 +9,9 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { filterLocaleDocs, hasAudio } from "@/utils/pouchdb-utils";
 import InformationArticleListItem from "@/components/InformationArticleListItem.vue";
+
 export default {
   components: {
     InformationArticleListItem
@@ -22,9 +23,18 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getSectorArticles"]),
+    localeArticles() {
+      if (!this.articles) return [];
+      const localeArticles = filterLocaleDocs(this.articles, this.$i18n.locale);
+      localeArticles.forEach(article => {
+        article.hasAudio = hasAudio(article, this.$i18n.locale);
+      });
+      return localeArticles;
+    }
+  },
+  pouch: {
     articles() {
-      return this.getSectorArticles(this.$i18n.locale, this.sector);
+      return { sector: this.sector };
     }
   }
 };

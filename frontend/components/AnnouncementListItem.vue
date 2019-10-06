@@ -3,8 +3,8 @@
     <VBorderedCard
       :to="
         localePath({
-          name: 'announcement-id',
-          params: { id: item.id }
+          name: 'article-id',
+          params: { id: `announcements_${item._id}` }
         })
       "
     >
@@ -23,25 +23,18 @@
             class="announcement-item-title accent--text headline mb-2"
             :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
           >
-            {{ item.attributes.title }}
+            {{ item.name }}
           </div>
           <div class="announcement-item-date black--text">
-            {{ $tc("day", fromNow(item.date)) }}
+            {{ $tc("day", fromNow) }}
           </div>
         </div>
         <div
+          v-if="item.hasAudio"
           class="announcement-item-audio"
           :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
         >
-          <v-btn
-            class="mx-2"
-            fab
-            dark
-            color="primary"
-            @click.prevent="playAudio"
-          >
-            <v-icon dark>{{ icon.audio }}</v-icon>
-          </v-btn>
+          <AudioPlayButton :doc="item" />
         </div>
       </div>
     </VBorderedCard>
@@ -49,12 +42,15 @@
 </template>
 
 <script>
-import { mdiCupWater, mdiVolumeHigh } from "@mdi/js";
+import { mdiCupWater } from "@mdi/js";
 import dayjs from "dayjs";
 import VBorderedCard from "@/components/VBorderedCard.vue";
+import AudioPlayButton from "@/components/AudioPlayButton.vue";
+
 export default {
   components: {
-    VBorderedCard
+    VBorderedCard,
+    AudioPlayButton
   },
   props: {
     item: {
@@ -65,17 +61,13 @@ export default {
   data() {
     return {
       icon: {
-        icon: mdiCupWater,
-        audio: mdiVolumeHigh
+        icon: mdiCupWater
       }
     };
   },
-  methods: {
-    playAudio(e) {
-      console.log("Play audio");
-    },
-    fromNow(date) {
-      return dayjs().diff(dayjs(date), "day");
+  computed: {
+    fromNow() {
+      return dayjs().diff(dayjs(+this.item._id), "day");
     }
   }
 };
