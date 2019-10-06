@@ -2,7 +2,9 @@
   <v-expansion-panel class="sector-item">
     <v-expansion-panel-header class="sector-item-header">
       <div class="sector-item-header-icon">
-        <v-icon x-large color="primary">{{ icon }}</v-icon>
+        <v-icon x-large color="primary">{{
+          getSectorIcon(item.sector)
+        }}</v-icon>
       </div>
       <div
         class="sector-item-header-title accent--text"
@@ -18,8 +20,30 @@
 </template>
 
 <script>
-import { mdiFoodApple } from "@mdi/js";
+import {
+  mdiFoodApple,
+  mdiHome,
+  mdiHanger,
+  mdiBottleTonicPlus,
+  mdiCupWater,
+  mdiBasketball,
+  mdiShieldPlus,
+  mdiSchool
+} from "@mdi/js";
+
 import InformationArticleList from "@/components/InformationArticleList.vue";
+
+const sectorIcons = {
+  food: mdiFoodApple,
+  shelter: mdiHome,
+  nonfoodItems: mdiHanger,
+  health: mdiBottleTonicPlus,
+  waterSanitation: mdiCupWater,
+  wellbeing: mdiBasketball,
+  protection: mdiShieldPlus,
+  education: mdiSchool
+};
+
 export default {
   components: {
     InformationArticleList
@@ -34,6 +58,11 @@ export default {
     return {
       icon: mdiFoodApple
     };
+  },
+  methods: {
+    getSectorIcon(sector) {
+      return sectorIcons[sector];
+    }
   }
 };
 </script>

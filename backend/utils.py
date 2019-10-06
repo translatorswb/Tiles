@@ -68,7 +68,7 @@ def create_json_datetime_now():
     e.g. 
     "2019-10-05T12:06:50.762Z"
     """
-    return str(int(time.time() * 1000));
+    return str(int(time.time() * 1000))
     # return str(datetime.now()).replace(" ", 'T') + 'Z'
 
 
