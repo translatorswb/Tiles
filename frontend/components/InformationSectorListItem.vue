@@ -2,7 +2,7 @@
   <v-expansion-panel class="sector-item">
     <v-expansion-panel-header class="sector-item-header">
       <div class="sector-item-header-icon">
-        <v-icon x-large color="primary">{{ item.icon }}</v-icon>
+        <v-icon x-large color="primary">{{ icon }}</v-icon>
       </div>
       <div
         class="sector-item-header-title accent--text"
@@ -12,7 +12,7 @@
       </div>
     </v-expansion-panel-header>
     <v-expansion-panel-content class="sector-item-body">
-      <InformationArticleList :sector="item.sector" />
+      <InformationArticleList :articles="item.articles" />
     </v-expansion-panel-content>
   </v-expansion-panel>
 </template>

@@ -25,12 +25,16 @@
         src="~/assets/images/TWB_Interim_Logo@1x.png"
       />
     </div>
-    <div class="article-content"></div>
+    <div class="article-content" v-html="content"></div>
   </article>
   <article v-else class="text-container">{{ error }}</article>
 </template>
 
 <script>
+import showdown from "showdown";
+import createDOMPurify from "dompurify";
+import { blobToDataURL } from "blob-util";
+import { getAssets } from "@/utils/pouchdb-utils";
 import AudioPlayButton from "@/components/AudioPlayButton.vue";
 
 export default {
@@ -40,7 +44,8 @@ export default {
   data() {
     return {
       article: null,
-      error: null
+      error: null,
+      content: null
     };
   },
   async created() {
@@ -52,15 +57,30 @@ export default {
         database
       );
 
-      console.log(doc);
+      this.article = doc;
 
       // Get markdown file
-      const mdAttachment = doc._attachments[`${this.$i18n.locale}.md`];
-      const mdContent = await mdAttachment.data.text();
+      const mdBlob = doc._attachments[`${this.$i18n.locale}.md`];
+      const mdText = await mdBlob.data.text();
+      const converter = new showdown.Converter();
+      const dirty = converter.makeHtml(mdText);
+      const DOMPurify = createDOMPurify(window);
+      let clean = DOMPurify.sanitize(dirty);
 
-      console.log(mdContent);
+      // Get images
+      const assets = getAssets(doc);
+      const assetsNames = Object.keys(assets);
+      const assetsDataURLs = await Promise.all(
+        Object.values(assets).map(info => {
+          return blobToDataURL(info.data);
+        })
+      );
+      assetsNames.forEach((name, i) => {
+        const dataURL = assetsDataURLs[i];
+        clean = clean.replace(name, dataURL);
+      });
 
-      // this.article = article;
+      this.content = clean;
     } catch (error) {
       this.error = error;
     }

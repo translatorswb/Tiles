@@ -20,30 +20,15 @@ export function hasAudio(doc, locale) {
   return false;
 }
 
-export function processAttachments(attachments, locale) {
-  const files = Object.entries(attachments);
-  let md;
-  let audio;
-  const others = [];
+export function getAssets(doc) {
+  const files = Object.entries(doc._attachments);
+  const assets = {};
   files.forEach(file => {
-    if (isMarkdown(file)) {
-      if (!md && matchesLocale(file, locale)) {
-        md = file[0];
-      }
-    } else if (isAudio) {
-      if (!audio && matchesLocale(file, locale)) {
-        audio = file[0];
-      }
-    } else {
-      others.push(file[0]);
+    if (!isMarkdown(file) && !isAudio(file)) {
+      assets[file[0]] = file[1];
     }
   });
-
-  return {
-    md,
-    audio,
-    others
-  };
+  return assets;
 }
 
 function isMarkdown(file) {
