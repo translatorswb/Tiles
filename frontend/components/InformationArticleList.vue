@@ -9,22 +9,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 import InformationArticleListItem from "@/components/InformationArticleListItem.vue";
+
 export default {
   components: {
     InformationArticleListItem
   },
   props: {
-    sector: {
-      type: String,
+    articles: {
+      type: Array,
       required: true
-    }
-  },
-  computed: {
-    ...mapGetters(["getSectorArticles"]),
-    articles() {
-      return this.getSectorArticles(this.$i18n.locale, this.sector);
     }
   }
 };

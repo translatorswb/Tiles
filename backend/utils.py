@@ -5,6 +5,7 @@ import io
 
 from cloudant.client import Cloudant
 from datetime import datetime
+import time
 
 
 ACCEPTABLE_FILE_TYPES = ['md', 'mp3', 'png']
@@ -67,7 +68,8 @@ def create_json_datetime_now():
     e.g. 
     "2019-10-05T12:06:50.762Z"
     """
-    return str(datetime.now()).replace(" ", 'T') + 'Z'
+    return str(int(time.time() * 1000));
+    # return str(datetime.now()).replace(" ", 'T') + 'Z'
 
 
 def add_attachment_to_doc(document, file_to_attach, content_type):

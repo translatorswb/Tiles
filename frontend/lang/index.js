@@ -1,59 +1,59 @@
-import hau from "./messages/hausa.js";
-import kau from "./messages/kanuri.js";
-import shu from "./messages/shuwa.js";
-import mrt from "./messages/marghi.js";
-import bwr from "./messages/bura.js";
-import mfi from "./messages/mandara.js";
-import ful from "./messages/fulfulde.js";
-import ckl from "./messages/kibaku.js";
-import wja from "./messages/waha.js";
+import hausa from "./messages/hausa.js";
+import kanuri from "./messages/kanuri.js";
+import shuwa from "./messages/shuwa.js";
+import marghi from "./messages/marghi.js";
+import bura from "./messages/bura.js";
+import mandara from "./messages/mandara.js";
+import fulfulde from "./messages/fulfulde.js";
+import kibaku from "./messages/kibaku.js";
+import waha from "./messages/waha.js";
 import en from "./messages/en.js";
 
 export const langInfo = {
   hausa: {
     name: "Hausa",
     rtl: false,
-    code: "hau"
+    code: "hausa"
   },
   kanuri: {
     name: "Kanuri",
     rtl: false,
-    code: "kau"
+    code: "kanuri"
   },
   shuwa: {
     name: "Shuwa Arab شُوَ أرَب",
     rtl: false,
-    code: "shu"
+    code: "shuwa"
   },
   marghi: {
     name: "Marghi",
     rtl: false,
-    code: "mrt"
+    code: "marghi"
   },
   bura: {
     name: "Bura or Pabər",
     rtl: false,
-    code: "bwr"
+    code: "bura"
   },
   mandara: {
     name: "Mandara",
     rtl: false,
-    code: "mfi"
+    code: "mandara"
   },
   fulfulde: {
     name: "Myar Marghi",
     rtl: false,
-    code: "ful"
+    code: "fulfulde"
   },
   kibaku: {
     name: "Kibaku",
     rtl: false,
-    code: "ckl"
+    code: "kibaku"
   },
   waha: {
     name: "Waha",
     rtl: false,
-    code: "wja"
+    code: "waha"
   },
   en: {
     name: "English",
@@ -63,14 +63,14 @@ export const langInfo = {
 };
 
 export const messages = {
-  hau,
-  kau,
-  shu,
-  mrt,
-  bwr,
-  mfi,
-  ful,
-  ckl,
-  wja,
+  hausa,
+  kanuri,
+  shuwa,
+  marghi,
+  bura,
+  mandara,
+  fulfulde,
+  kibaku,
+  waha,
   en
 };

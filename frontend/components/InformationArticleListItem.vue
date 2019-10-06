@@ -4,7 +4,7 @@
       :to="
         localePath({
           name: 'article-id',
-          params: { id: item.id }
+          params: { id: `articles_${item._id}` }
         })
       "
     >
@@ -17,22 +17,15 @@
             class="article-item-title accent--text"
             :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
           >
-            {{ item.attributes.title }}
+            {{ item.name }}
           </div>
         </div>
         <div
+          v-if="item.hasAudio"
           class="article-item-audio"
           :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
         >
-          <v-btn
-            class="mx-2"
-            fab
-            dark
-            color="primary"
-            @click.prevent="playAudio"
-          >
-            <v-icon dark>{{ icon.audio }}</v-icon>
-          </v-btn>
+          <AudioPlayButton :doc="item" />
         </div>
       </div>
     </VBorderedCard>
@@ -40,28 +33,18 @@
 </template>
 
 <script>
-import { mdiVolumeHigh } from "@mdi/js";
 import VBorderedCard from "@/components/VBorderedCard.vue";
+import AudioPlayButton from "@/components/AudioPlayButton.vue";
+
 export default {
   components: {
-    VBorderedCard
+    VBorderedCard,
+    AudioPlayButton
   },
   props: {
     item: {
       type: Object,
       required: true
-    }
-  },
-  data() {
-    return {
-      icon: {
-        audio: mdiVolumeHigh
-      }
-    };
-  },
-  methods: {
-    playAudio(e) {
-      console.log("Play audio");
     }
   }
 };
