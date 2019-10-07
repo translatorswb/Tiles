@@ -15,7 +15,7 @@ export function filterLocaleDocs(docs, locale) {
 export function hasAudio(doc, locale) {
   const files = Object.entries(doc._attachments);
   for (const file of files) {
-    if (isAudio(file) && matchesLocale(file, locale)) return true;
+    if (isAudio(file) && matchesLocale(file, locale)) return file[0];
   }
   return false;
 }

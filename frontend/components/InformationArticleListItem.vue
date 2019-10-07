@@ -25,7 +25,11 @@
           class="article-item-audio"
           :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
         >
-          <AudioPlayButton :doc="item" />
+          <AudioPlayButton
+            :docId="item._id"
+            :audioId="item.hasAudio"
+            database="articles"
+          />
         </div>
       </div>
     </VBorderedCard>
