@@ -1,28 +1,24 @@
 <template>
   <article v-if="article" class="article markdown text-container">
-    <div
-      class="d-flex"
-      :class="$vuetify.breakpoint.xs ? 'flex-column' : 'align-center'"
+    <h1
+      class="article-title flex-grow-1 accent--text font-weight-bold my-6"
+      :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-2'"
     >
-      <h1
-        class="article-title flex-grow-1 accent--text font-weight-bold my-6"
-        :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-2'"
-      >
-        {{ article.name }}
-      </h1>
-      <div
-        v-if="article.hasAudio"
-        class="article-audio"
-        :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
-      >
-        <AudioPlayButton :doc="article" />
-      </div>
-    </div>
+      {{ article.name }}
+    </h1>
     <div class="mb-4">
       <img
         alt="logo"
         class="article-author-logo"
         src="~/assets/images/TWB_Interim_Logo@1x.png"
+      />
+    </div>
+    <div v-if="recording" class="mb-4">
+      <audio
+        style="width: 100%"
+        :src="recording.src"
+        controls
+        @canplaythrough="onCanPlayThrough"
       />
     </div>
     <div class="article-content" v-html="content"></div>
@@ -33,19 +29,16 @@
 <script>
 import showdown from "showdown";
 import createDOMPurify from "dompurify";
-import { blobToDataURL } from "blob-util";
-import { getAssets } from "@/utils/pouchdb-utils";
-import AudioPlayButton from "@/components/AudioPlayButton.vue";
+import { createObjectURL, revokeObjectURL, blobToDataURL } from "blob-util";
+import { getAudio, getAssets } from "@/utils/pouchdb-utils";
 
 export default {
-  components: {
-    AudioPlayButton
-  },
   data() {
     return {
       article: null,
       error: null,
-      content: null
+      content: null,
+      recording: null
     };
   },
   async created() {
@@ -58,6 +51,14 @@ export default {
       );
 
       this.article = doc;
+
+      // Get audio
+      const audioBlob = getAudio(doc, this.$i18n.locale);
+      if (audioBlob) {
+        this.recording = {
+          src: createObjectURL(audioBlob)
+        };
+      }
 
       // Get markdown file
       const mdBlob = doc._attachments[`${this.$i18n.locale}.md`];
@@ -83,6 +84,11 @@ export default {
       this.content = clean;
     } catch (error) {
       this.error = error;
+    }
+  },
+  methods: {
+    onCanPlayThrough() {
+      revokeObjectURL(this.recording.src);
     }
   }
 };

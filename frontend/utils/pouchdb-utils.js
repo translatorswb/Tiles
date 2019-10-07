@@ -20,6 +20,14 @@ export function hasAudio(doc, locale) {
   return false;
 }
 
+export function getAudio(doc, locale) {
+  const files = Object.entries(doc._attachments);
+  for (const file of files) {
+    if (isAudio(file) && matchesLocale(file, locale)) return file[1].data;
+  }
+  return null;
+}
+
 export function getAssets(doc) {
   const files = Object.entries(doc._attachments);
   const assets = {};
