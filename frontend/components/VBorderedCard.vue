@@ -4,9 +4,9 @@
     tile
     hover
     nuxt
-    :to="to"
     class="bordered-card primary--text"
     :class="$vuetify.rtl ? 'bordered-right' : 'bordered-left'"
+    @click="navigateTo"
   >
     <slot />
   </v-card>
@@ -18,6 +18,11 @@ export default {
     to: {
       type: String,
       required: true
+    }
+  },
+  methods: {
+    navigateTo() {
+      this.$router.push(this.to);
     }
   }
 };
