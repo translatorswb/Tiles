@@ -1,10 +1,10 @@
 <template>
   <v-app-bar app dark color="primary">
-    <v-toolbar-title v-if="showGoHomeButton"
-      ><nuxt-link :to="localePath('welcome')" class="white--text px-4"
-        >Home</nuxt-link
-      ></v-toolbar-title
-    >
+    <v-toolbar-items v-if="showBack">
+      <v-btn text color="white" @click="goBack">
+        <v-icon large>{{ icon.back }}</v-icon>
+      </v-btn>
+    </v-toolbar-items>
 
     <div class="flex-grow-1"></div>
     <v-toolbar-items>
@@ -17,14 +17,12 @@
 </template>
 
 <script>
-import { mdiChevronLeft, mdiInformation, mdiPencil, mdiWeb } from "@mdi/js";
+import { mdiChevronLeftCircle, mdiWeb } from "@mdi/js";
 export default {
   data() {
     return {
       icon: {
-        chevronLeft: mdiChevronLeft,
-        information: mdiInformation,
-        pencil: mdiPencil,
+        back: mdiChevronLeftCircle,
         web: mdiWeb
       }
     };
@@ -35,13 +33,12 @@ export default {
     },
     showBack() {
       const base = this.getRouteBaseName(this.$route);
-      return !["index", "info"].includes(base);
+      const notHomePage = !["index", "welcome"].includes(base);
+      const notFirstPage = window.history.length > 1;
+      return notHomePage && notFirstPage;
     },
     currentLocaleName() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale).name;
-    },
-    showGoHomeButton() {
-      return this.getRouteBaseName(this.$route) !== "welcome";
     }
   },
   methods: {
