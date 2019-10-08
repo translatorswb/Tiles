@@ -1,18 +1,14 @@
 <template>
   <v-btn class="mx-2" fab dark color="primary" @click.stop="playAudio">
     <v-icon dark>{{ audioIcon }}</v-icon>
-    <audio
-      ref="audio"
-      v-if="recording"
-      :src="recording.src"
-      @canplaythrough="onCanPlayThrough"
-    />
+    <audio ref="audio" v-if="recording" :src="recording" />
   </v-btn>
 </template>
 
 <script>
 import { mdiVolumeHigh, mdiPause } from "@mdi/js";
-import { createObjectURL, revokeObjectURL } from "blob-util";
+import { createObjectURL } from "blob-util";
+import objectURLsMixin from "@/mixins/objectURLs-mixin";
 
 export default {
   props: {
@@ -29,6 +25,7 @@ export default {
       required: true
     }
   },
+  mixins: [objectURLsMixin],
   data() {
     return {
       icon: {
@@ -62,12 +59,9 @@ export default {
         this.audioId,
         this.database
       );
-      this.recording = {
-        src: createObjectURL(audioBlob)
-      };
-    },
-    onCanPlayThrough() {
-      revokeObjectURL(this.recording.src);
+      const objectURL = createObjectURL(audioBlob);
+      this.addObjectURL(objectURL);
+      this.recording = objectURL;
     }
   }
 };

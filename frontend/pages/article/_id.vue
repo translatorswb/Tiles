@@ -14,12 +14,7 @@
       />
     </div>
     <div v-if="recording" class="mb-4">
-      <audio
-        style="width: 100%"
-        :src="recording.src"
-        controls
-        @canplaythrough="onCanPlayThrough"
-      />
+      <audio style="width: 100%" :src="recording.src" controls />
     </div>
     <div class="article-content" v-html="content"></div>
   </article>
@@ -29,10 +24,12 @@
 <script>
 import showdown from "showdown";
 import createDOMPurify from "dompurify";
-import { createObjectURL, revokeObjectURL, blobToDataURL } from "blob-util";
+import { createObjectURL, blobToDataURL } from "blob-util";
 import { getAudio, getAssets } from "@/utils/pouchdb-utils";
+import objectURLsMixin from "@/mixins/objectURLs-mixin";
 
 export default {
+  mixins: [objectURLsMixin],
   data() {
     return {
       article: null,
@@ -71,24 +68,20 @@ export default {
       // Get images
       const assets = getAssets(doc);
       const assetsNames = Object.keys(assets);
-      const assetsDataURLs = await Promise.all(
+      const assetsObjectURLs = await Promise.all(
         Object.values(assets).map(info => {
           return blobToDataURL(info.data);
         })
       );
       assetsNames.forEach((name, i) => {
-        const dataURL = assetsDataURLs[i];
-        clean = clean.replace(name, dataURL);
+        const objectURL = assetsObjectURLs[i];
+        this.addObjectURL(objectURL);
+        clean = clean.replace(name, objectURL);
       });
 
       this.content = clean;
     } catch (error) {
       this.error = error;
-    }
-  },
-  methods: {
-    onCanPlayThrough() {
-      revokeObjectURL(this.recording.src);
     }
   }
 };
