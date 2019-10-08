@@ -20,12 +20,7 @@
       <TheVoiceRecorder @stream="onStream" @result="onResult" />
     </div>
     <div v-if="recording" class="text-container d-flex align-center">
-      <audio
-        style="width: 100%"
-        :src="recording.src"
-        controls
-        @canplaythrough="onCanPlayThrough"
-      />
+      <audio style="width: 100%" :src="recording" controls />
       <v-btn class="ml-4" color="primary" dark @click="submitFeedback"
         ><v-icon dark left>{{ icon.submit }}</v-icon> Submit</v-btn
       >
@@ -39,16 +34,18 @@
 
 <script>
 import { mdiCheckCircle } from "@mdi/js";
-import { createObjectURL, revokeObjectURL } from "blob-util";
+import { createObjectURL } from "blob-util";
 import { generateDocId } from "@/utils/pouchdb-utils";
 import TheVoiceRecorder from "@/components/TheVoiceRecorder.vue";
 import TheVisualizer from "@/components/TheVisualizer.vue";
+import objectURLsMixin from "@/mixins/objectURLs-mixin";
 
 export default {
   components: {
     TheVoiceRecorder,
     TheVisualizer
   },
+  mixins: [objectURLsMixin],
   data() {
     return {
       icon: {
@@ -74,12 +71,9 @@ export default {
     },
     onResult(data) {
       this.blob = data;
-      this.recording = {
-        src: createObjectURL(data)
-      };
-    },
-    onCanPlayThrough() {
-      revokeObjectURL(this.recording.src);
+      const objectURL = createObjectURL(data);
+      this.addObjectURL(objectURL);
+      this.recording = objectURL;
     },
     async submitFeedback() {
       try {

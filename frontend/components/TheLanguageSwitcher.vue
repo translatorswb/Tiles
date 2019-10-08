@@ -28,7 +28,7 @@
       sm="6"
       lg="4"
     >
-      <VBorderedCard :to="localePath(path, lang.code)">
+      <VBorderedCard :to="localePath('welcome', lang.code)">
         <h2 class="display-1 accent--text">{{ lang.name }}</h2>
       </VBorderedCard>
     </v-col>
@@ -50,14 +50,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["langInfo"]),
-    path() {
-      const base = this.getRouteBaseName(this.from);
-      return {
-        name: base || "welcome",
-        params: this.from ? this.from.params : {}
-      };
-    }
+    ...mapState(["langInfo"])
   }
 };
 </script>
