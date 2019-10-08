@@ -71,11 +71,11 @@ export default ({ store }) => {
       });
 
       // For debugging
-      vm.$on("pouchdb-push-paused", info => console.log("Paused ", info));
-      vm.$on("pouchdb-push-active", info => console.log("Active ", info));
-      vm.$on("pouchdb-push-denied", error => console.log("Denied ", error));
-      vm.$on("pouchdb-push-complete", info => console.log("Completed ", info));
-      vm.$on("pouchdb-push-error", error => console.log("Error ", error));
+      // vm.$on("pouchdb-push-paused", info => console.log("Paused ", info));
+      // vm.$on("pouchdb-push-active", info => console.log("Active ", info));
+      // vm.$on("pouchdb-push-denied", error => console.log("Denied ", error));
+      // vm.$on("pouchdb-push-complete", info => console.log("Completed ", info));
+      // vm.$on("pouchdb-push-error", error => console.log("Error ", error));
     })
     .catch(err => {
       console.log(err);
