@@ -169,6 +169,7 @@ export default {
       //   method: "GET",
       //   strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
       // }
-    ]
+    ],
+    routingExtensions: '@/plugins/workbox-navigation-route.js'
   }
 };

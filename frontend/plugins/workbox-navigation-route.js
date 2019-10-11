@@ -1,0 +1,1 @@
+workbox.routing.registerNavigationRoute("/index.html");
