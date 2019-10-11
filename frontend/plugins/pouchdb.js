@@ -83,13 +83,13 @@ export default ({ store }) => {
 
   // Announcements
   $pouch.pull("announcements", `${process.env.databaseBaseUrl}/announcements`, {
-    live: true,
-    retry: true
+    // live: true,
+    // retry: true
   });
 
   // Articles
   $pouch.pull("articles", `${process.env.databaseBaseUrl}/articles`, {
-    live: true,
-    retry: true
+    // live: true,
+    // retry: true
   });
 };
