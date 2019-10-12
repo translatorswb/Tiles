@@ -31,7 +31,7 @@ export const langInfo = {
     code: "marghi"
   },
   bura: {
-    name: "Bura or Pabər",
+    name: "Bura Pabər",
     rtl: false,
     code: "bura"
   },
@@ -41,7 +41,7 @@ export const langInfo = {
     code: "mandara"
   },
   fulfulde: {
-    name: "Myar Marghi",
+    name: "Fulfulde",
     rtl: false,
     code: "fulfulde"
   },

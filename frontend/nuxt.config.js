@@ -48,7 +48,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["@/assets/scss/index.scss"],
+  css: ["@/assets/fonts/Humanitarian-Icons.css", "@/assets/scss/index.scss"],
   /*
    ** Plugins to load before mounting the App
    */
@@ -156,6 +156,8 @@ export default {
    ** Handle external assets
    */
   workbox: {
+    offline: false,
+    cacheAssets: false,
     runtimeCaching: [
       // {
       //   urlPattern: "https://fonts.googleapis.com/.*",
@@ -169,6 +171,8 @@ export default {
       //   method: "GET",
       //   strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
       // }
-    ]
+    ],
+    cachingExtensions: "@/plugins/workbox-precaching-and-route.js",
+    routingExtensions: "@/plugins/workbox-navigation-route.js"
   }
 };

@@ -1,7 +1,7 @@
 <template>
   <v-btn class="mx-2" fab dark color="primary" @click.stop="playAudio">
     <v-icon dark>{{ audioIcon }}</v-icon>
-    <audio ref="audio" v-if="recording" :src="recording" />
+    <audio v-if="recording" ref="audio" :src="recording" />
   </v-btn>
 </template>
 
@@ -11,6 +11,7 @@ import { createObjectURL } from "blob-util";
 import objectURLsMixin from "@/mixins/objectURLs-mixin";
 
 export default {
+  mixins: [objectURLsMixin],
   props: {
     docId: {
       type: String,
@@ -25,7 +26,6 @@ export default {
       required: true
     }
   },
-  mixins: [objectURLsMixin],
   data() {
     return {
       icon: {

@@ -10,5 +10,7 @@ export default {
     protection: "Protection",
     education: "Education"
   },
+  information: "Information",
+  feedback: "Feedback",
   day: "Today | {n} day ago | {n} days ago"
 };
