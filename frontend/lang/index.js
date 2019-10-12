@@ -41,7 +41,7 @@ export const langInfo = {
     code: "mandara"
   },
   fulfulde: {
-    name: "Myar Marghi",
+    name: "Fulfulde",
     rtl: false,
     code: "fulfulde"
   },

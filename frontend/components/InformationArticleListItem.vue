@@ -26,8 +26,8 @@
           :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
         >
           <AudioPlayButton
-            :docId="item._id"
-            :audioId="item.hasAudio"
+            :doc-id="item._id"
+            :audio-id="item.hasAudio"
             database="articles"
           />
         </div>

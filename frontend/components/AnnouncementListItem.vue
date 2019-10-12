@@ -13,7 +13,7 @@
         :class="$vuetify.breakpoint.xs ? 'flex-column' : ''"
       >
         <div class="announcement-item-icon">
-          <v-icon x-large color="primary">{{ icon.icon }}</v-icon>
+          <i :class="icon.icon" class="primary--text x-large"></i>
         </div>
         <div
           class="announcement-item-main flex-grow-1"
@@ -35,8 +35,8 @@
           :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
         >
           <AudioPlayButton
-            :docId="item._id"
-            :audioId="item.hasAudio"
+            :doc-id="item._id"
+            :audio-id="item.hasAudio"
             database="announcements"
           />
         </div>
@@ -46,7 +46,6 @@
 </template>
 
 <script>
-import { mdiCupWater } from "@mdi/js";
 import dayjs from "dayjs";
 import VBorderedCard from "@/components/VBorderedCard.vue";
 import AudioPlayButton from "@/components/AudioPlayButton.vue";
@@ -65,7 +64,7 @@ export default {
   data() {
     return {
       icon: {
-        icon: mdiCupWater
+        icon: "humanitarianicons-Flood"
       }
     };
   },

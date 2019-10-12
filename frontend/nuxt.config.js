@@ -48,7 +48,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["@/assets/scss/index.scss"],
+  css: [
+    "@/assets/fonts/Humanitarian-Icons.css",
+    "@/assets/scss/index.scss"
+  ],
   /*
    ** Plugins to load before mounting the App
    */

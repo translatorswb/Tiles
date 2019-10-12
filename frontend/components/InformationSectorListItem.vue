@@ -2,9 +2,10 @@
   <v-expansion-panel class="sector-item">
     <v-expansion-panel-header class="sector-item-header">
       <div class="sector-item-header-icon">
-        <v-icon x-large color="primary">{{
-          getSectorIcon(item.sector)
-        }}</v-icon>
+        <i
+          :class="getSectorIcon(item.sector)"
+          class="primary--text x-large"
+        ></i>
       </div>
       <div
         class="sector-item-header-title accent--text"
@@ -20,29 +21,7 @@
 </template>
 
 <script>
-import {
-  mdiFoodApple,
-  mdiHome,
-  mdiHanger,
-  mdiBottleTonicPlus,
-  mdiCupWater,
-  mdiBasketball,
-  mdiShieldPlus,
-  mdiSchool
-} from "@mdi/js";
-
 import InformationArticleList from "@/components/InformationArticleList.vue";
-
-const sectorIcons = {
-  food: mdiFoodApple,
-  shelter: mdiHome,
-  nonfoodItems: mdiHanger,
-  health: mdiBottleTonicPlus,
-  waterSanitation: mdiCupWater,
-  wellbeing: mdiBasketball,
-  protection: mdiShieldPlus,
-  education: mdiSchool
-};
 
 export default {
   components: {
@@ -56,12 +35,21 @@ export default {
   },
   data() {
     return {
-      icon: mdiFoodApple
+      sectorIcons: {
+        food: "humanitarianicons-Food-Security",
+        shelter: "humanitarianicons-Shelter",
+        nonfoodItems: "humanitarianicons-Non-food-items-2",
+        health: "humanitarianicons-Health",
+        waterSanitation: "humanitarianicons-Water-Sanitation-and-Hygiene",
+        wellbeing: "humanitarianicons-Environment",
+        protection: "humanitarianicons-Protection",
+        education: "humanitarianicons-Education"
+      }
     };
   },
   methods: {
     getSectorIcon(sector) {
-      return sectorIcons[sector];
+      return this.sectorIcons[sector];
     }
   }
 };
