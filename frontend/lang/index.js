@@ -31,7 +31,7 @@ export const langInfo = {
     code: "marghi"
   },
   bura: {
-    name: "Bura or Pabər",
+    name: "Bura Pabər",
     rtl: false,
     code: "bura"
   },
