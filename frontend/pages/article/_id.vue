@@ -14,7 +14,9 @@
       />
     </div>
     <div v-if="recording" class="mb-4">
-      <audio style="width: 100%" :src="recording.src" controls />
+      <audio style="width: 100%" :src="recording.src" controls>
+        Sorry, your browser doesn't support embedded audios.
+      </audio>
     </div>
     <div class="article-content" v-html="content"></div>
   </article>
