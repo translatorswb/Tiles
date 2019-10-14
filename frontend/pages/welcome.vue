@@ -8,7 +8,17 @@
         </video>
       </v-col>
     </v-row>
-    <v-row align="stretch">
+    <v-row>
+      <v-col cols="12">
+        <div
+          class="text-center py-6 font-weight-bold accent--text text-uppercase"
+          :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-3'"
+        >
+          Welcome
+        </div>
+      </v-col>
+    </v-row>
+    <v-row align="stretch" class="pb-6">
       <v-col cols="12" sm="6">
         <v-btn
           color="primary"
@@ -38,16 +48,7 @@
         </v-btn>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="12">
-        <div
-          class="text-center py-6 font-weight-bold accent--text text-uppercase"
-          :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-3'"
-        >
-          Welcome
-        </div>
-      </v-col>
-    </v-row>
+
     <v-row>
       <v-col cols="12">
         <AnnouncementList />
