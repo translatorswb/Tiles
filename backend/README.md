@@ -14,9 +14,16 @@ Install required modules:
 
 create an admin user and password in couch, those values are hardcoded in the `__main__.py` file. I am using `admin`, `admin`
 
-from the project root run `python backend` or from the backend directory `python .`
+### CMS
 
-The announcements and recordings databases should be created from the content in the **content** directory.
+Our cms is currently a google drive folder. We copy the fils in this folder to the `content` directory using the command `python backend -pgdd`
+Once we have them in our local directory we process them to couchdb with `python backend -utc`
+To run both functions back to back execute `python backend -ra`
+
+## Google Drive
+
+Articles
+1WiBXft6qxEp0Yja3ljMuBcPoOK4BadH6
 
 ## CouchDB v 2.3.1
 
@@ -37,13 +44,13 @@ This data is sent one way from the client to the the database each document is a
 
 ```json
 {
-	"_id": "2019-10-05T12:06:50.762Z",
-	"_rev": "1-76324b9a1bc834b05511de987aeb511b",
-	"_attachments": {
-		"recordings.webm": {
-			"content_type": "audio/webm; codecs=opus"
-		}
-	}
+  "_id": "2019-10-05T12:06:50.762Z",
+  "_rev": "1-76324b9a1bc834b05511de987aeb511b",
+  "_attachments": {
+    "recordings.webm": {
+      "content_type": "audio/webm; codecs=opus"
+    }
+  }
 }
 ```
 
@@ -51,24 +58,40 @@ This data is sent one way from the client to the the database each document is a
 
 Announcements are shown to the user on the welcome screen.
 
-We push the data to the client (i think we should use \$pouch.pull() in vue).
-
-I propose the following data structure. We can get the date off of the ID since I'm posting the upload time. Currently your js code nicely removes the articles from the locals we don't have, can we use the same concept here?
-For audio we could conditionally attach it only if the .md file is also present. I can actually do that in python, only attach audio if a .md file is present.
+We push the data to the client .
 
 ```json
 {
-	"_id": "2019-10-05T21:26:41.148508Z",
-	"_rev": "3-d72c906c58a1c90314f6ddb3aecd7723",
-	"name": "disposal_of_faeces",
-	"_attachments": {
-		"en.md": {
-			"content_type": "text/markdown;charset=utf-8"
-		},
-		"bura.md": {
-			"content_type": "text/markdown;charset=utf-8"
-		}
-	}
+  "_id": "1570832046966",
+  "_rev": "3-d72c906c58a1c90314f6ddb3aecd7723",
+  "name": "disposal_of_faeces",
+  "_attachments": {
+    "en.md": {
+      "content_type": "text/markdown;charset=utf-8"
+    },
+    "en.mp3": {
+      "content_type": "audio/mp3"
+    },
+    "bura.md": {
+      "content_type": "text/markdown;charset=utf-8"
+    },
+    "bura.mp3": {
+      "content_type": "audio/mp3"
+    },
+    "author.png": {
+      "content_type": "image/png"
+    }
+  },
+  "title": {
+    "hausa": "Sakonnin Kariya Daga Ambaliya",
+    "kanuri": "Kawuliwa Wawa Njiye-ro Katәbe",
+    "shuwa": "رِسالَتْ فوغ سلامه مِن صَيْل",
+    "marghi": "Labar Arkira Asar Imi",
+    "bura": "Labarayari atakəra nkamta asar pərtu",
+    "en": "Flood Safety Messages"
+  },
+  "icon": "Flood",
+  "expiration": "2019-11-01"
 }
 ```
 
@@ -78,29 +101,29 @@ Same idea as announcements but we don't need the date and also have the sector f
 
 ```json
 {
-	"_id": "2019-10-05T21:28:58.410329Z",
-	"_rev": "7-344e6afcdd1302bfcf92c7db212fc67d",
-	"sector": "waterSanitation",
-	"name": "safe_water_hygine",
-	"_attachments": {
-		"step5.png": {
-			"content_type": "image/png"
-		},
-		"step4.png": {
-			"content_type": "image/png"
-		},
-		"step3.png": {
-			"content_type": "image/png"
-		},
-		"en.md": {
-			"content_type": "text/markdown;charset=utf-8"
-		},
-		"step2.png": {
-			"content_type": "image/png"
-		},
-		"step1.png": {
-			"content_type": "image/png"
-		}
-	}
+  "_id": "2019-10-05T21:28:58.410329Z",
+  "_rev": "7-344e6afcdd1302bfcf92c7db212fc67d",
+  "sector": "waterSanitation",
+  "name": "safe_water_hygine",
+  "_attachments": {
+    "step5.png": {
+      "content_type": "image/png"
+    },
+    "step4.png": {
+      "content_type": "image/png"
+    },
+    "step3.png": {
+      "content_type": "image/png"
+    },
+    "en.md": {
+      "content_type": "text/markdown;charset=utf-8"
+    },
+    "step2.png": {
+      "content_type": "image/png"
+    },
+    "step1.png": {
+      "content_type": "image/png"
+    }
+  }
 }
 ```

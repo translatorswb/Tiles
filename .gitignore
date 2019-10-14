@@ -19,3 +19,5 @@ yarn.lock
 .vscode
 backend/env
 *.pyc
+
+frontend/static/sw.js
