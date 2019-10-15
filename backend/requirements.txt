@@ -1,6 +1,10 @@
+appdirs==1.4.3
+attrs==19.2.0
+black==19.3b0
 cachetools==3.1.1
 certifi==2019.9.11
 chardet==3.0.4
+Click==7.0
 cloudant==2.12.0
 google-api-python-client==1.7.9
 google-auth==1.6.3
@@ -19,5 +23,6 @@ requests==2.22.0
 requests-oauthlib==1.2.0
 rsa==4.0
 six==1.12.0
+toml==0.10.0
 uritemplate==3.0.0
 urllib3==1.25.6
