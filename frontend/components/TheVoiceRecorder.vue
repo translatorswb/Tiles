@@ -50,11 +50,11 @@ export default {
     this.isSupported = true;
   },
   methods: {
-    toggleRecording() {
+    async toggleRecording() {
       if (this.isRecording) {
         this.stop();
       } else {
-        this.start();
+        await this.start();
       }
       this.isRecording = !this.isRecording;
     },
