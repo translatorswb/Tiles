@@ -4,14 +4,10 @@
       class="article-title flex-grow-1 accent--text font-weight-bold my-6"
       :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-2'"
     >
-      {{ article.name }}
+      {{ article.title[$i18n.locale] }}
     </h1>
-    <div class="mb-4">
-      <img
-        alt="logo"
-        class="article-author-logo"
-        src="~/assets/images/TWB_Interim_Logo@1x.png"
-      />
+    <div v-if="author" class="mb-4">
+      <img alt="logo" class="article-author-logo" :src="author" />
     </div>
     <div v-if="recording" class="mb-4">
       <audio style="width: 100%" :src="recording.src" controls>
@@ -27,7 +23,7 @@
 import showdown from "showdown";
 import createDOMPurify from "dompurify";
 import { createObjectURL, blobToDataURL } from "blob-util";
-import { getAudio, getAssets } from "@/utils/pouchdb-utils";
+import { getAuthorImage, getAudio, getAssets } from "@/utils/pouchdb-utils";
 import objectURLsMixin from "@/mixins/objectURLs-mixin";
 
 export default {
@@ -35,6 +31,7 @@ export default {
   data() {
     return {
       article: null,
+      author: null,
       error: null,
       content: null,
       recording: null
@@ -50,6 +47,12 @@ export default {
       );
 
       this.article = doc;
+
+      // Get author
+      const authorImage = getAuthorImage(doc);
+      if (authorImage) {
+        this.author = await blobToDataURL(authorImage);
+      }
 
       // Get audio
       const audioBlob = getAudio(doc, this.$i18n.locale);

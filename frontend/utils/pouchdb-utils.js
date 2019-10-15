@@ -4,11 +4,7 @@ export function generateDocId() {
 
 export function filterLocaleDocs(docs, locale) {
   return docs.filter(doc => {
-    const files = Object.entries(doc._attachments);
-    for (const file of files) {
-      if (isMarkdown(file) && matchesLocale(file, locale)) return true;
-    }
-    return false;
+    return !!doc.title[locale];
   });
 }
 
@@ -24,6 +20,14 @@ export function getAudio(doc, locale) {
   const files = Object.entries(doc._attachments);
   for (const file of files) {
     if (isAudio(file) && matchesLocale(file, locale)) return file[1].data;
+  }
+  return null;
+}
+
+export function getAuthorImage(doc) {
+  const files = Object.entries(doc._attachments);
+  for (const file of files) {
+    if (file[0].split(".")[0] === "author") return file[1].data;
   }
   return null;
 }

@@ -13,7 +13,7 @@
         :class="$vuetify.breakpoint.xs ? 'flex-column' : ''"
       >
         <div class="announcement-item-icon">
-          <i :class="icon.icon" class="primary--text x-large"></i>
+          <i :class="item.icon" class="primary--text x-large"></i>
         </div>
         <div
           class="announcement-item-main flex-grow-1"
@@ -23,7 +23,7 @@
             class="announcement-item-title accent--text headline mb-2"
             :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
           >
-            {{ item.name }}
+            {{ item.title[$i18n.locale] }}
           </div>
           <div class="announcement-item-date black--text">
             {{ $tc("day", fromNow) }}
@@ -60,13 +60,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-  data() {
-    return {
-      icon: {
-        icon: "humanitarianicons-Flood"
-      }
-    };
   },
   computed: {
     fromNow() {

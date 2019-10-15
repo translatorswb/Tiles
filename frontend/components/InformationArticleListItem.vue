@@ -17,7 +17,7 @@
             class="article-item-title accent--text"
             :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
           >
-            {{ item.name }}
+            {{ item.title[$i18n.locale] }}
           </div>
         </div>
         <div
