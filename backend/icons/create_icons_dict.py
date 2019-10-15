@@ -24,7 +24,6 @@ icons_structured = [
 human_readable = [create_readable_humanitarian_name(icon) for icon in icons]
 with open("icons.json", "w") as fp:
     json.dump(icons_structured, fp)
-print(human_readable)
 
 with open("icons.csv", "w") as f:  # Just use 'w' mode in 3.x
     wr = csv.writer(f)
