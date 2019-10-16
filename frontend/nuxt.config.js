@@ -76,8 +76,12 @@ export default {
   /*
    ** env
    */
+  // env: {
+  //   databaseBaseUrl: process.env.DATABASE_BASE_URL || "http://localhost:5984"
+  // },
   env: {
-    databaseBaseUrl: process.env.DATABASE_BASE_URL || "http://localhost:5984"
+    databaseBaseUrl:
+      process.env.DATABASE_BASE_URL || "https://tiles-couchdb.pngk.org/"
   },
   /*
    ** nuxt-i18n module configuration
