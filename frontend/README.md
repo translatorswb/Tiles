@@ -1,7 +1,7 @@
 # iiab
 
-> TWB IIAB
+Be sure to set the DATABASE_BASE_URL to whatever server you are using
 
-## CouchDB
+`http://52.16.175.173:5984`
 
-https://couchdb.apache.org/fauxton-visual-guide/#_all_dbs
+I manually changed this on line 80 in `nuxt.config.js`

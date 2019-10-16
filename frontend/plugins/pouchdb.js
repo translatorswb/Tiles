@@ -24,7 +24,7 @@ export default ({ store }) => {
   const vm = store._vm;
   const $pouch = vm.$pouch;
   $pouch
-    .connect("admin", "admin")
+    .connect("test_user", "test_password") // this user needs to have write permission for recording and read permission for other
     .then(res => {
       const isUnauthorized = res.error === "unauthorized";
       const isOffline = res.status === 0;

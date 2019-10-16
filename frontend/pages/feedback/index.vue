@@ -80,7 +80,7 @@ export default {
         const docId = generateDocId();
         const contentType = this.blob.type;
         const extension = contentType.split(";")[0].slice(6);
-        const recordingName = `${process.env.feedbackDataBaseName}.${extension}`;
+        const recordingName = `recordings.${extension}`;
         const doc = {
           _id: docId,
           locale: this.$i18n.locale,
@@ -91,11 +91,7 @@ export default {
             }
           }
         };
-        const response = await this.$pouch.put(
-          doc,
-          {},
-          `${process.env.feedbackDataBaseName}`
-        );
+        const response = await this.$pouch.put(doc, {}, `recordings`);
         console.log("New recording ", response);
 
         this.submitted = true;

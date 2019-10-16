@@ -20,4 +20,4 @@ yarn.lock
 backend/env
 *.pyc
 
-frontend/static/sw.js
+frontend/static/sw.jstoken.pickle
