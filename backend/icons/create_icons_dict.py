@@ -13,6 +13,9 @@ def to_camel_case(kebab_str):
 
 
 def create_readable_humanitarian_name(icon: str):
+    """
+    This is used to manually (copy paste) populate the 
+    """
     return " ".join([word.lower() for word in icon.split("-")[1:]])
 
 
@@ -25,7 +28,7 @@ human_readable = [create_readable_humanitarian_name(icon) for icon in icons]
 with open("icons.json", "w") as fp:
     json.dump(icons_structured, fp)
 
-with open("icons.csv", "w") as f:  # Just use 'w' mode in 3.x
+with open("icons.csv", "w") as f:
     wr = csv.writer(f)
     for icon in human_readable:
         wr.writerow([icon])
