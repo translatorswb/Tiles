@@ -65,5 +65,3 @@ When you have the certificate created be sure to select for the CNAME to be auto
 ## Couch DB
 
 Upon accessing the `/_utils` the first time run the checks. If the checks fail you need to follow [this](https://stackoverflow.com/questions/54334950/when-attempting-to-verify-my-couchdb-installation-i-get-the-error-error-could) use `0.0.0.0` be sure to configure a node and give it a username `admin` and password `admin`
-
-Create a user in the database
