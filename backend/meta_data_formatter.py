@@ -17,7 +17,7 @@ LANGUAGES = {
     "Mandara": "mandara",
     "Bura": "bura",
     "Marghi": "marghi",
-    "Shuwa Arabic": "shuwa",
+    "Shuwa": "shuwa",
     "Kanuri": "kanuri",
     "Hausa": "hausa",
 }

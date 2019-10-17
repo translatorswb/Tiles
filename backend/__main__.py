@@ -24,7 +24,7 @@ from __init__ import (
 
 USERNAME = "admin"
 PASSWORD = "admin"
-URL = "http://127.0.0.1:5984"
+URL = "https://tiles-couchdb.pngk.org"
 # URL = "http://52.16.175.173:5984"
 
 
