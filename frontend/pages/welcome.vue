@@ -1,13 +1,13 @@
 <template>
   <div>
-    <v-row>
+    <!-- <v-row>
       <v-col cols="12" class="text-center">
         <video controls style="width: 100%; max-width: 720px">
           <source src="/radio_manual_compressed.mp4" type="video/mp4" />
           Sorry, your browser doesn't support embedded videos.
         </video>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row>
       <v-col cols="12">
         <div

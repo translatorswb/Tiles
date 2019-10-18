@@ -26,7 +26,8 @@
 		"pouchdb-browser": "^7.1.1",
 		"pouchdb-find": "^7.1.1",
 		"pouchdb-live-find": "^0.4.0",
-		"showdown": "^1.9.0"
+		"showdown": "^1.9.0",
+		"vuex-persist": "^2.1.0"
 	},
 	"devDependencies": {
 		"@mdi/js": "^4.4.95",

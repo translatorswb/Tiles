@@ -1,49 +1,42 @@
 <template>
   <v-app-bar app dark color="primary">
     <v-toolbar-items v-if="showBack">
-      <v-btn text color="white" @click="goBack">
-        <v-icon large>{{ icon.back }}</v-icon>
-      </v-btn>
+      <TheHeaderBackButton />
     </v-toolbar-items>
 
     <div class="flex-grow-1"></div>
     <v-toolbar-items>
-      <v-btn text nuxt to="/"
-        ><v-icon :left="showText">{{ icon.web }}</v-icon
-        ><span v-if="showText">{{ currentLocaleName }}</span></v-btn
-      >
+      <TheHeaderLanguage v-if="showLanguage" />
+      <TheHeaderCamp v-if="showCamp" />
+      <TheHeaderSync />
     </v-toolbar-items>
   </v-app-bar>
 </template>
 
 <script>
-import { mdiChevronLeftCircle, mdiWeb } from "@mdi/js";
+import TheHeaderBackButton from "@/components/TheHeaderBackButton.vue";
+import TheHeaderLanguage from "@/components/TheHeaderLanguage.vue";
+import TheHeaderCamp from "@/components/TheHeaderCamp.vue";
+import TheHeaderSync from "@/components/TheHeaderSync.vue";
 export default {
-  data() {
-    return {
-      icon: {
-        back: mdiChevronLeftCircle,
-        web: mdiWeb
-      }
-    };
+  components: {
+    TheHeaderBackButton,
+    TheHeaderLanguage,
+    TheHeaderCamp,
+    TheHeaderSync
   },
   computed: {
-    showText() {
-      return this.$vuetify.breakpoint.smAndUp;
+    routeName() {
+      return this.getRouteBaseName(this.$route);
     },
     showBack() {
-      const base = this.getRouteBaseName(this.$route);
-      const notHomePage = !["index", "welcome"].includes(base);
-      const notFirstPage = window.history.length > 1;
-      return notHomePage && notFirstPage;
+      return !["index", "language", "camp", "welcome"].includes(this.routeName);
     },
-    currentLocaleName() {
-      return this.$i18n.locales.find(i => i.code === this.$i18n.locale).name;
-    }
-  },
-  methods: {
-    goBack() {
-      this.$router.go(-1);
+    showLanguage() {
+      return !["index", "language", "camp"].includes(this.routeName);
+    },
+    showCamp() {
+      return ["language", "camp"].includes(this.routeName);
     }
   }
 };

@@ -42,13 +42,6 @@ export default {
   components: {
     VBorderedCard
   },
-  props: {
-    // is used for sending the user to the next page, not sure why it's called from
-    from: {
-      type: Object,
-      required: true
-    }
-  },
   computed: {
     ...mapState(["langInfo"])
   }

@@ -15,7 +15,6 @@ export default {
       from: { name: "welcome", params: {} }
     };
   },
-  layout: "welcome",
   beforeRouteEnter(to, from, next) {
     next(vm => {
       if (from.name) vm.from = from;
