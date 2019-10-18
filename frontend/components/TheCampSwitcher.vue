@@ -82,9 +82,6 @@ export default {
       this.dialog = true;
     }
   },
-  mounted() {
-    console.log(this.$databases);
-  },
   methods: {
     ...mapActions(["selectCamp"]),
     clickCamp(campId) {

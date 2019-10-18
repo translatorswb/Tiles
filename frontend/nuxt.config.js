@@ -30,14 +30,14 @@ export default {
   router: {
     middleware: "redirect"
   },
-  env: {
-    databaseBaseUrl:
-      process.env.DATABASE_BASE_URL || "https://tiles-couchdb.pngk.org"
-  },
   // env: {
   //   databaseBaseUrl:
   //     process.env.DATABASE_BASE_URL || "http://localhost:5984"
   // },
+  env: {
+    databaseBaseUrl:
+      process.env.DATABASE_BASE_URL || "https://tiles-couchdb.pngk.org"
+  },
   i18n: {
     detectBrowserLanguage: false,
     locales,
