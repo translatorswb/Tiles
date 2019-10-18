@@ -22,8 +22,14 @@
 <script>
 import showdown from "showdown";
 import createDOMPurify from "dompurify";
+import { mapState } from "vuex";
 import { createObjectURL, blobToDataURL } from "blob-util";
-import { getAuthorImage, getAudio, getAssets } from "@/utils/pouchdb-utils";
+import {
+  getDatabaseName,
+  getAuthorImage,
+  getAudio,
+  getAssets
+} from "@/utils/pouchdb-utils";
 import objectURLsMixin from "@/mixins/objectURLs-mixin";
 
 export default {
@@ -34,59 +40,81 @@ export default {
       author: null,
       error: null,
       content: null,
-      recording: null
+      recording: null,
+      databaseType: null,
+      id: null
     };
   },
-  async created() {
-    const [database, _id] = this.$route.params.id.split("_");
-    try {
-      const doc = await this.$pouch.get(
-        _id,
-        { attachments: true, binary: true },
-        database
-      );
-
-      this.article = doc;
-
-      // Get author
-      const authorImage = getAuthorImage(doc);
-      if (authorImage) {
-        this.author = await blobToDataURL(authorImage);
+  computed: {
+    ...mapState(["selectedCamp"]),
+    localDB() {
+      return getDatabaseName("local", this.selectedCamp, this.databaseType);
+    }
+  },
+  watch: {
+    localDB(value) {
+      if (value) {
+        this.getArticle();
       }
+    }
+  },
+  created() {
+    const splitIndex = this.$route.params.id.indexOf("_");
+    this.databaseType = this.$route.params.id.slice(0, splitIndex);
+    this.id = this.$route.params.id.slice(splitIndex + 1);
+    this.getArticle();
+  },
+  methods: {
+    async getArticle() {
+      try {
+        const doc = await this.$pouch.get(
+          this.id,
+          { attachments: true, binary: true },
+          this.localDB
+        );
 
-      // Get audio
-      const audioBlob = getAudio(doc, this.$i18n.locale);
-      if (audioBlob) {
-        this.recording = {
-          src: createObjectURL(audioBlob)
-        };
+        this.article = doc;
+
+        // Get author
+        const authorImage = getAuthorImage(doc);
+        if (authorImage) {
+          this.author = await blobToDataURL(authorImage);
+        }
+
+        // Get audio
+        const audioBlob = getAudio(doc, this.$i18n.locale);
+        if (audioBlob) {
+          this.recording = {
+            src: createObjectURL(audioBlob)
+          };
+        }
+
+        // Get markdown file
+        const mdBlob = doc._attachments[`${this.$i18n.locale}.md`];
+        const mdText = await mdBlob.data.text();
+        const converter = new showdown.Converter();
+        const dirty = converter.makeHtml(mdText);
+        const DOMPurify = createDOMPurify(window);
+        let clean = DOMPurify.sanitize(dirty);
+
+        // Get images
+        const assets = getAssets(doc);
+        const assetsNames = Object.keys(assets);
+        const assetsObjectURLs = await Promise.all(
+          Object.values(assets).map(info => {
+            return blobToDataURL(info.data);
+          })
+        );
+        assetsNames.forEach((name, i) => {
+          const objectURL = assetsObjectURLs[i];
+          this.addObjectURL(objectURL);
+          clean = clean.replace(name, objectURL);
+        });
+
+        this.content = clean;
+      } catch (error) {
+        this.error = error;
       }
-
-      // Get markdown file
-      const mdBlob = doc._attachments[`${this.$i18n.locale}.md`];
-      const mdText = await mdBlob.data.text();
-      const converter = new showdown.Converter();
-      const dirty = converter.makeHtml(mdText);
-      const DOMPurify = createDOMPurify(window);
-      let clean = DOMPurify.sanitize(dirty);
-
-      // Get images
-      const assets = getAssets(doc);
-      const assetsNames = Object.keys(assets);
-      const assetsObjectURLs = await Promise.all(
-        Object.values(assets).map(info => {
-          return blobToDataURL(info.data);
-        })
-      );
-      assetsNames.forEach((name, i) => {
-        const objectURL = assetsObjectURLs[i];
-        this.addObjectURL(objectURL);
-        clean = clean.replace(name, objectURL);
-      });
-
-      this.content = clean;
-    } catch (error) {
-      this.error = error;
     }
   }
 };

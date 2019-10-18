@@ -1,3 +1,12 @@
+export function getDatabaseName(location, campId, dbName) {
+  if (!location || !campId || !dbName) return null;
+  if (location === "local") {
+    return `${campId}_${dbName}`;
+  } else if (location === "remote") {
+    return `${process.env.databaseBaseUrl}/${campId}_${dbName}`;
+  }
+}
+
 export function generateDocId() {
   return new Date().toISOString();
 }

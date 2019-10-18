@@ -17,12 +17,16 @@ export default {
   props: {
     to: {
       type: String,
-      required: true
+      required: false
     }
   },
   methods: {
     navigateTo() {
-      this.$router.push(this.to);
+      if (this.to) {
+        this.$router.push(this.to);
+      } else {
+        this.$emit("click");
+      }
     }
   }
 };
