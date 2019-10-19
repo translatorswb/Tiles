@@ -31,7 +31,8 @@ export default {
     middleware: "redirect"
   },
   // env: {
-  //   databaseBaseUrl: process.env.DATABASE_BASE_URL || "http://localhost:5984"
+  //   databaseBaseUrl:
+  //     process.env.DATABASE_BASE_URL || "http://localhost:5984"
   // },
   env: {
     databaseBaseUrl:

@@ -2,6 +2,7 @@ import { langInfo } from "@/lang";
 
 export const state = () => ({
   selectedCamp: null,
+  toUploadRecordingsCount: 0,
   langInfo,
   camps: [
     { id: "c001", name: "Camp 1" },
@@ -26,6 +27,9 @@ export const state = () => ({
 export const mutations = {
   selectCamp: (state, campId) => {
     state.selectedCamp = campId;
+  },
+  updateToUploadRecordingsCount: (state, count) => {
+    state.toUploadRecordingsCount = count;
   }
 };
 
@@ -34,6 +38,9 @@ export const actions = {
     if (state.selectedCamp !== campId) {
       commit("selectCamp", campId);
     }
+  },
+  updateToUploadRecordingsCount: ({ commit }, count) => {
+    commit("updateToUploadRecordingsCount", count);
   }
 };
 
