@@ -79,7 +79,9 @@ export default {
         this.cleanupOldDatabases();
       }
       if (newValue) {
-        this.dialog = true;
+        if (oldValue) {
+          this.dialog = true; // Only show dialog when switching camp, not when initial loading
+        }
         this.startSyncing();
       }
     },
