@@ -48,16 +48,19 @@ export default {
         }
       }
     },
-    setupNewDatabases() {
+    startSyncing() {
+      if (this.recordingsReplication) {
+        this.recordingsReplication.cancel();
+      }
       this.recordingsReplication = this.pushRecordings();
       this.pullAnnouncements();
       this.pullArticles();
-      this.setupListeners();
     },
     pushRecordings() {
       return this.$pouch.push(this.localRecordings, this.remoteRecordings, {
         live: true,
-        retry: true
+        retry: true,
+        filter: doc => !doc._deleted
       });
     },
     pullAnnouncements() {
@@ -67,35 +70,117 @@ export default {
       this.$pouch.pull(this.localArticles, this.remoteArticles);
     },
     setupListeners() {
-      this.$on("pouchdb-push-change", info => {
-        if (info.db === this.localRecordings) {
-          console.log("Recordings pushed ", info.info);
-          this.cancel();
-          this.$pouch.destroy(this.localRecordings).then(() => {
-            console.log("Destroyed local recordings db ☠️");
-            console.log("Started a new local recordings db 🐣 ");
-            this.recordingsReplication = this.pushRecordings();
-          });
+      this.$on("pouchdb-push-change", async change => {
+        console.log("Change ", change);
+        if (change.db === this.localRecordings) {
+          try {
+            const deletedDocs = change.info.docs.forEach(doc => {
+              doc._deleted = true;
+            });
+            await this.$pouch.bulkDocs(deletedDocs, {}, this.localRecordings);
+            const info = await this.$pouch.info(this.localRecordings);
+            if (info.doc_count === 0) {
+              this.setSyncStatus("Recordings", "success");
+              this.updateToUploadRecordingsCount(info.doc_count);
+              this.recordingsReplication.cancel();
+              this.$pouch.destroy(this.localRecordings).then(() => {
+                console.log("Destroyed local recordings db ☠️");
+                console.log("Started a new local recordings db 🐣 ");
+                this.recordingsReplication = this.pushRecordings();
+              });
+            }
+          } catch (error) {
+            this.setSyncStatus("Recordings", "failure");
+          }
+        }
+      });
+      this.$on("pouchdb-push-paused", paused => {
+        console.log("Paused ", paused);
+        if (paused.db === this.localRecordings) {
+          this.setSyncStatus("Recordings", "success");
+        }
+      });
+      this.$on("pouchdb-push-active", active => {
+        console.log("Active ", active);
+        if (active.db === this.localRecordings) {
+          this.setSyncStatus("Recordings", "syncing");
+        }
+      });
+      this.$on("pouchdb-push-denied", err => {
+        console.log("Denied ", err);
+        if (err.db === this.localRecordings) {
+          this.setSyncStatus("Recordings", "failure");
+          this.error = `${this.error}. ${err.error}`;
+        }
+      });
+      this.$on("pouchdb-push-complete", complete => {
+        console.log("Completed ", complete);
+      });
+      this.$on("pouchdb-pull-error", err => {
+        console.log("Error ", err);
+        if (err.db === this.localRecordings) {
+          this.setSyncStatus("Recordings", "failure");
+          this.error = `${this.error}. ${err.error}`;
         }
       });
 
-      // For debugging
-      this.$on("pouchdb-push-paused", info => console.log("Paused ", info));
-      this.$on("pouchdb-push-active", info => console.log("Active ", info));
-      this.$on("pouchdb-push-denied", error => console.log("Denied ", error));
-      this.$on("pouchdb-push-complete", info =>
-        console.log("Completed ", info)
-      );
-      this.$on("pouchdb-pull-error", error => console.log("Error ", error));
-
-      this.$on("pouchdb-pull-change", info => console.log("Changed ", info));
-      this.$on("pouchdb-pull-paused", info => console.log("Paused ", info));
-      this.$on("pouchdb-pull-active", info => console.log("Active ", info));
-      this.$on("pouchdb-pull-denied", error => console.log("Denied ", error));
-      this.$on("pouchdb-pull-complete", info =>
-        console.log("Completed ", info)
-      );
-      this.$on("pouchdb-pull-error", error => console.log("Error ", error));
+      this.$on("pouchdb-pull-change", async change => {
+        console.log("Changed ", change);
+        if (change.db === this.localAnnouncements) {
+          try {
+            await this.$pouch.compact({}, this.localAnnouncements);
+          } catch (error) {
+            this.error = `${this.error}. ${error}`;
+          }
+          this.setSyncStatus("Announcements", "success");
+        } else if (change.db === this.localArticles) {
+          try {
+            await this.$pouch.compact({}, this.localArticles);
+          } catch (error) {
+            this.error = `${this.error}. ${error}`;
+          }
+          this.setSyncStatus("Articles", "success");
+        }
+      });
+      this.$on("pouchdb-pull-paused", paused => {
+        console.log("Paused ", paused);
+        if (paused.db === this.localAnnouncements) {
+          this.setSyncStatus("Announcements", "success");
+        } else if (paused.db === this.localArticles) {
+          this.setSyncStatus("Articles", "success");
+        }
+      });
+      this.$on("pouchdb-pull-active", active => {
+        console.log("Active ", active);
+        if (active.db === this.localAnnouncements) {
+          this.setSyncStatus("Announcements", "syncing");
+        } else if (active.db === this.localArticles) {
+          this.setSyncStatus("Articles", "syncing");
+        }
+      });
+      this.$on("pouchdb-pull-denied", err => {
+        console.log("Denied ", err);
+        if (err.db === this.localAnnouncements) {
+          this.setSyncStatus("Announcements", "failure");
+          this.error = `${this.error}. ${err.error}`;
+        } else if (err.db === this.localArticles) {
+          this.setSyncStatus("Articles", "failure");
+          this.error = `${this.error}. ${err.error}`;
+        }
+      });
+      this.$on("pouchdb-pull-complete", complete => {
+        console.log("Completed ", complete);
+      });
+      this.$on("pouchdb-pull-error", err => {
+        console.log("Error", err);
+        if (err.db === this.localAnnouncements) {
+          this.setSyncStatus("Announcements", "failure");
+          this.error = `${this.error}. ${err.error}`;
+        } else if (err.db === this.localArticles) {
+          this.setSyncStatus("Articles", "failure");
+          this.error = `${this.error}. ${err.error}`;
+        }
+      });
     }
   }
 };

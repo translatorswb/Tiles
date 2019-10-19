@@ -33,9 +33,10 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 import { mdiCheckCircle } from "@mdi/js";
 import { createObjectURL } from "blob-util";
-import { generateDocId } from "@/utils/pouchdb-utils";
+import { getDatabaseName, generateDocId } from "@/utils/pouchdb-utils";
 import TheVoiceRecorder from "@/components/TheVoiceRecorder.vue";
 import TheVisualizer from "@/components/TheVisualizer.vue";
 import objectURLsMixin from "@/mixins/objectURLs-mixin";
@@ -58,6 +59,12 @@ export default {
       submitted: false
     };
   },
+  computed: {
+    ...mapState(["selectedCamp"]),
+    localRecordingsDB() {
+      return getDatabaseName("local", this.selectedCamp, "recordings");
+    }
+  },
   watch: {
     isRecording(value) {
       if (value === true && this.error) {
@@ -66,6 +73,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["updateToUploadRecordingsCount"]),
     onStream(stream) {
       this.stream = stream;
     },
@@ -91,8 +99,9 @@ export default {
             }
           }
         };
-        const response = await this.$pouch.put(doc, {}, `recordings`);
-        console.log("New recording ", response);
+        await this.$pouch.put(doc, {}, this.localRecordingsDB);
+        const info = await this.$pouch.info(this.localRecordingsDB);
+        this.updateToUploadRecordingsCount(info.doc_count);
 
         this.submitted = true;
         this.recording = null;
