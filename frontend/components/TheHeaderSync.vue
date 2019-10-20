@@ -9,6 +9,9 @@
       <v-card-title class="headline">Sync</v-card-title>
       <v-card-text>
         <v-list disabled>
+          <v-subheader
+            >Unsynced recordings: {{ toUploadRecordingsCount }}</v-subheader
+          >
           <v-list-item-group>
             <v-list-item v-for="item in items" :key="item.name">
               <v-list-item-icon>
@@ -20,11 +23,13 @@
               </v-list-item-icon>
               <v-list-item-content>
                 <v-list-item-title v-text="item.name"></v-list-item-title>
+                <v-list-item-subtitle v-if="item.error" class="error--text">{{
+                  item.error
+                }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
         </v-list>
-        <div v-if="error" class="error--text">{{ error }}</div>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -58,19 +63,15 @@ export default {
         { name: "Recordings", status: "success" },
         { name: "Announcements", status: "success" },
         { name: "Articles", status: "success" }
-      ],
-      error: null
+      ]
     };
   },
   computed: {
     ...mapState(["selectedCamp", "toUploadRecordingsCount"]),
     syncIcon() {
-      return this.toUploadRecordingsCount > 0
+      return this.toUploadRecordingsCount !== 0
         ? this.icon.syncAlert
         : this.icon.sync;
-    },
-    syncFinished() {
-      return this.items.filter(item => item.status === "syncing").length === 0;
     }
   },
   watch: {
@@ -82,24 +83,26 @@ export default {
         if (oldValue) {
           this.dialog = true; // Only show dialog when switching camp, not when initial loading
         }
+
         this.startSyncing();
       }
     },
     dialog(value) {
-      if (value && this.syncFinished) {
-        this.error = null;
-        this.items.forEach(item => (item.status = "syncing"));
+      if (value) {
+        this.items.forEach(item => {
+          item.status = "syncing";
+          item.error = null;
+        });
         this.startSyncing();
       }
     }
   },
-  created() {
-    this.setupListeners();
-  },
   methods: {
-    setSyncStatus(name, status) {
+    setSyncStatus(name, status, error) {
       const updated = this.items.slice();
-      updated.find(item => item.name === name).status = status;
+      const item = updated.find(item => item.name === name);
+      item.status = status;
+      item.error = error;
       this.items = updated;
     }
   }

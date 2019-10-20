@@ -8,9 +8,8 @@
     </h1>
     <div class="text-container">
       <p>
-        Here you can leave us audio feedback. Your feedback can be completely
-        anonomous or, if you choose you can leave us your contact information in
-        the message.
+        Click the microphone button to record your feedback. If you want, you
+        can leave us your contact information in the message.
       </p>
     </div>
     <div>
@@ -25,10 +24,21 @@
         ><v-icon dark left>{{ icon.submit }}</v-icon> Submit</v-btn
       >
     </div>
-    <div v-show="submitted" class="text-container">
-      Thanks for your feedback 😀
-    </div>
     <div v-if="error" class="error--text text-container">{{ error }}</div>
+    <v-dialog v-model="submitted" max-width="290">
+      <v-card>
+        <v-card-title class="headline justify-center">😀</v-card-title>
+        <v-card-text>
+          Thanks for your feedback!
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" dark @click="submitted = false"
+            ><v-icon dark left>{{ icon.submit }}</v-icon> OK</v-btn
+          >
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -88,7 +98,7 @@ export default {
         const docId = generateDocId();
         const contentType = this.blob.type;
         const extension = contentType.split(";")[0].slice(6);
-        const recordingName = `recordings.${extension}`;
+        const recordingName = `recording.${extension}`;
         const doc = {
           _id: docId,
           locale: this.$i18n.locale,
@@ -100,14 +110,15 @@ export default {
           }
         };
         await this.$pouch.put(doc, {}, this.localRecordingsDB);
-        const info = await this.$pouch.info(this.localRecordingsDB);
-        this.updateToUploadRecordingsCount(info.doc_count);
+        const docs = await this.$pouch.allDocs(
+          { include_docs: false },
+          this.localRecordingsDB
+        );
+        const count = docs.rows.length;
+        this.updateToUploadRecordingsCount(count);
 
         this.submitted = true;
         this.recording = null;
-        setTimeout(() => {
-          this.submitted = false;
-        }, 2000);
       } catch (error) {
         this.error = error;
       }
