@@ -5,8 +5,13 @@ export default ({ store }) => {
     new VuexPersistence({
       key: "tiles",
       storage: window.localStorage,
-      reducer: state => ({ selectedCamp: state.selectedCamp }),
-      filter: mutation => mutation.type === "selectCamp"
+      reducer: state => ({
+        selectedCamp: state.selectedCamp,
+        toUploadRecordingsCount: state.toUploadRecordingsCount
+      }),
+      filter: mutation =>
+        mutation.type === "selectCamp" ||
+        mutation.type === "updateToUploadRecordingsCount"
     }).plugin(store);
   });
 };
