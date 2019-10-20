@@ -28,7 +28,7 @@
           <AudioPlayButton
             :doc-id="item._id"
             :audio-id="item.hasAudio"
-            database="articles"
+            :database="localDB"
           />
         </div>
       </div>
@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+import { getDatabaseName } from "@/utils/pouchdb-utils";
 import VBorderedCard from "@/components/VBorderedCard.vue";
 import AudioPlayButton from "@/components/AudioPlayButton.vue";
 
@@ -49,6 +51,12 @@ export default {
     item: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    ...mapState(["selectedCamp"]),
+    localDB() {
+      return getDatabaseName("local", this.selectedCamp, "articles");
     }
   }
 };

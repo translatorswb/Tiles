@@ -37,7 +37,7 @@
           <AudioPlayButton
             :doc-id="item._id"
             :audio-id="item.hasAudio"
-            database="announcements"
+            :database="localDB"
           />
         </div>
       </div>
@@ -47,6 +47,8 @@
 
 <script>
 import dayjs from "dayjs";
+import { mapState } from "vuex";
+import { getDatabaseName } from "@/utils/pouchdb-utils";
 import VBorderedCard from "@/components/VBorderedCard.vue";
 import AudioPlayButton from "@/components/AudioPlayButton.vue";
 
@@ -62,8 +64,12 @@ export default {
     }
   },
   computed: {
+    ...mapState(["selectedCamp"]),
     fromNow() {
       return dayjs().diff(dayjs(+this.item._id), "day");
+    },
+    localDB() {
+      return getDatabaseName("local", this.selectedCamp, "announcements");
     }
   }
 };
