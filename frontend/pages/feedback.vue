@@ -15,14 +15,14 @@
     <div>
       <TheVisualizer :stream="stream" />
     </div>
-    <div class="py-4">
-      <TheVoiceRecorder @stream="onStream" @result="onResult" />
-    </div>
     <div v-if="recording" class="text-container d-flex align-center">
       <audio style="width: 100%" :src="recording" controls />
       <v-btn class="ml-4" color="primary" dark @click="submitFeedback"
         ><v-icon dark left>{{ icon.submit }}</v-icon> Submit</v-btn
       >
+    </div>
+    <div class="py-4">
+      <TheVoiceRecorder @stream="onStream" @result="onResult" />
     </div>
     <div v-if="error" class="error--text text-container">{{ error }}</div>
     <v-dialog v-model="submitted" max-width="290">

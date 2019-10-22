@@ -10,23 +10,20 @@ We use [aws load balancer](https://aws.amazon.com/elasticloadbalancing/) in fron
 
 I'm using a micro ec2 instance, 1ram and 1cpu. Might not be big enough even for testing. But we will see.
 
-We can connect to the server by entering this directory and using
+We can connect to the server by entering this directory and executing.
 
-`ssh -i couchdb.pem ec2-user@ec2-34-242-40-10.eu-west-1.compute.amazonaws.com`
+`ssh -i couchdb.pem ec2-user@ec2-52-16-175-173.eu-west-1.compute.amazonaws.com`
 
-or for eric
-`ssh -o IdentitiesOnly=yes -i couchdb.pem ec2-user@ec2-34-242-40-107.eu-west-1.compute.amazonaws.com`
+or for eric's ubuntu machine
+`ssh -o IdentitiesOnly=yes -i couchdb.pem ec2-user@ec2-52-16-175-173.eu-west-1.compute.amazonaws.com`
 
 root_password = root
 
-## Install Docker
+## Install Docker on the instance
 
 Follow [this](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html) tutorial to ensure docker is working on the instance we can get our site showing hello world. Visit the site on the public ip
 
-Get the latest version of docker couchdb `docker pull couchdb`
-
-And run `docker run -p 5984:5894 -d -t -i couchdb` to start couchdb.
-This is really dumb anyone can access it and change admin. We need admin to automatically be setup.
+Once you know docker is functioning on the instance then follow the instructions in the `backend/docker` folder to finish setting up docker.
 
 ## Create a load balancer
 
@@ -64,4 +61,4 @@ When you have the certificate created be sure to select for the CNAME to be auto
 
 ## Couch DB
 
-Upon accessing the `/_utils` the first time run the checks. If the checks fail you need to follow [this](https://stackoverflow.com/questions/54334950/when-attempting-to-verify-my-couchdb-installation-i-get-the-error-error-could) use `0.0.0.0` be sure to configure a node and give it a username `admin` and password `admin`
+To finalize the configuration of CouchDB utilize the `python_couchdb` module

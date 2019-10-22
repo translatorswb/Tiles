@@ -26,7 +26,7 @@ def get_access_token():
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    token_location = os.path.join(BASE_DIR, "token.pickle")
+    token_location = os.path.join(BASE_DIR, "google_docs_pull", "token.pickle")
     if os.path.exists(token_location):
         log("token.pickle found. Reusing tokens ...")
         with open(token_location, "rb") as token:
@@ -39,12 +39,12 @@ def get_access_token():
         else:
             log("Fetching new tokens")
             flow = InstalledAppFlow.from_client_secrets_file(
-                os.path.join(BASE_DIR, "credentials.json"), SCOPES
+                os.path.join(BASE_DIR, "google_docs_pull", "credentials.json"), SCOPES
             )
             creds = flow.run_local_server(port=0)
 
         log("Saving tokens for next run")
-        with open("token.pickle", "wb") as token:
+        with open(token_location, "wb") as token:
             pickle.dump(creds, token)
 
     return creds

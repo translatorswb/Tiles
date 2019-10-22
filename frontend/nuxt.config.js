@@ -21,7 +21,6 @@ export default {
   loading: { color: "#fff" },
   css: ["@/assets/fonts/Humanitarian-Icons.css", "@/assets/scss/index.scss"],
   plugins: [
-    { src: "~plugins/i18n.js" },
     { src: "~/plugins/pouchdb.js", mode: "client" },
     { src: "~/plugins/vuex-persist.js", mode: "client" }
   ],
