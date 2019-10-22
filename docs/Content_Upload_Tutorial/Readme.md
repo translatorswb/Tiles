@@ -2,7 +2,7 @@
 
 ## Intro
 
-We need a temporary solution for uploading content to the platform before we have the backend admin user interface created. We have decided to use google drive to manage this temporary content management system, which is accessable [here](https://drive.google.com/drive/folders/1wYpUXa5ImbUBa8M35Xwa-dT-F0N458Wj?usp=sharing).
+We need a temporary solution for uploading content to the IIAB platform before we have the backend admin user interface created. We have decided to use google drive to manage this temporary content management system, which is accessable [here](https://drive.google.com/drive/folders/1wYpUXa5ImbUBa8M35Xwa-dT-F0N458Wj?usp=sharing).
 
 #### Requirements
 
@@ -11,7 +11,7 @@ We need a temporary solution for uploading content to the platform before we hav
 
 ## Folder structure
 
-The root folder contains two other folders and a PDF of Icon options which are utilized for the announcements.
+Upon entering the google drive directory you will see two folders and a PDF of Icon options which are utilized for the announcements.
 
 ![directory root](dirRoot.png)
 
@@ -31,7 +31,7 @@ If we enter the _safe_water_hygine_ directory we see the following structure.
 
 Let's break this apart we can group the files shown here into 5 different groups.
 
-### Image files for the Markdown content
+### 1) Image files for the Markdown content
 
 These are the photos which are referenced as images in the markdown (e.g. step5.png, step4.png, step3.png, step2.png, step1.png), for example in the the markdown files here we reference step1.png as shown below.
 
@@ -39,15 +39,15 @@ These are the photos which are referenced as images in the markdown (e.g. step5.
 
 The image types allowed for our markdown files are **.png** and **.jpg**
 
-### Author Image
+### 2) Author Image
 
-We agreed to display the logo of the organization who created the content. For now only one author image file will be displayed. Upload the logo as and be sure it is called `author.png` if it is named differently or misspelled it will not be uploaded. Keep in mind the size and shape of the file, the logo should take up no more than 50kb of data.
+We agreed to display the logo of the organization who created the content. For now only one author image file will be displayed. Upload the logo and be sure it is called `author.png` if it is named differently or misspelled it will not be uploaded. Keep in mind the size and shape of the file, should take up no more than 50kb of data.
 
-The logo will always appear in the location shown below (showing the IOM logo) underneath the article title and above the location to play the audio files. If no file title `author.png` is present in the article directory then then no image will be displayed.
+The logo will always appear in the location shown below (showing the IOM logo) underneath the article title and above the location to play the audio files. If no file titled `author.png` is present in the article directory then no image will be displayed.
 
 ![article displayed](displayedExampleArticle.png)
 
-### .mp3 audio files
+### 3) .mp3 audio files
 
 If an audio file is present then our users will be given the option to play it, if no audio file is present (in a given language) then the user will obviously not be able to play an audio file for that language. The audio files must be saved as .mp3 files and the language options are shown below. The file must be spelled correctly, for example if you save a Kibaku audio file as `kibbaku.mp3` instead of `kibaku.mp3` then then user will not be able to listen to the Kibaku audio.
 
@@ -64,7 +64,7 @@ If an audio file is present then our users will be given the option to play it, 
 - Kanuri = `kanuri.mp3`
 - Hausa = `hausa.mp3`
 
-### .md Markdown files
+### 4) .md Markdown files
 
 The markdown files are used to create the content of the articles and announcements, they will be rendered underneath the option to play the audio.
 
@@ -85,11 +85,15 @@ Uploading markdown files is basically the same as the .mp3 files. They must be l
 
 _NOTE: for Shuwa, Virgina told us it would be ok to have the text side by side. i.e. Latin text followed by the Arabic text see example in_ `articles/safe_water_hygine/shuwa.md`
 
-## Meta data
+### 5) Meta data
 
-The meta data sheet must be included in every directory. This sheet contains important information for the Articles and Announcements. We will now explain how the Articles meta data sheet is structured, then discuss the differences in the Announcements meta data file.
+The meta data sheet must be included in every directory. This sheet contains important information for the Articles and Announcements.
 
-### Articles
+In both sheets you have the option to select which camps the article or content will be displayed. By default the content is displayed in all camps, if you like to have it not displayed in a certain camp then select `Do not display` for that camp.
+
+We will now explain how the Articles meta data sheet is structured, then discuss the differences in the Announcements meta data file.
+
+#### 5a) Articles
 
 In cells B2-11 you should include the title of the article in the given language.
 
@@ -99,7 +103,7 @@ _NOTE: The article will only be displayed to the user if both the title and it's
 
 In cell B13 you can select the sector this article belongs in. If this is left blank the article will not be displayed.
 
-### Announcements
+#### 5b) Announcements
 
 The Announcements meta data is very similar to the Articles, in the sense that you must provide a title for the Announcement - in the given language - to be displayed.
 

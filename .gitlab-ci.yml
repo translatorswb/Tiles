@@ -28,3 +28,17 @@ deploy:
     - aws s3 cp dist s3://twb-iiab/ --recursive --include "*"
   only:
     - master
+
+pages:
+  image: python:alpine
+  before_script:
+    - pip install mkdocs
+    - pip install mkdocs-material
+  script:
+    - mkdocs build
+    - mv site public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

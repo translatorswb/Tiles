@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  couchdb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: couchdb_tiles
+    restart: always
+    ports:
+      - "5984:5984"
+    # we use the docker director to store the data
+    volumes:
+      - ./data:/opt/couchdb/data

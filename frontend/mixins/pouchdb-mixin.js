@@ -89,6 +89,7 @@ export default {
       this.$pouch.pull(this.localArticles, this.remoteArticles);
     },
     setupListeners() {
+      this.$pouch.connect("client", "clientPassword");
       this.$on("pouchdb-push-change", async change => {
         console.log("Change ", change);
         if (change.db === this.localRecordings) {

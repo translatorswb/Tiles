@@ -12,7 +12,11 @@ export function generateDocId() {
 }
 
 export function filterLocaleDocs(docs, locale) {
-  return docs.filter(doc => {
+  // Since we clone the databases we get the design docs as well
+  const noDesignDocs = docs.filter(doc => {
+    return !doc._id.includes("_design") ? doc : NaN;
+  });
+  return noDesignDocs.filter(doc => {
     return !!doc.title[locale];
   });
 }

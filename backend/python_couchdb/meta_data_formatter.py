@@ -6,6 +6,8 @@ import json
 from datetime import datetime
 import time
 
+from __init__ import BASE_DIR
+
 
 META_DATA_CSV_NAME = "meta_data.csv"
 NAME_OF_CAMP_IN_COLUMN_1 = "Camp 1"
@@ -36,7 +38,7 @@ def extract_and_add_data_to_meta_data_dict(
 
 
 def get_icons_mapper():
-    with open("icons/icons.json", "r") as icons_file:
+    with open(os.path.join(BASE_DIR, "icons", "icons.json"), "r") as icons_file:
         icons = json.load(icons_file)
     return {icon["iconName"]: icon["iconId"] for icon in icons}
 
@@ -96,7 +98,6 @@ def create_meta_data_articles_dict(df: pd.DataFrame, camp_id: int):
             "en": "Flood Safety Messages"
             },
         "sector": "protection",
-        "camps": ['c001','c002']
     }
     """
     if will_article_be_displayed_for_this_camp(df, camp_id) == False:
@@ -116,8 +117,7 @@ def create_meta_data_articles_dict(df: pd.DataFrame, camp_id: int):
 
 def extract_announcements_meta_data(announcement_dir: str, camp_id: str):
     """
-    Perhaps we can do this with a google sheet, we give TWB a folder on drive which they just copy. In there is a meta_data sheet which has everything pre-filled out in a format they can work with. 
-    TODO check if shuwa language can work like that
+    Main logic for extracting the meta data for the announcements.
     """
     if META_DATA_CSV_NAME not in os.listdir(announcement_dir):
         print(f"Cannot find {META_DATA_CSV_NAME}")
@@ -130,6 +130,9 @@ def extract_announcements_meta_data(announcement_dir: str, camp_id: str):
 
 
 def extract_articles_meta_data(articles_dir: str, camp_id: str):
+    """
+    Main logic for extracting the meta data for the articles. 
+    """
     if META_DATA_CSV_NAME not in os.listdir(articles_dir):
         print(f"Cannot find {META_DATA_CSV_NAME}")
         sys.exit()
