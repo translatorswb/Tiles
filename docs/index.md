@@ -2,11 +2,13 @@
 
 ## TILES
 
-_Providing feedback and receiving information in any language anywhere._
+_Providing up to date information and receiving feedback in any language, anywhere._
 
 ## Intro
 
-The purpose of this page is to give a quick overview of TILES. TILES is a content management system designed to operate in austere environments and to accommodate any language.
+This page provides a basic overview of TILES. TILES is a content management system designed to operate in environments with lack of access to basic infrastructure including water, electricity and internet and to accommodate any language spoken in these places.
+
+The TILES system is currently in the initial development stage with a prototype entering the first phase of testing in November 2019. The feature list described in detail in this document may change based on the results of field testing.
 
 ![tiles overview](images/index/tiles_overview.png)
 _Figure 1: Overview of TILES._
@@ -15,17 +17,15 @@ _Figure 1: Overview of TILES._
 
 ## **Why** we need TILES
 
-In refugee camp settings disseminating information can be challenging. Existing software systems are not compatible with many languages spoken in camps. They typically also only work when the user is connected to the WiFi network of the system.
+In refugee and IDP camps, disseminating information can be challenging. Existing software systems intended to provide information are not compatible with many languages spoken in camps. They typically also only work when the user is connected to the WiFi network of the system.
 
-Currently, there is no such user-friendly information dissemination and feedback system.
+Currently, there is no user-friendly information system which can disseminate information and obtain feedback in all languages spoken in a camp.
 
 &nbsp;
 
-$ \sum_{\forall i}{x_i^{2}} $
-
 ## **What** is TILES
 
-With TILES users can access information and provide feedback offline, from any location. The entire user interaction takes place in their language.
+With TILES, users can access information and provide feedback offline, from any location. The entire user interaction takes place in their language.
 
 A user can set up the system by connecting to a TILES WiFi hotspot and opening the TILES webpage. The website automatically downloads to the browser so the user can interact with it offline.
 
@@ -67,7 +67,7 @@ TILES consists of three main components:
 
 ### 1. TILES Website
 
-Users receive information from TILES by reading or listening to content. Verbal feedback can be recorded directly in the users web browser. Illiterate people can therefore also interact with TILES.
+Users receive information from TILES by reading or listening to content. Verbal feedback can be recorded directly in the users web browser. Illiterate users can therefore also interact with TILES (instructions on how to provide feedback will be provided verbally via the TILES application for illiterate users).
 ![twb website](images/index/tiles_website.png)
 _Figure 4: Screenshots of the TILES Website._
 
