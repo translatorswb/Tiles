@@ -14,10 +14,22 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import TheHeader from "@/components/TheHeader.vue";
 export default {
   components: {
     TheHeader
+  },
+  methods: {
+    ...mapActions(["updateOnlineStatus"])
+  },
+  mounted() {
+    window.addEventListener("online", () => {
+      this.updateOnlineStatus(true);
+    });
+    window.addEventListener("offline", () => {
+      this.updateOnlineStatus(false);
+    });
   }
 };
 </script>

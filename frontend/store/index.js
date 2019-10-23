@@ -1,6 +1,7 @@
 import { langInfo } from "@/lang";
 
 export const state = () => ({
+  isOnline: false,
   selectedCamp: null,
   toUploadRecordingsCount: 0,
   langInfo,
@@ -25,6 +26,9 @@ export const state = () => ({
 });
 
 export const mutations = {
+  updateOnlineStatus: (state, status) => {
+    state.isOnline = status;
+  },
   selectCamp: (state, campId) => {
     state.selectedCamp = campId;
   },
@@ -34,6 +38,9 @@ export const mutations = {
 };
 
 export const actions = {
+  updateOnlineStatus: ({ commit }, status) => {
+    commit("updateOnlineStatus", status);
+  },
   selectCamp: ({ commit, state }, campId) => {
     if (state.selectedCamp !== campId) {
       commit("selectCamp", campId);

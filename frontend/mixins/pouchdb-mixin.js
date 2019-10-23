@@ -1,4 +1,4 @@
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 import { getDatabaseName } from "@/utils/pouchdb-utils";
 
 export default {
@@ -8,6 +8,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(["isOnline"]),
     localRecordings() {
       return getDatabaseName("local", this.selectedCamp, "recordings");
     },
@@ -79,7 +80,7 @@ export default {
       return recordingsRegex.test(db[0]);
     },
     startSyncing() {
-      if (!navigator.onLine) {
+      if (!this.isOnline) {
         this.setSyncStatus("Recordings", "failure", "Network Error");
         this.setSyncStatus("Announcements", "failure", "Network error");
         this.setSyncStatus("Articles", "failure", "Network error");
