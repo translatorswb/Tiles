@@ -26,10 +26,13 @@ export default {
   mounted() {
     window.addEventListener("online", () => {
       this.updateOnlineStatus(true);
+      console.log("Online 🥳");
     });
     window.addEventListener("offline", () => {
       this.updateOnlineStatus(false);
+      console.log("Offline 😱");
     });
+    this.updateOnlineStatus(navigator.onLine);
   }
 };
 </script>
