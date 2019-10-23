@@ -23,9 +23,13 @@
             {{ currentCampName }} <v-icon>{{ icon.to }}</v-icon>
             {{ attemptCampName }}
           </p>
-          <p>
+          <p v-if="isOnline">
             This will erase the current camp's data and download the new camp's
-            data. All your previous not uploaded recordings will be lost.
+            data.
+          </p>
+          <p v-else>
+            Switch camp requires internet connection. Please try again later
+            when connected to interent.
           </p></v-card-text
         >
         <v-card-actions>
@@ -33,7 +37,7 @@
           <v-btn color="primary" dark @click="dialog = false"
             ><v-icon dark left>{{ icon.cancel }}</v-icon> Cancel</v-btn
           >
-          <v-btn color="primary" dark @click="switchCamp"
+          <v-btn v-if="isOnline" color="primary" dark @click="switchCamp"
             ><v-icon dark left>{{ icon.confirm }}</v-icon> Confirm</v-btn
           >
         </v-card-actions>
@@ -63,7 +67,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["selectedCamp", "camps"]),
+    ...mapState(["isOnline", "selectedCamp", "camps"]),
     currentCampName() {
       return this.getCampName(this.currentCamp);
     },
