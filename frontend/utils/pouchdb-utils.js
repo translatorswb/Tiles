@@ -1,5 +1,13 @@
 export function getDatabaseName(location, campId, dbName) {
-  if (!location || !campId || !dbName) return null;
+  if (!location || !dbName) return null;
+  if (dbName === "recordings") {
+    if (location === "local") {
+      return `${dbName}`;
+    } else if (location === "remote") {
+      return `${process.env.databaseBaseUrl}/${dbName}`;
+    }
+  }
+  if (!campId) return null;
   if (location === "local") {
     return `${campId}_${dbName}`;
   } else if (location === "remote") {

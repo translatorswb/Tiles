@@ -32,9 +32,18 @@ export default {
   },
   created() {
     this.setupListeners();
+    this.signIn();
   },
   methods: {
     ...mapActions(["updateToUploadRecordingsCount"]),
+    async signIn() {
+      try {
+        const result = await this.$pouch.connect("client", "clientPassword");
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
+    },
     async getToUploadRecordingsCount() {
       try {
         const docs = await this.$pouch.allDocs(
@@ -51,12 +60,23 @@ export default {
       const dbs = Object.entries(this.$databases);
       if (dbs.length > 0) {
         try {
-          const localDBs = dbs.filter(db => db[1].adapter === "idb");
-          await Promise.all([localDBs.map(db => this.$pouch.destroy(db[0]))]);
+          const dbsToBeDeleted = dbs.filter(
+            db => this.isDBLocal(db) && !this.isDBRecordings(db)
+          );
+          await Promise.all([
+            dbsToBeDeleted.map(db => this.$pouch.destroy(db[0]))
+          ]);
         } catch (error) {
           console.log(error);
         }
       }
+    },
+    isDBLocal(db) {
+      return db[1].adapter === "idb";
+    },
+    isDBRecordings(db) {
+      const recordingsRegex = /recordings$/;
+      return recordingsRegex.test(db[0]);
     },
     startSyncing() {
       if (!navigator.onLine) {
@@ -89,7 +109,6 @@ export default {
       this.$pouch.pull(this.localArticles, this.remoteArticles);
     },
     setupListeners() {
-      this.$pouch.connect("client", "clientPassword");
       this.$on("pouchdb-push-change", async change => {
         console.log("Change ", change);
         if (change.db === this.localRecordings) {
