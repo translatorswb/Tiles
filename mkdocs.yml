@@ -1,3 +1,20 @@
 site_name: TILES
+site_description: Home of the TILES project
+site_author: PNGK and TWB
 
-theme: material
+# Copyright
+copyright: "&copy; 2019 PNGK"
+
+theme:
+  name: material
+  palette:
+    primary: "blue"
+    accent: "blue"
+  font:
+    text: "Roboto"
+    code: "Roboto Mono"
+  logo:
+    icon: "cloud"
+  favicon: "images/favicon.png"
+  feature:
+    # tabs: true
