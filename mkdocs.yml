@@ -3,7 +3,7 @@ site_description: Home of the TILES project
 site_author: PNGK and TWB
 
 # Copyright
-copyright: "&copy; 2019 PNGK"
+copyright: "&copy; 2019 TWB & PNGK"
 
 theme:
   name: material

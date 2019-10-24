@@ -31,7 +31,7 @@ A user can set up the system by connecting to a TILES WiFi hotspot and opening t
 
 #### Feedback mechanism
 
-TILES allows people to provide verbal feedback in their own language. The steps below are illustrated in \ref{Figure2}.
+TILES allows people to provide verbal feedback in their own language. The steps below are illustrated in Figure 2.
 
 1. A user can leave verbal feedback from any location. Feedback is recorded anonymously, but users can leave their contact information if they wish to do so.
 2. When the user connects to the WiFi and opens the webpage the data is securely sent to a server located in the camp.
@@ -39,7 +39,7 @@ TILES allows people to provide verbal feedback in their own language. The steps 
 4. Feedback is automatically<sup>1</sup> transferred from the server at the campsite to the cloud.
 5. Authorized people located elsewhere can access the feedback left in the camp through the cloud server.
 
-![feedback overview\label{Figure2}](images/index/feedback_overview.png)
+![feedback overview](images/index/feedback_overview.png)
 _Figure 2: Overview of the TILES feedback mechanism._
 
 #### Information dissemination

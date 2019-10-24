@@ -77,6 +77,7 @@ def configure_content_db(
             users_with_rights_to_db=db_users,
         )
     delete_documents_removed_from_google_drive(db=db, dirs=dirs)
+    print(f"Configured {database_name}")
 
 
 def configure_recordings_db(
