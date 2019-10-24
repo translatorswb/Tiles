@@ -117,7 +117,10 @@ The additional information to provide for an Announcement is the Icon which will
 
 Of course work in whatever way you feel comfortable, but we propose the following steps.
 
-1. Create a directory on your local machine (i find it a bit easier to work locally then on google drive)
+1. Create a directory on your local machine (i find it a bit easier to work locally then on google drive).
+
+**Note!**: The directory name cannot include any spaces. So "my directory name" will not work while "my_directory_name" will.
+
 2. Use some markdown editor to create the markdown files. I prefer [VSCode](https://code.visualstudio.com/), but there are dozens of suitable programs out there. Below is an image of my screen when editing a markdown file.
 
 ![Markdown Workflow](../images/tutorials/how_to_add_content/markdownWorkflowExample.png)
