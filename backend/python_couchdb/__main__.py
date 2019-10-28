@@ -29,8 +29,8 @@ SERVER_ADMIN_PASSWORD = "password"
 TWB_STAFF_USERNAME = "twb"
 TWB_STAFF_PASSWORD = "twbPassword"
 
-# URL = "https://tiles-couchdb.pngk.org"
-URL = "http://localhost:5984"
+URL = "https://tiles-couchdb.pngk.org"
+# URL = "http://localhost:5984"
 
 
 def run_configure_couchdb():

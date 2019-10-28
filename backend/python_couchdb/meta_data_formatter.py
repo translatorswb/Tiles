@@ -3,8 +3,11 @@ import pandas as pd
 import sys
 import json
 
+import utils
+
 from datetime import datetime
 import time
+
 
 from __init__ import BASE_DIR
 
@@ -87,6 +90,7 @@ def create_meta_data_announcements_dict(df: pd.DataFrame, camp_id: int):
         )
     )
     meta_data_dict["icon"] = get_icons_mapper()[meta_data_dict["icon"]]
+    meta_data_dict["createdOn"] = utils.create_json_datetime_now()
     return meta_data_dict
 
 
@@ -111,7 +115,7 @@ def create_meta_data_articles_dict(df: pd.DataFrame, camp_id: int):
     meta_data_dict = extract_and_add_data_to_meta_data_dict(
         df=df, item_type="Sector", meta_data_dict=meta_data_dict
     )
-
+    meta_data_dict["createdOn"] = utils.create_json_datetime_now()
     return meta_data_dict
 
 
