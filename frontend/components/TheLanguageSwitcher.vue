@@ -28,19 +28,18 @@
       sm="6"
       lg="4"
     >
-      <VBorderedCard :to="localePath('welcome', lang.code)">
-        <h2 class="display-1 accent--text">{{ lang.name }}</h2>
-      </VBorderedCard>
+      <TheLanguageButton :lang="lang" />
     </v-col>
   </v-row>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import VBorderedCard from "@/components/VBorderedCard";
+import TheLanguageButton from "@/components/TheLanguageButton";
+
 export default {
   components: {
-    VBorderedCard
+    TheLanguageButton
   },
   computed: {
     ...mapState(["langInfo"])

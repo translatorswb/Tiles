@@ -48,7 +48,8 @@ export default {
       }
       this.isPlaying = !this.isPlaying;
       if (this.isPlaying) {
-        this.$refs.audio.play();
+        this.isPlaying = !this.isPlaying;
+        this.isPlaying = false;
       } else {
         this.$refs.audio.pause();
       }
