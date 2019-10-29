@@ -1,6 +1,10 @@
 <template>
   <div>
-    <VTitleWithAudio title="Information" :src="audioSrc" />
+    <VTitleWithAudio
+      title="Information"
+      :src="audioSrc"
+      :is-instruction="true"
+    />
     <InformationSectorList />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <PlayButton :src="src" />
+  <PlayButton :src="src" :is-instruction="isInstruction" />
 </template>
 
 <script>
@@ -13,6 +13,10 @@ export default {
     src: {
       type: String,
       required: true
+    },
+    isInstruction: {
+      type: Boolean,
+      default: false
     }
   }
 };

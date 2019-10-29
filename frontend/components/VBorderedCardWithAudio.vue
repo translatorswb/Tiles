@@ -16,7 +16,7 @@
         class="item-audio"
         :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
       >
-        <PlayButtonInstruction :src="src" />
+        <PlayButtonInstruction :src="src" :is-instruction="isInstruction" />
       </div>
     </div>
   </VBorderedCard>
@@ -33,7 +33,11 @@ export default {
   },
   props: {
     to: { type: String, required: true },
-    src: { type: String, required: true }
+    src: { type: String, required: true },
+    isInstruction: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>

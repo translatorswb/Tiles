@@ -6,7 +6,7 @@
     >
       {{ title }}
     </div>
-    <PlayButtonInstruction :src="src" />
+    <PlayButtonInstruction :src="src" :is-instruction="isInstruction" />
   </div>
 </template>
 
@@ -24,6 +24,10 @@ export default {
     src: {
       type: String,
       required: true
+    },
+    isInstruction: {
+      type: Boolean,
+      default: false
     }
   }
 };

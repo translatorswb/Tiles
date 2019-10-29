@@ -1,6 +1,6 @@
 <template>
   <div class="feedback-container">
-    <VTitleWithAudio title="Feedback" :src="audioSrc" />
+    <VTitleWithAudio title="Feedback" :src="audioSrc" :is-instruction="true" />
     <div class="text-container">
       <p>
         Click the microphone button to record your feedback. If you want, you

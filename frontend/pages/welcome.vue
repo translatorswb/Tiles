@@ -4,7 +4,8 @@
       <v-col cols="12" sm="6">
         <VBorderedCardWithAudio
           :to="localePath('info')"
-          :src="audioSrc('announcement')"
+          :src="audioSrc('information')"
+          :is-instruction="true"
         >
           <div class="display-1 accent--text d-flex">
             <v-icon x-large left class="primary--text">{{
@@ -18,6 +19,7 @@
         <VBorderedCardWithAudio
           :to="localePath('feedback')"
           :src="audioSrc('feedback')"
+          :is-instruction="true"
         >
           <div class="display-1 accent--text d-flex">
             <v-icon x-large left class="primary--text">{{
@@ -30,7 +32,11 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <VTitleWithAudio title="Announcement" :src="audioSrc('announcement')" />
+        <VTitleWithAudio
+          title="Announcement"
+          :src="audioSrc('announcement')"
+          :is-instruction="true"
+        />
       </v-col>
       <v-col cols="12">
         <AnnouncementList />
