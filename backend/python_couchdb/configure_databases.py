@@ -98,6 +98,7 @@ def configure_recordings_db(
             server_admin_username=server_admin_username,
             users_with_rights_to_db=db_users,
         )
+    print("Configured recordings")
     return db
 
 

@@ -25,7 +25,7 @@
           class="article-item-audio"
           :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
         >
-          <AudioPlayButton
+          <PlayButtonArticle
             :doc-id="item._id"
             :audio-id="item.hasAudio"
             :database="localDB"
@@ -40,12 +40,12 @@
 import { mapState } from "vuex";
 import { getDatabaseName } from "@/utils/pouchdb-utils";
 import VBorderedCard from "@/components/VBorderedCard.vue";
-import AudioPlayButton from "@/components/AudioPlayButton.vue";
+import PlayButtonArticle from "@/components/PlayButtonArticle.vue";
 
 export default {
   components: {
     VBorderedCard,
-    AudioPlayButton
+    PlayButtonArticle
   },
   props: {
     item: {

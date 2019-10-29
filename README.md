@@ -10,3 +10,7 @@ To get started with contributing to the documentation you need to install mkDocs
 To start the development server:
 `mkdocs serve`
 You can now access the docs on `localhost:8000`
+
+## Interesting reading
+
+To be aware of when rolling this out, see [this](https://blog.gruntwork.io/5-lessons-learned-from-writing-over-300-000-lines-of-infrastructure-code-36ba7fadeac1) production guide for infrastructure.
