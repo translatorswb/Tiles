@@ -33,17 +33,12 @@ export default {
   },
   created() {
     this.setupListeners();
-    this.signIn();
+    this.startSyncing();
   },
   methods: {
     ...mapActions(["updateToUploadRecordingsCount"]),
-    async signIn() {
-      try {
-        const result = await this.$pouch.connect("client", "clientPassword");
-        console.log(result);
-      } catch (error) {
-        console.log(error);
-      }
+    signIn() {
+      return this.$pouch.connect("client", "clientPassword");
     },
     async getToUploadRecordingsCount() {
       try {
@@ -79,7 +74,7 @@ export default {
       const recordingsRegex = /recordings$/;
       return recordingsRegex.test(db[0]);
     },
-    startSyncing() {
+    async startSyncing() {
       if (!this.isOnline) {
         this.setSyncStatus("Recordings", "failure", "Network Error");
         this.setSyncStatus("Announcements", "failure", "Network error");
@@ -90,11 +85,27 @@ export default {
       if (this.toUploadRecordingsCount === 0) {
         this.setSyncStatus("Recordings", "success");
       }
-      if (!this.recordingsReplication) {
-        this.recordingsReplication = this.pushRecordings();
+
+      try {
+        const session = await this.$pouch.getSession();
+        if (session.error) {
+          // Not signed in
+          const user = await this.signIn();
+          if (!user.hasAccess) {
+            throw new Error(user);
+          }
+        }
+        if (!this.recordingsReplication) {
+          this.recordingsReplication = this.pushRecordings();
+        }
+        this.pullAnnouncements();
+        this.pullArticles();
+      } catch (error) {
+        console.log(error);
+        this.setSyncStatus("Recordings", "failure", "Authentication Error");
+        this.setSyncStatus("Announcements", "failure", "Authentication error");
+        this.setSyncStatus("Articles", "failure", "Authentication error");
       }
-      this.pullAnnouncements();
-      this.pullArticles();
     },
     pushRecordings() {
       return this.$pouch.push(this.localRecordings, this.remoteRecordings, {

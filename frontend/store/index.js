@@ -1,7 +1,7 @@
 import { langInfo } from "@/lang";
 
 export const state = () => ({
-  isOnline: false,
+  isOnline: true,
   selectedCamp: null,
   toUploadRecordingsCount: 0,
   langInfo,

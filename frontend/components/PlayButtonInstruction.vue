@@ -1,5 +1,5 @@
 <template>
-  <PlayButton :src="src" />
+  <PlayButton :src="src" :is-instruction="isInstruction" />
 </template>
 
 <script>
@@ -10,14 +10,13 @@ export default {
     PlayButton
   },
   props: {
-    langCode: {
+    src: {
       type: String,
       required: true
-    }
-  },
-  computed: {
-    src() {
-      return `lang/${this.langCode}.mp3`;
+    },
+    isInstruction: {
+      type: Boolean,
+      default: false
     }
   }
 };

@@ -1,55 +1,43 @@
 <template>
   <div>
-    <!-- <v-row>
-      <v-col cols="12" class="text-center">
-        <video controls style="width: 100%; max-width: 720px">
-          <source src="/radio_manual_compressed.mp4" type="video/mp4" />
-          Sorry, your browser doesn't support embedded videos.
-        </video>
-      </v-col>
-    </v-row> -->
-    <v-row>
-      <v-col cols="12">
-        <div
-          class="text-center py-6 font-weight-bold accent--text text-uppercase"
-          :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-3'"
-        >
-          Welcome
-        </div>
-      </v-col>
-    </v-row>
     <v-row align="stretch" class="pb-6">
       <v-col cols="12" sm="6">
-        <v-btn
-          color="primary"
-          dark
-          x-large
-          block
-          nuxt
+        <VBorderedCardWithAudio
           :to="localePath('info')"
-          class="title"
+          :src="audioSrc('information')"
+          :is-instruction="true"
         >
-          <v-icon x-large left>{{ icon.information }}</v-icon>
-          {{ $t("information") }}
-        </v-btn>
+          <div class="display-1 accent--text d-flex">
+            <v-icon x-large left class="primary--text">{{
+              icon.information
+            }}</v-icon>
+            {{ $t("information") }}
+          </div>
+        </VBorderedCardWithAudio>
       </v-col>
       <v-col cols="12" sm="6">
-        <v-btn
-          color="primary"
-          dark
-          x-large
-          block
-          nuxt
+        <VBorderedCardWithAudio
           :to="localePath('feedback')"
-          class="title"
+          :src="audioSrc('feedback')"
+          :is-instruction="true"
         >
-          <v-icon x-large left>{{ icon.feedback }}</v-icon>
-          {{ $t("feedback") }}
-        </v-btn>
+          <div class="display-1 accent--text d-flex">
+            <v-icon x-large left class="primary--text">{{
+              icon.feedback
+            }}</v-icon>
+            {{ $t("feedback") }}
+          </div>
+        </VBorderedCardWithAudio>
       </v-col>
     </v-row>
-
     <v-row>
+      <v-col cols="12">
+        <VTitleWithAudio
+          title="Announcement"
+          :src="audioSrc('announcement')"
+          :is-instruction="true"
+        />
+      </v-col>
       <v-col cols="12">
         <AnnouncementList />
       </v-col>
@@ -59,10 +47,14 @@
 
 <script>
 import { mdiMicrophone, mdiBookOpen } from "@mdi/js";
+import VBorderedCardWithAudio from "@/components/VBorderedCardWithAudio";
+import VTitleWithAudio from "@/components/VTitleWithAudio";
 import AnnouncementList from "@/components/AnnouncementList";
 
 export default {
   components: {
+    VBorderedCardWithAudio,
+    VTitleWithAudio,
     AnnouncementList
   },
   data() {
@@ -72,6 +64,16 @@ export default {
         feedback: mdiMicrophone
       }
     };
+  },
+  computed: {
+    locale() {
+      return this.$i18n.locale;
+    }
+  },
+  methods: {
+    audioSrc(item) {
+      return `audio/welcome/${item}/${this.locale}.mp3`;
+    }
   }
 };
 </script>
