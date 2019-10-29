@@ -102,6 +102,7 @@ export default {
         const doc = {
           _id: docId,
           locale: this.$i18n.locale,
+          camp: this.selectedCamp,
           _attachments: {
             [recordingName]: {
               content_type: contentType,
