@@ -16,7 +16,7 @@
         class="article-item-audio"
         :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
       >
-        <TheLanguageAudioPlayButton :lang-code="lang.code" />
+        <PlayButtonLanguage :lang-code="lang.code" />
       </div>
     </div>
   </VBorderedCard>
@@ -24,13 +24,13 @@
 
 <script>
 import VBorderedCard from "@/components/VBorderedCard";
-import TheLanguageAudioPlayButton from "@/components/TheLanguageAudioPlayButton";
+import PlayButtonLanguage from "@/components/PlayButtonLanguage";
 
 export default {
   props: { lang: { type: Object, required: true } },
   components: {
     VBorderedCard,
-    TheLanguageAudioPlayButton
+    PlayButtonLanguage
   }
 };
 </script>
