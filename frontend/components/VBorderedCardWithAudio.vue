@@ -32,7 +32,7 @@ export default {
     PlayButtonInstruction
   },
   props: {
-    to: { type: String, default: null },
+    to: { type: String, required: true },
     src: { type: String, required: true }
   }
 };

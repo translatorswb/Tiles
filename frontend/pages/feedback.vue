@@ -1,11 +1,6 @@
 <template>
   <div class="feedback-container">
-    <h1
-      class="font-weight-bold text-uppercase text-center accent--text my-12"
-      :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-3'"
-    >
-      Feedback
-    </h1>
+    <VTitleWithAudio title="Feedback" :src="audioSrc" />
     <div class="text-container">
       <p>
         Click the microphone button to record your feedback. If you want, you
@@ -47,12 +42,14 @@ import { mapState, mapActions } from "vuex";
 import { mdiCheckCircle } from "@mdi/js";
 import { createObjectURL } from "blob-util";
 import { getDatabaseName, generateDocId } from "@/utils/pouchdb-utils";
+import VTitleWithAudio from "@/components/VTitleWithAudio";
 import TheVoiceRecorder from "@/components/TheVoiceRecorder.vue";
 import TheVisualizer from "@/components/TheVisualizer.vue";
 import objectURLsMixin from "@/mixins/objectURLs-mixin";
 
 export default {
   components: {
+    VTitleWithAudio,
     TheVoiceRecorder,
     TheVisualizer
   },
@@ -73,6 +70,9 @@ export default {
     ...mapState(["selectedCamp"]),
     localRecordingsDB() {
       return getDatabaseName("local", this.selectedCamp, "recordings");
+    },
+    audioSrc() {
+      return `audio/feedback/${this.$i18n.locale}.mp3`;
     }
   },
   watch: {

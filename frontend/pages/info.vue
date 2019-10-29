@@ -1,18 +1,19 @@
 <template>
   <div>
-    <div
-      class="font-weight-bold text-uppercase text-center accent--text py-12"
-      :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-3'"
-    >
-      Information
-    </div>
+    <VTitleWithAudio title="Information" :src="audioSrc" />
     <InformationSectorList />
   </div>
 </template>
 
 <script>
+import VTitleWithAudio from "@/components/VTitleWithAudio";
 import InformationSectorList from "@/components/InformationSectorList.vue";
 export default {
-  components: { InformationSectorList }
+  components: { VTitleWithAudio, InformationSectorList },
+  computed: {
+    audioSrc() {
+      return `audio/info/${this.$i18n.locale}.mp3`;
+    }
+  }
 };
 </script>
