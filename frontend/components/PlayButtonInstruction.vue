@@ -10,14 +10,9 @@ export default {
     PlayButton
   },
   props: {
-    langCode: {
+    src: {
       type: String,
       required: true
-    }
-  },
-  computed: {
-    src() {
-      return `lang/${this.langCode}.mp3`;
     }
   }
 };
