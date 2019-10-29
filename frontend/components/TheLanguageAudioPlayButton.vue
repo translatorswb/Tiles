@@ -1,7 +1,7 @@
 <template>
   <v-btn class="mx-2" fab dark color="primary" @click.stop="playAudio">
     <v-icon dark>{{ audioIcon }}</v-icon>
-    <audio ref="audio" :src="recording" v-if="recording" />
+    <audio v-if="recording" ref="audio" :src="recording" />
   </v-btn>
 </template>
 

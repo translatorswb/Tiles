@@ -27,10 +27,10 @@ import VBorderedCard from "@/components/VBorderedCard";
 import PlayButtonLanguage from "@/components/PlayButtonLanguage";
 
 export default {
-  props: { lang: { type: Object, required: true } },
   components: {
     VBorderedCard,
     PlayButtonLanguage
-  }
+  },
+  props: { lang: { type: Object, required: true } }
 };
 </script>
