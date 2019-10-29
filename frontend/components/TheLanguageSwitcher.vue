@@ -28,21 +28,31 @@
       sm="6"
       lg="4"
     >
-      <TheLanguageButton :lang="lang" />
+      <VBorderedCardWithAudio :to="to(lang.code)" :src="audioSrc(lang.code)">
+        <div class="display-1 accent--text">{{ lang.name }}</div>
+      </VBorderedCardWithAudio>
     </v-col>
   </v-row>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import TheLanguageButton from "@/components/TheLanguageButton";
+import VBorderedCardWithAudio from "@/components/VBorderedCardWithAudio";
 
 export default {
   components: {
-    TheLanguageButton
+    VBorderedCardWithAudio
   },
   computed: {
     ...mapState(["langInfo"])
+  },
+  methods: {
+    audioSrc(locale) {
+      return `audio/language/${locale}.mp3`;
+    },
+    to(locale) {
+      return this.localePath("welcome", locale);
+    }
   }
 };
 </script>

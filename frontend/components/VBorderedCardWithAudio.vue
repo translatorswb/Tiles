@@ -1,19 +1,19 @@
 <template>
-  <VBorderedCard :to="localePath('welcome', lang.code)">
+  <VBorderedCard :to="to">
     <div
-      class="article-item d-flex"
+      class="item d-flex"
       :class="$vuetify.breakpoint.xs ? 'flex-column' : ''"
     >
-      <div class="article-item-main flex-grow-1">
+      <div class="item-main flex-grow-1">
         <div
-          class="article-item-title accent--text"
+          class="item-title accent--text"
           :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
         >
-          <h2 class="display-1 accent--text">{{ lang.name }}</h2>
+          <slot></slot>
         </div>
       </div>
       <div
-        class="article-item-audio"
+        class="item-audio"
         :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
       >
         <PlayButtonInstruction :src="src" />
@@ -31,11 +31,9 @@ export default {
     VBorderedCard,
     PlayButtonInstruction
   },
-  props: { lang: { type: Object, required: true } },
-  computed: {
-    src() {
-      return `audio/language/${this.lang.code}.mp3`;
-    }
+  props: {
+    to: { type: String, default: null },
+    src: { type: String, required: true }
   }
 };
 </script>
