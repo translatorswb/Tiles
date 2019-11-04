@@ -27,9 +27,6 @@ export default {
         this.$emit("click");
       }
     }
-  },
-  mounted() {
-    console.log(this.$vuetify.rtl, this.$i18n);
   }
 };
 </script>
