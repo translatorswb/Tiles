@@ -8,9 +8,9 @@ const mountFunction = options => {
   return shallowMount(VBorderedCard, {
     localVue,
     vuetify,
-    ...options,
-  })
-}
+    ...options
+  });
+};
 
 describe("VBorderedCard", () => {
   test("renders the slot with text", () => {
@@ -20,7 +20,7 @@ describe("VBorderedCard", () => {
       }
     });
     expect(wrapper.text()).toContain("Card content");
-  })
+  });
 
   test("renders the slot with template string", () => {
     const wrapper = mountFunction({
@@ -29,13 +29,13 @@ describe("VBorderedCard", () => {
       }
     });
     expect(wrapper.find(".bordered-card-content").exists()).toBe(true);
-  })
+  });
 
   test("renders the slot with another component", () => {
     const Foo = {
-      name: 'foo-component',
-      template: '<p>Foo</p>'
-    }
+      name: "foo-component",
+      template: "<p>Foo</p>"
+    };
 
     const wrapper = mountFunction({
       slots: {
@@ -43,7 +43,7 @@ describe("VBorderedCard", () => {
       }
     });
     expect(wrapper.find(Foo).is(Foo)).toBe(true);
-  })
+  });
 
   test("navigates to 'to' when clicked if 'to' exists", () => {
     const mocks = {
@@ -70,5 +70,5 @@ describe("VBorderedCard", () => {
   test("renders correctly", () => {
     const wrapper = mountFunction();
     expect(wrapper.element).toMatchSnapshot();
-  })
+  });
 });

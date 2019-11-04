@@ -1,7 +1,5 @@
 module.exports = {
-  setupFiles: [
-    "<rootDir>/tests/unit/jest.setup.js"
-  ],
+  setupFiles: ["<rootDir>/tests/unit/jest.setup.js"],
   // tell Jest to handle `*.vue` files
   moduleFileExtensions: ["js", "json", "vue"],
   watchman: false,
