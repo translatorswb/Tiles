@@ -76,14 +76,14 @@ export default {
     },
     async startSyncing() {
       if (!this.isOnline) {
-        this.setSyncStatus("Recordings", "failure", "Network Error");
-        this.setSyncStatus("Announcements", "failure", "Network error");
-        this.setSyncStatus("Articles", "failure", "Network error");
+        this.setSyncStatus("recordings", "failure", "Network Error");
+        this.setSyncStatus("announcements", "failure", "Network error");
+        this.setSyncStatus("articles", "failure", "Network error");
         console.log("Offline");
         return;
       }
       if (this.toUploadRecordingsCount === 0) {
-        this.setSyncStatus("Recordings", "success");
+        this.setSyncStatus("recordings", "success");
       }
 
       try {
@@ -102,9 +102,9 @@ export default {
         this.pullArticles();
       } catch (error) {
         console.log(error);
-        this.setSyncStatus("Recordings", "failure", "Authentication Error");
-        this.setSyncStatus("Announcements", "failure", "Authentication error");
-        this.setSyncStatus("Articles", "failure", "Authentication error");
+        this.setSyncStatus("recordings", "failure", "Authentication Error");
+        this.setSyncStatus("announcements", "failure", "Authentication error");
+        this.setSyncStatus("articles", "failure", "Authentication error");
       }
     },
     pushRecordings() {
@@ -135,12 +135,12 @@ export default {
             );
             const count = await this.getToUploadRecordingsCount();
             if (count === 0) {
-              this.setSyncStatus("Recordings", "success");
+              this.setSyncStatus("recordings", "success");
               this.updateToUploadRecordingsCount(count);
               this.recordingsReplication.cancel(); // Will trigger complete event
             }
           } catch (error) {
-            this.setSyncStatus("Recordings", "failure", error);
+            this.setSyncStatus("recordings", "failure", error);
             console.log(error);
           }
         }
@@ -148,19 +148,19 @@ export default {
       this.$on("pouchdb-push-paused", paused => {
         console.log("Paused ", paused);
         if (paused.db === this.localRecordings) {
-          this.setSyncStatus("Recordings", "success");
+          this.setSyncStatus("recordings", "success");
         }
       });
       this.$on("pouchdb-push-active", active => {
         console.log("Active ", active);
         if (active.db === this.localRecordings) {
-          this.setSyncStatus("Recordings", "syncing");
+          this.setSyncStatus("recordings", "syncing");
         }
       });
       this.$on("pouchdb-push-denied", err => {
         console.log("Denied ", err);
         if (err.db === this.localRecordings) {
-          this.setSyncStatus("Recordings", "failure");
+          this.setSyncStatus("recordings", "failure");
           this.error = "Authentication Error";
           console.log(err.error);
         }
@@ -176,7 +176,7 @@ export default {
       this.$on("pouchdb-push-error", err => {
         console.log("Error ", err);
         if (err.db === this.localRecordings) {
-          this.setSyncStatus("Recordings", "failure", err.error);
+          this.setSyncStatus("recordings", "failure", err.error);
           console.log(err.error);
         }
       });
@@ -187,47 +187,47 @@ export default {
           try {
             await this.$pouch.compact({}, this.localAnnouncements);
           } catch (error) {
-            this.setSyncStatus("Announcements", "failure", error);
+            this.setSyncStatus("announcements", "failure", error);
             console.log(error);
           }
-          this.setSyncStatus("Announcements", "success");
+          this.setSyncStatus("announcements", "success");
         } else if (change.db === this.localArticles) {
           try {
             await this.$pouch.compact({}, this.localArticles);
           } catch (error) {
-            this.setSyncStatus("Articles", "failure", error);
+            this.setSyncStatus("articles", "failure", error);
             console.log(error);
           }
-          this.setSyncStatus("Articles", "success");
+          this.setSyncStatus("articles", "success");
         }
       });
       this.$on("pouchdb-pull-paused", paused => {
         console.log("Paused ", paused);
         if (paused.db === this.localAnnouncements) {
-          this.setSyncStatus("Announcements", "success");
+          this.setSyncStatus("announcements", "success");
         } else if (paused.db === this.localArticles) {
-          this.setSyncStatus("Articles", "success");
+          this.setSyncStatus("articles", "success");
         }
       });
       this.$on("pouchdb-pull-active", active => {
         console.log("Active ", active);
         if (active.db === this.localAnnouncements) {
-          this.setSyncStatus("Announcements", "syncing");
+          this.setSyncStatus("announcements", "syncing");
         } else if (active.db === this.localArticles) {
-          this.setSyncStatus("Articles", "syncing");
+          this.setSyncStatus("articles", "syncing");
         }
       });
       this.$on("pouchdb-pull-denied", err => {
         console.log("Denied ", err);
         if (err.db === this.localAnnouncements) {
           this.setSyncStatus(
-            "Announcements",
+            "announcements",
             "failure",
             "Authentication Error"
           );
           console.log(err.error);
         } else if (err.db === this.localArticles) {
-          this.setSyncStatus("Articles", "failure", "Authentication Error");
+          this.setSyncStatus("articles", "failure", "Authentication Error");
           console.log(err.error);
         }
       });
@@ -237,10 +237,10 @@ export default {
       this.$on("pouchdb-pull-error", err => {
         console.log("Error", err);
         if (err.db === this.localAnnouncements) {
-          this.setSyncStatus("Announcements", "failure", "Network error");
+          this.setSyncStatus("announcements", "failure", "Network error");
           console.log(err.error);
         } else if (err.db === this.localArticles) {
-          this.setSyncStatus("Articles", "failure", "Network error");
+          this.setSyncStatus("articles", "failure", "Network error");
           console.log(err.error);
         }
       });

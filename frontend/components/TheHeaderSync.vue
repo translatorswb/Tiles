@@ -10,7 +10,8 @@
       <v-card-text>
         <v-list disabled>
           <v-subheader
-            >Unsynced recordings: {{ toUploadRecordingsCount }}</v-subheader
+            >{{ $t("unsyncedRecordings") }}:
+            {{ toUploadRecordingsCount }}</v-subheader
           >
           <v-list-item-group>
             <v-list-item v-for="item in items" :key="item.name">
@@ -22,9 +23,9 @@
                 ></v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title v-text="item.name"></v-list-item-title>
+                <v-list-item-title>{{ $t(item.name) }}</v-list-item-title>
                 <v-list-item-subtitle v-if="item.error" class="error--text">{{
-                  item.error
+                  $t("tryAgainLater")
                 }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -34,7 +35,8 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn color="primary" dark @click="dialog = false"
-          ><v-icon dark left>{{ icon.confirm }}</v-icon> OK</v-btn
+          ><v-icon dark left>{{ icon.confirm }}</v-icon>
+          {{ $t("close") }}</v-btn
         >
       </v-card-actions>
     </v-card>
@@ -60,9 +62,9 @@ export default {
       },
       dialog: false,
       items: [
-        { name: "Recordings", status: "success" },
-        { name: "Announcements", status: "success" },
-        { name: "Articles", status: "success" }
+        { name: "recordings", status: "success" },
+        { name: "announcements", status: "success" },
+        { name: "articles", status: "success" }
       ]
     };
   },
