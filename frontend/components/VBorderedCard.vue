@@ -4,8 +4,7 @@
     tile
     hover
     nuxt
-    class="bordered-card primary--text"
-    :class="$vuetify.rtl ? 'bordered-right' : 'bordered-left'"
+    class="bordered-card primary--text bordered-left"
     @click="navigateTo"
   >
     <slot />
@@ -28,6 +27,9 @@ export default {
         this.$emit("click");
       }
     }
+  },
+  mounted() {
+    console.log(this.$vuetify.rtl, this.$i18n);
   }
 };
 </script>
@@ -40,10 +42,5 @@ export default {
 .bordered-left {
   border-left: 8px solid #e8991c !important;
   padding-left: 16px;
-}
-
-.bordered-right {
-  border-right: 8px solid #e8991c !important;
-  padding-right: 16px;
 }
 </style>
