@@ -1,13 +1,13 @@
-import hausa from "./messages/hausa.js";
-import kanuri from "./messages/kanuri.js";
-import shuwa from "./messages/shuwa.js";
-import marghi from "./messages/marghi.js";
-import bura from "./messages/bura.js";
-import mandara from "./messages/mandara.js";
-import fulfulde from "./messages/fulfulde.js";
-import kibaku from "./messages/kibaku.js";
-import waha from "./messages/waha.js";
-import en from "./messages/en.js";
+import hausa from "./messages/hausa.json";
+import kanuri from "./messages/kanuri.json";
+import shuwa from "./messages/shuwa.json";
+import marghi from "./messages/marghi.json";
+import bura from "./messages/bura.json";
+import mandara from "./messages/mandara.json";
+import fulfulde from "./messages/fulfulde.json";
+import kibaku from "./messages/kibaku.json";
+import waha from "./messages/waha.json";
+import en from "./messages/en.json";
 
 export const langInfo = {
   hausa: {
