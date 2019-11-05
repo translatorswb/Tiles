@@ -22,7 +22,7 @@
 <script>
 import showdown from "showdown";
 import createDOMPurify from "dompurify";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import { createObjectURL, blobToDataURL } from "blob-util";
 import {
   getDatabaseName,
@@ -47,6 +47,7 @@ export default {
   },
   computed: {
     ...mapState(["selectedCamp"]),
+    ...mapGetters(["isLangRtl"]),
     localDB() {
       return getDatabaseName("local", this.selectedCamp, this.databaseType);
     }
@@ -90,12 +91,29 @@ export default {
         }
 
         // Get markdown file
-        const mdBlob = doc._attachments[`${this.$i18n.locale}.md`];
-        const mdText = await mdBlob.data.text();
+        const rtl = this.isLangRtl(this.$i18n.locale);
         const converter = new showdown.Converter();
-        const dirty = converter.makeHtml(mdText);
         const DOMPurify = createDOMPurify(window);
-        let clean = DOMPurify.sanitize(dirty);
+        let clean;
+        if (rtl) {
+          const mdLatinBlog = doc._attachments[`${this.$i18n.locale}_latin.md`];
+          const mdLatinText = await mdLatinBlog.data.text();
+          const mdArabicBlog =
+            doc._attachments[`${this.$i18n.locale}_arabic.md`];
+          const mdArabicText = await mdArabicBlog.data.text();
+
+          const dirtyLatin = converter.makeHtml(mdLatinText);
+          const dirtyArabic = `<div style="direction: rtl">${converter.makeHtml(
+            mdArabicText
+          )}</div>`;
+          const dirty = `${dirtyLatin} ${dirtyArabic}`;
+          clean = DOMPurify.sanitize(dirty);
+        } else {
+          const mdBlob = doc._attachments[`${this.$i18n.locale}.md`];
+          const mdText = await mdBlob.data.text();
+          const dirty = converter.makeHtml(mdText);
+          clean = DOMPurify.sanitize(dirty);
+        }
 
         // Get images
         const assets = getAssets(doc);

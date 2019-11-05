@@ -22,7 +22,7 @@ export const langInfo = {
   },
   shuwa: {
     name: "Shuwa Arab شُوَ أرَب",
-    rtl: false,
+    rtl: true,
     code: "shuwa"
   },
   marghi: {
