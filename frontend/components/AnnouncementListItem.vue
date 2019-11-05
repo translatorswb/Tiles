@@ -66,7 +66,7 @@ export default {
   computed: {
     ...mapState(["selectedCamp"]),
     fromNow() {
-      return dayjs().diff(dayjs(+this.item._id), "day");
+      return dayjs().diff(dayjs(+this.item.createdOn), "day");
     },
     localDB() {
       return getDatabaseName("local", this.selectedCamp, "announcements");

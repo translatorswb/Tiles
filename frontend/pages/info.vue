@@ -1,7 +1,7 @@
 <template>
   <div>
     <VTitleWithAudio
-      title="Information"
+      :title="$t('information')"
       :src="audioSrc"
       :is-instruction="true"
     />

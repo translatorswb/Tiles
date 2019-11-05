@@ -33,7 +33,7 @@
     <v-row>
       <v-col cols="12">
         <VTitleWithAudio
-          title="Announcement"
+          :title="$t('announcements')"
           :src="audioSrc('announcement')"
           :is-instruction="true"
         />

@@ -1,10 +1,13 @@
 <template>
   <div class="feedback-container">
-    <VTitleWithAudio title="Feedback" :src="audioSrc" :is-instruction="true" />
+    <VTitleWithAudio
+      :title="$t('feedback')"
+      :src="audioSrc"
+      :is-instruction="true"
+    />
     <div class="text-container">
       <p>
-        Click the microphone button to record your feedback. If you want, you
-        can leave us your contact information in the message.
+        {{ $t("feedbackInstruction") }}
       </p>
     </div>
     <div>
@@ -13,23 +16,26 @@
     <div v-if="recording" class="text-container d-flex align-center">
       <audio style="width: 100%" :src="recording" controls />
       <v-btn class="ml-4" color="primary" dark @click="submitFeedback"
-        ><v-icon dark left>{{ icon.submit }}</v-icon> Submit</v-btn
+        ><v-icon dark left>{{ icon.submit }}</v-icon> {{ $t("submit") }}</v-btn
       >
     </div>
     <div class="py-4">
       <TheVoiceRecorder @stream="onStream" @result="onResult" />
     </div>
-    <div v-if="error" class="error--text text-container">{{ error }}</div>
+    <div v-if="error" class="error--text text-container">
+      {{ $("tryAgainLater") }}
+    </div>
     <v-dialog v-model="submitted" max-width="290">
       <v-card>
         <v-card-title class="headline justify-center">😀</v-card-title>
         <v-card-text>
-          Thanks for your feedback!
+          {{ $t("feedbackSuccess") }}
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" dark @click="submitted = false"
-            ><v-icon dark left>{{ icon.submit }}</v-icon> OK</v-btn
+            ><v-icon dark left>{{ icon.submit }}</v-icon>
+            {{ $t("close") }}</v-btn
           >
         </v-card-actions>
       </v-card>
@@ -121,6 +127,7 @@ export default {
         this.submitted = true;
         this.recording = null;
       } catch (error) {
+        console.log(error);
         this.error = error;
       }
     }

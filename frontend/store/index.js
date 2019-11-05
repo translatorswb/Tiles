@@ -59,5 +59,9 @@ export const getters = {
   validateCampId: state => campId => {
     const foundCamp = state.camps.find(camp => camp.id === campId);
     return !!foundCamp;
+  },
+
+  isLangRtl: state => code => {
+    return state.langInfo[code].rtl;
   }
 };
