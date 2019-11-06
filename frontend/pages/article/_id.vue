@@ -126,13 +126,19 @@ export default {
         assetsNames.forEach((name, i) => {
           const objectURL = assetsObjectURLs[i];
           this.addObjectURL(objectURL);
-          clean = clean.replace(name, objectURL);
+          clean = this.replaceAll(clean, name, objectURL);
         });
 
         this.content = clean;
       } catch (error) {
         this.error = error;
       }
+    },
+    escapeRegExp(str) {
+      return str.replace(/([.*+?^=!:${}()|[\]/\\])/g, "\\$1");
+    },
+    replaceAll(str, find, replace) {
+      return str.replace(new RegExp(this.escapeRegExp(find), "g"), replace);
     }
   }
 };
