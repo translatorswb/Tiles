@@ -25,7 +25,7 @@
       v-for="lang in Object.values(langInfo)"
       :key="lang.code"
       cols="12"
-      sm="6"
+      md="6"
       lg="4"
     >
       <VBorderedCardWithAudio :to="to(lang.code)" :src="audioSrc(lang.code)">

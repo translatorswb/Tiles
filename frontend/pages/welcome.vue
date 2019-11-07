@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row align="stretch" class="pb-6">
-      <v-col cols="12" sm="6">
+      <v-col cols="12" md="6">
         <VBorderedCardWithAudio
           :to="localePath('info')"
           :src="audioSrc('information')"
@@ -15,7 +15,7 @@
           </div>
         </VBorderedCardWithAudio>
       </v-col>
-      <v-col cols="12" sm="6">
+      <v-col cols="12" md="6">
         <VBorderedCardWithAudio
           :to="localePath('feedback')"
           :src="audioSrc('feedback')"
