@@ -21,7 +21,7 @@ export const langInfo = {
     code: "kanuri"
   },
   shuwa: {
-    name: "Shuwa Arab شُوَ أرَب",
+    name: "Shuwa Arabic  شُوَ أرَبِيك",
     rtl: true,
     code: "shuwa"
   },
@@ -31,7 +31,7 @@ export const langInfo = {
     code: "marghi"
   },
   bura: {
-    name: "Bura Pabər",
+    name: "Bura-Pabir",
     rtl: false,
     code: "bura"
   },
