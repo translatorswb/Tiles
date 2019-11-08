@@ -24,3 +24,4 @@ frontend/static/sw.jstoken.pickle
 env/
 __pycache__
 backend/docker/data
+raw

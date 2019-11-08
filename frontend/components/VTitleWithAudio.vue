@@ -1,7 +1,7 @@
 <template>
-  <div class="d-flex flex-wrap align-center justify-center">
+  <div class="d-flex flex-wrap align-center justify-center py-6">
     <div
-      class="text-center py-6 font-weight-bold accent--text text-uppercase"
+      class="text-center font-weight-bold accent--text text-uppercase"
       :class="$vuetify.breakpoint.xs ? 'display-1' : 'display-3'"
     >
       {{ title }}

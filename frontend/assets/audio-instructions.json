@@ -1,0 +1,74 @@
+{
+  "language": {
+    "bura": true,
+    "en": false,
+    "fulfulde": true,
+    "hausa": true,
+    "kanuri": true,
+    "kibaku": true,
+    "mandara": true,
+    "marghi": true,
+    "shuwa": true,
+    "waha": false
+  },
+  "welcome/information": {
+    "bura": true,
+    "en": false,
+    "fulfulde": true,
+    "hausa": true,
+    "kanuri": true,
+    "kibaku": true,
+    "mandara": true,
+    "marghi": true,
+    "shuwa": true,
+    "waha": false
+  },
+  "welcome/recordings": {
+    "bura": true,
+    "en": false,
+    "fulfulde": true,
+    "hausa": true,
+    "kanuri": true,
+    "kibaku": true,
+    "mandara": true,
+    "marghi": true,
+    "shuwa": true,
+    "waha": false
+  },
+  "welcome/announcements": {
+    "bura": true,
+    "en": false,
+    "fulfulde": true,
+    "hausa": true,
+    "kanuri": true,
+    "kibaku": true,
+    "mandara": true,
+    "marghi": true,
+    "shuwa": true,
+    "waha": false
+  },
+  "info": {
+    "bura": true,
+    "en": false,
+    "fulfulde": true,
+    "hausa": true,
+    "kanuri": true,
+    "kibaku": true,
+    "mandara": true,
+    "marghi": true,
+    "shuwa": true,
+    "waha": false
+  },
+  "feedback": {
+    "bura": true,
+    "en": false,
+    "fulfulde": true,
+    "hausa": true,
+    "kanuri": true,
+    "kibaku": true,
+    "mandara": true,
+    "marghi": true,
+    "shuwa": true,
+    "waha": false
+  }
+}
