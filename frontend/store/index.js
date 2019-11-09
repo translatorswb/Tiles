@@ -1,10 +1,12 @@
 import { langInfo } from "@/lang";
+import audioInstructions from "@/assets/audio-instructions";
 
 export const state = () => ({
   isOnline: true,
   selectedCamp: null,
   toUploadRecordingsCount: 0,
   langInfo,
+  audioInstructions,
   camps: [
     { id: "c001", name: "Camp 1" },
     { id: "c002", name: "Camp 2" },
@@ -63,5 +65,9 @@ export const getters = {
 
   isLangRtl: state => code => {
     return state.langInfo[code].rtl;
+  },
+
+  hasAudioInstruction: state => (key, code) => {
+    return state.audioInstructions[key][code];
   }
 };

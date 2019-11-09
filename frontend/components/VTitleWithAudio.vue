@@ -6,7 +6,9 @@
     >
       {{ title }}
     </div>
-    <PlayButtonInstruction :src="src" :is-instruction="isInstruction" />
+    <div v-if="src">
+      <PlayButtonInstruction :src="src" :is-instruction="isInstruction" />
+    </div>
   </div>
 </template>
 
@@ -23,7 +25,7 @@ export default {
     },
     src: {
       type: String,
-      required: true
+      default: null
     },
     isInstruction: {
       type: Boolean,

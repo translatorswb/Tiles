@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 import { mdiCheckCircle } from "@mdi/js";
 import { createObjectURL } from "blob-util";
 import { getDatabaseName, generateDocId } from "@/utils/pouchdb-utils";
@@ -74,11 +74,18 @@ export default {
   },
   computed: {
     ...mapState(["selectedCamp"]),
+    ...mapGetters(["hasAudioInstruction"]),
     localRecordingsDB() {
       return getDatabaseName("local", this.selectedCamp, "recordings");
     },
+    locale() {
+      return this.$i18n.locale;
+    },
     audioSrc() {
-      return `audio/feedback/${this.$i18n.locale}.mp3`;
+      const key = "feedback";
+      return this.hasAudioInstruction(key, this.locale)
+        ? `/audio/${key}/${this.locale}.mp3`
+        : null;
     }
   },
   watch: {
