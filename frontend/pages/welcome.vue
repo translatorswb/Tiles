@@ -47,6 +47,7 @@
 
 <script>
 import { mdiMicrophone, mdiBookOpen } from "@mdi/js";
+import { mapGetters } from "vuex";
 import VBorderedCardWithAudio from "@/components/VBorderedCardWithAudio";
 import VTitleWithAudio from "@/components/VTitleWithAudio";
 import AnnouncementList from "@/components/AnnouncementList";
@@ -66,13 +67,17 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(["hasAudioInstruction"]),
     locale() {
       return this.$i18n.locale;
     }
   },
   methods: {
     audioSrc(item) {
-      return `audio/welcome/${item}/${this.locale}.mp3`;
+      const key = `welcome/${item}`;
+      return this.hasAudioInstruction(key, this.locale)
+        ? `/audio/${key}/${this.locale}.mp3`
+        : null;
     }
   }
 };

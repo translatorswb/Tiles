@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import VBorderedCardWithAudio from "@/components/VBorderedCardWithAudio";
 
 export default {
@@ -44,11 +44,15 @@ export default {
     VBorderedCardWithAudio
   },
   computed: {
-    ...mapState(["langInfo"])
+    ...mapState(["langInfo"]),
+    ...mapGetters(["hasAudioInstruction"])
   },
   methods: {
     audioSrc(locale) {
-      return `audio/language/${locale}.mp3`;
+      const key = "language";
+      return this.hasAudioInstruction(key, locale)
+        ? `/audio/${key}/${locale}.mp3`
+        : null;
     },
     to(locale) {
       return this.localePath("welcome", locale);

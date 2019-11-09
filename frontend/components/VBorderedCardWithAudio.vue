@@ -13,6 +13,7 @@
         </div>
       </div>
       <div
+        v-if="src"
         class="item-audio"
         :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
       >
@@ -33,7 +34,7 @@ export default {
   },
   props: {
     to: { type: String, required: true },
-    src: { type: String, required: true },
+    src: { type: String, default: null },
     isInstruction: {
       type: Boolean,
       default: false
