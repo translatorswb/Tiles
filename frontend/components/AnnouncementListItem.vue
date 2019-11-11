@@ -20,7 +20,7 @@
           :class="$vuetify.breakpoint.xs ? '' : 'mx-4'"
         >
           <div
-            class="announcement-item-title accent--text headline mb-2"
+            class="announcement-item-title accent--text mb-2"
             :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
           >
             {{ item.title[$i18n.locale] }}
