@@ -7,7 +7,7 @@
           :src="audioSrc('information')"
           :is-instruction="true"
         >
-          <div class="display-1 accent--text d-flex">
+          <div class="headline accent--text d-flex">
             <v-icon x-large left class="primary--text">{{
               icon.information
             }}</v-icon>
@@ -21,7 +21,7 @@
           :src="audioSrc('feedback')"
           :is-instruction="true"
         >
-          <div class="display-1 accent--text d-flex">
+          <div class="headline accent--text d-flex">
             <v-icon x-large left class="primary--text">{{
               icon.feedback
             }}</v-icon>

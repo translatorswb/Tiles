@@ -12,7 +12,7 @@
     </v-col>
     <v-col v-for="camp in camps" :key="camp.id" cols="12" sm="6" lg="4">
       <VBorderedCard @click="clickCamp(camp.id)">
-        <h2 class="display-1 accent--text">{{ camp.name }}</h2>
+        <h2 class="headline accent--text">{{ camp.name }}</h2>
       </VBorderedCard>
     </v-col>
     <v-dialog v-model="dialog" persistent max-width="600">

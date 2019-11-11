@@ -29,7 +29,7 @@
       lg="4"
     >
       <VBorderedCardWithAudio :to="to(lang.code)" :src="audioSrc(lang.code)">
-        <div class="display-1 accent--text">{{ lang.name }}</div>
+        <div class="headline accent--text">{{ lang.name }}</div>
       </VBorderedCardWithAudio>
     </v-col>
   </v-row>

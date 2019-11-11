@@ -4,10 +4,7 @@
       <div class="sector-item-header-icon">
         <i :class="item.icon" class="primary--text x-large"></i>
       </div>
-      <div
-        class="sector-item-header-title accent--text"
-        :class="$vuetify.breakpoint.xs ? 'title mx-2' : 'display-1 mx-4'"
-      >
+      <div class="sector-item-header-title accent--text headline mx-2">
         {{ $t(`infoSectors.${item.key}`) }}
       </div>
     </v-expansion-panel-header>
