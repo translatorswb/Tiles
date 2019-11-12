@@ -1,47 +1,33 @@
 <template>
   <div class="mb-4">
-    <VBorderedCard
-      :to="
-        localePath({
-          name: 'article-id',
-          params: { id: `announcements_${item._id}` }
-        })
-      "
-    >
-      <div
-        class="announcement-item d-flex"
-        :class="$vuetify.breakpoint.xs ? 'flex-column' : ''"
-      >
+    <VBorderCard>
+      <template v-slot:card-media>
         <div class="announcement-item-icon">
           <i :class="item.icon" class="primary--text x-large"></i>
         </div>
-        <div
-          class="announcement-item-main flex-grow-1"
-          :class="$vuetify.breakpoint.xs ? '' : 'mx-4'"
-        >
-          <div
-            class="announcement-item-title accent--text mb-2"
-            :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
-          >
-            {{ item.title[$i18n.locale] }}
-          </div>
-          <div class="announcement-item-date black--text">
-            {{ $tc("day", fromNow) }}
-          </div>
-        </div>
-        <div
-          v-if="item.hasAudio"
-          class="announcement-item-audio"
-          :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
-        >
-          <PlayButtonArticle
-            :doc-id="item._id"
-            :audio-id="item.hasAudio"
-            :database="localDB"
-          />
-        </div>
-      </div>
-    </VBorderedCard>
+      </template>
+      <template v-slot:card-title>
+        {{ item.title[$i18n.locale] }}
+      </template>
+      <template v-slot:card-subtitle>
+        {{ $tc("day", fromNow) }}
+      </template>
+      <template v-slot:card-actions>
+        <PlayButtonArticle
+          :doc-id="item._id"
+          :audio-id="item.hasAudio"
+          :database="localDB"
+        />
+        <NextButton
+          :to="
+            localePath({
+              name: 'article-id',
+              params: { id: `announcements_${item._id}` }
+            })
+          "
+        />
+      </template>
+    </VBorderCard>
   </div>
 </template>
 
@@ -49,13 +35,15 @@
 import dayjs from "dayjs";
 import { mapState } from "vuex";
 import { getDatabaseName } from "@/utils/pouchdb-utils";
-import VBorderedCard from "@/components/VBorderedCard.vue";
+import VBorderCard from "@/components/VBorderCard.vue";
 import PlayButtonArticle from "@/components/PlayButtonArticle.vue";
+import NextButton from "@/components/NextButton";
 
 export default {
   components: {
-    VBorderedCard,
-    PlayButtonArticle
+    VBorderCard,
+    PlayButtonArticle,
+    NextButton
   },
   props: {
     item: {
@@ -66,6 +54,8 @@ export default {
   computed: {
     ...mapState(["selectedCamp"]),
     fromNow() {
+      console.log(+this.item.createdOn);
+      console.log(dayjs(+this.item.createdOn));
       return dayjs().diff(dayjs(+this.item.createdOn), "day");
     },
     localDB() {
@@ -83,9 +73,5 @@ export default {
 .announcement-item-icon svg {
   width: 64px !important;
   height: 64px !important;
-}
-
-.announcement-item-audio {
-  width: 64px;
 }
 </style>

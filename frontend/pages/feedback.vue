@@ -1,10 +1,13 @@
 <template>
   <div class="feedback-container">
-    <VTitleWithAudio
-      :title="$t('feedback')"
-      :src="audioSrc"
-      :is-instruction="true"
-    />
+    <VTitle>
+      <template v-slot:title>
+        {{ $t("feedback") }}
+      </template>
+      <template v-slot:title-append>
+        <PlayButtonInstruction :src="audioSrc" :is-instruction="true" />
+      </template>
+    </VTitle>
     <div class="text-container">
       <p>
         {{ $t("feedbackInstruction") }}
@@ -48,14 +51,16 @@ import { mapState, mapActions, mapGetters } from "vuex";
 import { mdiCheckCircle } from "@mdi/js";
 import { createObjectURL } from "blob-util";
 import { getDatabaseName, generateDocId } from "@/utils/pouchdb-utils";
-import VTitleWithAudio from "@/components/VTitleWithAudio";
+import VTitle from "@/components/VTitle";
+import PlayButtonInstruction from "@/components/PlayButtonInstruction";
 import TheVoiceRecorder from "@/components/TheVoiceRecorder.vue";
 import TheVisualizer from "@/components/TheVisualizer.vue";
 import objectURLsMixin from "@/mixins/objectURLs-mixin";
 
 export default {
   components: {
-    VTitleWithAudio,
+    VTitle,
+    PlayButtonInstruction,
     TheVoiceRecorder,
     TheVisualizer
   },

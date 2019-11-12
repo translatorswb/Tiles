@@ -1,5 +1,10 @@
 <template>
-  <PlayButton :src="src" :requires-init="true" @init="initAudio" />
+  <PlayButton
+    v-if="audioId"
+    :src="src"
+    :requires-init="true"
+    @init="initAudio"
+  />
 </template>
 
 <script>
@@ -18,7 +23,7 @@ export default {
       required: true
     },
     audioId: {
-      type: String,
+      type: [String, Boolean],
       required: true
     },
     database: {
