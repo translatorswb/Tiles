@@ -5,7 +5,7 @@
         {{ $t("feedback") }}
       </template>
       <template v-slot:title-append>
-        <PlayButtonInstruction :src="audioSrc" :is-instruction="true" />
+        <PlayButtonInstruction :src="audioSrc" />
       </template>
     </VTitle>
     <div class="text-container">

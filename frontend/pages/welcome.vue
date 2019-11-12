@@ -12,10 +12,7 @@
             {{ $t("information") }}
           </template>
           <template v-slot:card-actions>
-            <PlayButtonInstruction
-              :src="audioSrc('information')"
-              :is-instruction="true"
-            />
+            <PlayButtonInstruction :src="audioSrc('information')" />
             <NextButton :to="localePath('info')" />
           </template>
         </VBorderCard>
@@ -31,10 +28,7 @@
             {{ $t("feedback") }}
           </template>
           <template v-slot:card-actions>
-            <PlayButtonInstruction
-              :src="audioSrc('feedback')"
-              :is-instruction="true"
-            />
+            <PlayButtonInstruction :src="audioSrc('feedback')" />
             <NextButton :to="localePath('feedback')" />
           </template>
         </VBorderCard>
@@ -47,10 +41,7 @@
             {{ $t("announcements") }}
           </template>
           <template v-slot:title-append>
-            <PlayButtonInstruction
-              :src="audioSrc('announcement')"
-              :is-instruction="true"
-            />
+            <PlayButtonInstruction :src="audioSrc('announcement')" />
           </template>
         </VTitle>
       </v-col>

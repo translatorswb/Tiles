@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mdiVolumeHigh, mdiPause, mdiCommentQuestion } from "@mdi/js";
+import { mdiVolumeHigh, mdiPause } from "@mdi/js";
 export default {
   props: {
     src: {
@@ -23,28 +23,20 @@ export default {
     requiresInit: {
       type: Boolean,
       default: false
-    },
-    isInstruction: {
-      type: Boolean,
-      default: false
     }
   },
   data() {
     return {
       icon: {
         play: mdiVolumeHigh,
-        pause: mdiPause,
-        instruction: mdiCommentQuestion
+        pause: mdiPause
       },
       isPlaying: false
     };
   },
   computed: {
-    playIcon() {
-      return this.isInstruction ? this.icon.instruction : this.icon.play;
-    },
     audioIcon() {
-      return this.isPlaying ? this.icon.pause : this.playIcon;
+      return this.isPlaying ? this.icon.pause : this.icon.play;
     }
   },
   methods: {

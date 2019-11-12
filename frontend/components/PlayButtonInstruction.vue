@@ -1,5 +1,5 @@
 <template>
-  <PlayButton v-if="src" :src="src" :is-instruction="isInstruction" />
+  <PlayButton v-if="src" :src="src" />
 </template>
 
 <script>
@@ -13,10 +13,6 @@ export default {
     src: {
       type: String,
       required: false
-    },
-    isInstruction: {
-      type: Boolean,
-      default: false
     }
   }
 };
