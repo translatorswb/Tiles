@@ -16,8 +16,8 @@ OUT_FILE = os.path.join(ASSETS_DIR, "audio-instructions.json")
 FILE_DIRECTORIES = [
     "language",
     "welcome/information",
-    "welcome/recordings",
-    "welcome/announcements",
+    "welcome/feedback",
+    "welcome/announcement",
     "info",
     "feedback",
 ]

@@ -11,8 +11,8 @@ FORMATTED_AUDIO_DIR = os.path.join(DIR, "formatted")
 DIRECTORY_MAPPER = {
     "0": "language",
     "1": "welcome/information",
-    "2": "welcome/recordings",
-    "3": "welcome/announcements",
+    "2": "welcome/feedback",
+    "3": "welcome/announcement",
     "4": "info",
     "5": "feedback",
 }
@@ -26,6 +26,7 @@ LANGUAGE_MAPPER = {
     "Mandara": "mandara",
     "Marghi": "marghi",
     "Shuwa-Arabic": "shuwa",
+    "Waha": "waha",
 }
 
 
