@@ -1,51 +1,45 @@
 <template>
   <div class="mb-4">
-    <VBorderedCard
-      :to="
-        localePath({
-          name: 'article-id',
-          params: { id: `articles_${item._id}` }
-        })
-      "
-    >
-      <div
-        class="article-item d-flex"
-        :class="$vuetify.breakpoint.xs ? 'flex-column' : ''"
-      >
-        <div class="article-item-main flex-grow-1">
-          <div
-            class="article-item-title accent--text"
-            :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
-          >
-            {{ item.title[$i18n.locale] }}
-          </div>
+    <VBorderCard>
+      <template v-slot:card-media>
+        <div class="announcement-item-icon">
+          <i :class="item.icon" class="primary--text x-large"></i>
         </div>
-        <div
-          v-if="item.hasAudio"
-          class="article-item-audio"
-          :class="$vuetify.breakpoint.xs ? 'align-self-end' : ''"
-        >
-          <PlayButtonArticle
-            :doc-id="item._id"
-            :audio-id="item.hasAudio"
-            :database="localDB"
-          />
-        </div>
-      </div>
-    </VBorderedCard>
+      </template>
+      <template v-slot:card-title>
+        {{ item.title[$i18n.locale] }}
+      </template>
+      <template v-slot:card-actions>
+        <PlayButtonArticle
+          :doc-id="item._id"
+          :audio-id="item.hasAudio"
+          :database="localDB"
+        />
+        <NextButton
+          :to="
+            localePath({
+              name: 'article-id',
+              params: { id: `articles_${item._id}` }
+            })
+          "
+        />
+      </template>
+    </VBorderCard>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import { getDatabaseName } from "@/utils/pouchdb-utils";
-import VBorderedCard from "@/components/VBorderedCard.vue";
+import VBorderCard from "@/components/VBorderCard.vue";
 import PlayButtonArticle from "@/components/PlayButtonArticle.vue";
+import NextButton from "@/components/NextButton";
 
 export default {
   components: {
-    VBorderedCard,
-    PlayButtonArticle
+    VBorderCard,
+    PlayButtonArticle,
+    NextButton
   },
   props: {
     item: {

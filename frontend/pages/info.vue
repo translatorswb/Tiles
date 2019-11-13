@@ -1,20 +1,24 @@
 <template>
   <div>
-    <VTitleWithAudio
-      :title="$t('information')"
-      :src="audioSrc"
-      :is-instruction="true"
-    />
+    <VTitle>
+      <template v-slot:title>
+        {{ $t("information") }}
+      </template>
+      <template v-slot:title-append>
+        <PlayButtonInstruction :src="audioSrc" />
+      </template>
+    </VTitle>
     <InformationSectorList />
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import VTitleWithAudio from "@/components/VTitleWithAudio";
+import VTitle from "@/components/VTitle";
+import PlayButtonInstruction from "@/components/PlayButtonInstruction";
 import InformationSectorList from "@/components/InformationSectorList.vue";
 export default {
-  components: { VTitleWithAudio, InformationSectorList },
+  components: { VTitle, PlayButtonInstruction, InformationSectorList },
   computed: {
     ...mapGetters(["hasAudioInstruction"]),
     locale() {

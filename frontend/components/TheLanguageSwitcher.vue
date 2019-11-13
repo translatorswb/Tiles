@@ -21,27 +21,31 @@
         </div>
       </div>
     </v-col>
-    <v-col
-      v-for="lang in Object.values(langInfo)"
-      :key="lang.code"
-      cols="12"
-      md="6"
-      lg="4"
-    >
-      <VBorderedCardWithAudio :to="to(lang.code)" :src="audioSrc(lang.code)">
-        <div class="headline accent--text">{{ lang.name }}</div>
-      </VBorderedCardWithAudio>
+    <v-col v-for="lang in Object.values(langInfo)" :key="lang.code" cols="12">
+      <VBorderCard>
+        <template v-slot:card-title>
+          {{ lang.name }}
+        </template>
+        <template v-slot:card-actions>
+          <PlayButtonInstruction :src="audioSrc(lang.code)" />
+          <NextButton :to="to(lang.code)" />
+        </template>
+      </VBorderCard>
     </v-col>
   </v-row>
 </template>
 
 <script>
 import { mapState, mapGetters } from "vuex";
-import VBorderedCardWithAudio from "@/components/VBorderedCardWithAudio";
+import VBorderCard from "@/components/VBorderCard.vue";
+import PlayButtonInstruction from "@/components/PlayButtonInstruction";
+import NextButton from "@/components/NextButton";
 
 export default {
   components: {
-    VBorderedCardWithAudio
+    VBorderCard,
+    PlayButtonInstruction,
+    NextButton
   },
   computed: {
     ...mapState(["langInfo"]),

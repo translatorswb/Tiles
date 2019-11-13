@@ -1,42 +1,49 @@
 <template>
   <div>
     <v-row align="stretch" class="pb-6">
-      <v-col cols="12" md="6">
-        <VBorderedCardWithAudio
-          :to="localePath('info')"
-          :src="audioSrc('information')"
-          :is-instruction="true"
-        >
-          <div class="headline accent--text d-flex">
+      <v-col cols="12">
+        <VBorderCard>
+          <template v-slot:card-media>
             <v-icon x-large left class="primary--text">{{
               icon.information
             }}</v-icon>
+          </template>
+          <template v-slot:card-title>
             {{ $t("information") }}
-          </div>
-        </VBorderedCardWithAudio>
+          </template>
+          <template v-slot:card-actions>
+            <PlayButtonInstruction :src="audioSrc('information')" />
+            <NextButton :to="localePath('info')" />
+          </template>
+        </VBorderCard>
       </v-col>
-      <v-col cols="12" md="6">
-        <VBorderedCardWithAudio
-          :to="localePath('feedback')"
-          :src="audioSrc('feedback')"
-          :is-instruction="true"
-        >
-          <div class="headline accent--text d-flex">
+      <v-col cols="12">
+        <VBorderCard>
+          <template v-slot:card-media>
             <v-icon x-large left class="primary--text">{{
               icon.feedback
             }}</v-icon>
+          </template>
+          <template v-slot:card-title>
             {{ $t("feedback") }}
-          </div>
-        </VBorderedCardWithAudio>
+          </template>
+          <template v-slot:card-actions>
+            <PlayButtonInstruction :src="audioSrc('feedback')" />
+            <NextButton :to="localePath('feedback')" />
+          </template>
+        </VBorderCard>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="12">
-        <VTitleWithAudio
-          :title="$t('announcements')"
-          :src="audioSrc('announcement')"
-          :is-instruction="true"
-        />
+        <VTitle>
+          <template v-slot:title>
+            {{ $t("announcements") }}
+          </template>
+          <template v-slot:title-append>
+            <PlayButtonInstruction :src="audioSrc('announcement')" />
+          </template>
+        </VTitle>
       </v-col>
       <v-col cols="12">
         <AnnouncementList />
@@ -48,14 +55,18 @@
 <script>
 import { mdiMicrophone, mdiBookOpen } from "@mdi/js";
 import { mapGetters } from "vuex";
-import VBorderedCardWithAudio from "@/components/VBorderedCardWithAudio";
-import VTitleWithAudio from "@/components/VTitleWithAudio";
+import VBorderCard from "@/components/VBorderCard.vue";
+import PlayButtonInstruction from "@/components/PlayButtonInstruction";
+import NextButton from "@/components/NextButton";
+import VTitle from "@/components/VTitle";
 import AnnouncementList from "@/components/AnnouncementList";
 
 export default {
   components: {
-    VBorderedCardWithAudio,
-    VTitleWithAudio,
+    VBorderCard,
+    PlayButtonInstruction,
+    NextButton,
+    VTitle,
     AnnouncementList
   },
   data() {
