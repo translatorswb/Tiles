@@ -26,7 +26,8 @@ export default {
       source: null,
       analyser: null,
       bufferLength: null,
-      dataArray: null
+      dataArray: null,
+      binCount: 128
     };
   },
   watch: {
@@ -35,7 +36,7 @@ export default {
         this.audioCtx.resume();
         this.source = this.audioCtx.createMediaStreamSource(stream);
         this.analyser = this.audioCtx.createAnalyser();
-        this.analyser.fftSize = 2048;
+        this.analyser.fftSize = this.binCount * 2;
         this.bufferLength = this.analyser.frequencyBinCount;
         this.dataArray = new Uint8Array(this.bufferLength);
         this.source.connect(this.analyser);
@@ -57,30 +58,27 @@ export default {
       if (this.canvasCtx) this.draw();
     },
     draw() {
+      requestAnimationFrame(this.draw);
       this.canvasCtx.fillStyle = "rgb(250, 250, 250)";
       this.canvasCtx.fillRect(0, 0, this.width, this.height);
-      this.canvasCtx.lineWidth = 2;
-      this.canvasCtx.strokeStyle = "rgb(232, 153, 28)";
-      this.canvasCtx.beginPath();
-      this.canvasCtx.moveTo(0, this.height / 2);
-      requestAnimationFrame(this.draw);
+      const barWidth = this.width / (this.binCount * 2 - 1);
+      this.canvasCtx.fillStyle = "rgb(232, 153, 28)";
+      const sliceWidth = barWidth * 2;
+      let x = 0;
       if (this.stream) {
         this.analyser.getByteTimeDomainData(this.dataArray);
-        const sliceWidth = (this.width * 1.0) / this.bufferLength;
-        let x = 0;
         for (let i = 0; i < this.bufferLength; i++) {
           const v = this.dataArray[i] / 128.0;
           const y = (v * this.height) / 2;
-          if (i === 0) {
-            this.canvasCtx.moveTo(x, y);
-          } else {
-            this.canvasCtx.lineTo(x, y);
-          }
+          this.canvasCtx.fillRect(x, y, barWidth, this.height - y * 2);
+          x += sliceWidth;
+        }
+      } else {
+        for (let i = 0; i < this.binCount; i++) {
+          this.canvasCtx.fillRect(x, this.height / 2 - 1, barWidth, 2);
           x += sliceWidth;
         }
       }
-      this.canvasCtx.lineTo(this.width, this.height / 2);
-      this.canvasCtx.stroke();
     }
   }
 };
