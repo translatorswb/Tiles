@@ -1,13 +1,26 @@
 {
-	"selectLanguage": "ALBARAK AZIL LUGGATAK ألبرك أزِل لُغتَكْ",
-	"infoSectors": {
-		"food": "EYSH عَيشْ",
-		"shelter": "BAYT بيْت",
-		"nonfoodItems": "SHU'UL ALMI HANA AKIL شُعُول المي هن أكِل",
-		"health": "AFITAL JILD أفيت الجلد",
-		"waterSanitation": "ALMEY WA NAZAFA ألمي و نظاف",
-		"wellbeing": "MULHAMMAD مُلهَمُد",
-		"protection": "KHAMAYA خمايه",
-		"education": "DIRASA دِراسه"
-	}
+  "selectLanguage": "Albarak azzil luggah ألبَرَكْ عَزِل لُغَه",
+  "infoSectors": {
+    "food": "Eysh عَيشْ",
+    "shelter": "Bayt بَيتْ",
+    "nonfoodItems": "Shu'ul almi hana akul شُعُول ألمِي هَنَ أكِل",
+    "health": "Al'afiye ألعَفِيِ",
+    "waterSanitation": "Almey wa Nazafa ألمَي وَ نَظَافَ",
+    "wellbeing": "Al'afiyah ألعَفِيَه",
+    "protection": "Khimaya خِمايه",
+    "education": "Ta'alim تَعلِيم"
+  },
+  "information": "Khabar خَبَر",
+  "feedback": "Rad رَد",
+  "feedbackInstruction": "Assural mikrofone ley tasajyl faoug radakak. Kan tadur, taddar tahal khabar shaba tallagi fyl risala. عَصُرَل مَيكُرَفَون لي تَسجِيل فَوغ رَدَكَك. كَنْ تَدَور، تَدَر تَهَل خَبَر هَنَ شَبَ تَلْلَغِي فيل رِسالَ",
+  "feedbackSuccess": "Shukuran ley radakak! شُكُراً لَي رَدَكَكْ",
+  "announcements": "Ei'alaanat إعلانات",
+  "articles": "Kutub faoug shu'ul wahdyn كُتُبْ فَوغ شُعُول وَحْدِين",
+  "recordings": "Tasjilaat تسجيلات",
+  "sync": "Alshu'ul almashi jami bey shu'ul gadey ألشُعُول مَشِي جَمِي بي شُعُول غَدَي",
+  "unsyncedRecordings": "Tasjilat almam mashyn jami bey shu'ul gadey تسجيلات ألمَام مَشِين جَمي بي شُعُول ألتَشِيفَ",
+  "day": "Alyaum | {n} min yaum wahud alfaat | {n} min yaumat alfato اليوم |من  يوم واحد ألفات| من يَوماتْ ألفاتَو",
+  "submit": "Lizzal risala لِزَل رِسالَ",
+  "close": "Siddah صِدْدَه",
+  "tryAgainLater": "Albarak haawulah gadey kula addarey shiyakay ألبَرَك حَاوُله غَدَيْ كُلَ عَدَارَي شِيَكَي"
 }

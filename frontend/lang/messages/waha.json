@@ -1,13 +1,26 @@
 {
-	"selectLanguage": "GAMSA ABKLA GWAD LUWAGHA",
-	"infoSectors": {
-		"food": "DAFFA",
-		"shelter": "GABEDE",
-		"nonfoodItems": "INAHA",
-		"health": "YANGA GHIVA KO INA ",
-		"waterSanitation": "IMMI NDA TSADA ",
-		"wellbeing": "BOB TUNDU",
-		"protection": "TSUFUT GHANG ",
-		"education": "JANGA MAKARANTAYA"
-	}
+  "selectLanguage": "gamsa abdamat gwada",
+  "infoSectors": {
+    "food": "Daffa",
+    "shelter": "Higa",
+    "nonfoodItems": "Inahunda inaz bewo",
+    "health": "Yanga",
+    "waterSanitation": "Immi nda tsada",
+    "wellbeing": "Jama undu",
+    "protection": "Ngiyunta",
+    "education": "Janga"
+  },
+  "information": "Habarha",
+  "feedback": "Varngat gwada",
+  "feedbackInstruction": "Affa jav tina kwara gwada da klata mak gwadunda varngaflo. Vita dow ka, thlavanika tinunda da higadatal ndene.",
+  "feedbackSuccess": "Use anga varngafta gwada!",
+  "announcements": "Vaz thlahaha",
+  "articles": "Inahunda vindalo",
+  "recordings": "Kalt gwadha",
+  "sync": "Kort gwada nda mogo tabigatala",
+  "unsyncedRecordings": "Kol kort gwada nda klo",
+  "day": "An tene | {n}hin tala labta | {n}hinaha kada labta",
+  "submit": "Langapta",
+  "close": "Funta",
+  "tryAgainLater": "Gamsa avra tikanta tikima"
 }

@@ -1,13 +1,26 @@
 {
-	"selectLanguage": "ZABI YARENKA",
-	"infoSectors": {
-		"food": "ABINCI",
-		"shelter": "MATSUGUNI",
-		"nonfoodItems": "KAYAN AIKIN GIDA",
-		"health": "LAFIYA",
-		"waterSanitation": "RUWA DA TSAFTA",
-		"wellbeing": "WADATA",
-		"protection": "KARIYA",
-		"education": "ILIMI"
-	}
+  "selectLanguage": "Dan Allah A zabi yare",
+  "infoSectors": {
+    "food": "Abinci",
+    "shelter": "Rumfa",
+    "nonfoodItems": "Kayan Aikin Gida",
+    "health": "Lafiya",
+    "waterSanitation": "Ruwa da Tsafta",
+    "wellbeing": "Lafiyan  jiki",
+    "protection": "Ware haqqin jama'a",
+    "education": "Ilimi"
+  },
+  "information": "Bayani",
+  "feedback": "Bayani na gyara ko gamsuwa",
+  "feedbackInstruction": "Danna alamar abun daukan magana domin ya dauke bayanin gyara ko gamsuwar Ka. Idan Ka na so, Ka na iya bar mana bayanin tuntuban ka a cikin bayanin.",
+  "feedbackSuccess": "Mun gode da bayanin!",
+  "announcements": "Sanarwa",
+  "articles": "Labarai rubutu",
+  "recordings": "Bayanai magana a nau'ra",
+  "sync": "Aiki tare",
+  "unsyncedRecordings": "Bayanai magana wanda ba a hada ba",
+  "day": "Yau | {n} kwana | {n} Kwanaki",
+  "submit": "Tura gabatarwa",
+  "close": "Rufe",
+  "tryAgainLater": "Dan Allah a Kara gwadawa anjima"
 }

@@ -1,13 +1,26 @@
 {
-	"selectLanguage": "MARTƎNE TƎLAMNƎN KARNE",
-	"infoSectors": {
-		"food": "KƎMBU",
-		"shelter": "NAPTƎRAM",
-		"nonfoodItems": "KAREWA KƎMBUN-NGURONSO FATON NOTOBE",
-		"health": "NƎLEWA",
-		"waterSanitation": "NJI-a KOR FƎRATƎ-a",
-		"wellbeing": "KƎNƎNGA NGALWO",
-		"protection": "NZƎTKAWO",
-		"education": "ILMU"
-	}
+  "selectLanguage": "Mart3ne t3lam fal karne",
+  "infoSectors": {
+    "food": "K3mbu",
+    "shelter": "Napt3ram",
+    "nonfoodItems": "Karewa K3mbun Guron",
+    "health": "N3lewa",
+    "waterSanitation": "Nji-a & Kor Kadau ba ro k3nta-a",
+    "wellbeing": "K3nda n3lewabe",
+    "protection": "Nz3tkawo",
+    "education": "Ilmu zamt3"
+  },
+  "information": "Hawar au Bayan",
+  "feedback": "Jawawu kalaktin ma",
+  "feedbackInstruction": "Makrofon d3 ranne jawawu n3m got3g3 ro Ra'amma maa, andero bayan nya fandoye suro kawuli n3mye lan koll3min",
+  "feedbackSuccess": "Ask3rnyena jawawu kalakt3g3 n3m ro",
+  "announcements": "Warmat3g3",
+  "articles": "Ruo'wa hawarbe",
+  "recordings": "Got3g3 kowobe",
+  "sync": "Sync",
+  "unsyncedRecordings": "Kowo got3g3 sync t3d3nyi",
+  "day": "Ku | kau {n} ma s3d3na|kau {n} ma s3d3na",
+  "submit": "G3mt3g3",
+  "close": "Zakt3/zangne",
+  "tryAgainLater": "Mart3ne tushsha walt3ne jarabne"
 }

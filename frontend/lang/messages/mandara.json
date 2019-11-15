@@ -1,13 +1,26 @@
 {
-	"selectLanguage": "TASLEŊA TUDUƊE NAZA NARAŊA",
-	"infoSectors": {
-		"food": "ƊAFA",
-		"shelter": "ŊA",
-		"nonfoodItems": "NAZA MAGA SLERAAHA ƁA",
-		"health": "LAPIYERE",
-		"waterSanitation": "YAWE ANTARA CAƊA",
-		"wellbeing": "CINAN EMTAKIRE",
-		"protection": "FAAꚔEMA",
-		"education": "ƊAALAYE"
-	}
+  "selectLanguage": "Tazlaŋa Kesante-kesa nare",
+  "infoSectors": {
+    "food": "Ɗafa",
+    "shelter": "Bere",
+    "nonfoodItems": "Kazlaŋaha-ɗafa ezzenka am mba",
+    "health": "Lapiyire",
+    "waterSanitation": "Yawe antara maga caɗa",
+    "wellbeing": "Kalkale-nja",
+    "protection": "Fahyema",
+    "education": "Daalaye"
+  },
+  "information": "Labare",
+  "feedback": "Jawabiye",
+  "feedbackInstruction": "Peyana-peya ta-laspika ge tesa ɗamala jawabiyaŋa. Ma eske ka kata, ka naba ɗyante ŋalape hana ashaka-sha ɗe at-kwana am ɗamala jawabiyaŋa.",
+  "feedbackSuccess": "A kagka albarka ge ɗamala jawabiyaŋa!",
+  "announcements": "Sanarwaha",
+  "articles": "Labare hana aviɗa ɗe na",
+  "recordings": "Tesa-ɗamalaha",
+  "sync": "Kaɓanahe",
+  "unsyncedRecordings": "Tesa ɗamalana kaɓaŋna",
+  "day": "Fàtna | {n} fàtuwa | {n} harehawà",
+  "submit": "Zlihane",
+  "close": "Hiɗane",
+  "tryAgainLater": "Tazlaŋa ma-maga à daleya"
 }

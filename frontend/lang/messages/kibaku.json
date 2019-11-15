@@ -1,13 +1,26 @@
 {
-	"selectLanguage": "TSARBA NYAR NGƐ",
-	"infoSectors": {
-		"food": "SƎR SƎMƐ",
-		"shelter": "DƎRI",
-		"nonfoodItems": "KARIYIR KƎTHLƎRƎR KUI",
-		"health": "LAPIYAKUR",
-		"waterSanitation": "YIMI AKA KƎTSƎ KƎTSƎKUR",
-		"wellbeing": "DZUIYIR SƎDAKUR",
-		"protection": "MBUIDZI",
-		"education": "ILIMI"
-	}
+  "selectLanguage": "UsƐ tsarba nyar ngƐ",
+  "infoSectors": {
+    "food": "ƊuvƐ",
+    "shelter": "Vi ndzai",
+    "nonfoodItems": "Kari nam kura sǝr sǝmƐ",
+    "health": "Kalangkur/lapiyakur",
+    "waterSanitation": "Yimi ba kǝtsi kǝtsikur",
+    "wellbeing": "Ndziyir lapiyakur",
+    "protection": "Bǝlatǝdzi",
+    "education": "Ilimi"
+  },
+  "information": "Labar",
+  "feedback": "Hamta labar",
+  "feedbackInstruction": "Tsani sǝr kǝl kuɗaha ka gǝ kǝli labar. Maga yiɗƐ, gata mǝzi gyar ala yar whalƐ namtu yar ata mǝzi bui tǝngƐ akwa viyir labar ǝni.",
+  "feedbackSuccess": "Yi godicini kadubar labar tǝgǝ li ni!",
+  "announcements": "Sǝr gǝla ka waima zǝndi",
+  "articles": "Labar nam rubwa rubwa",
+  "recordings": "Labarir kudahu namtu ndƐ kǝrta kǝli",
+  "sync": "Dzukti nya dar kalkal",
+  "unsyncedRecordings": "Labar nam kura dzugwi dzugwi tǝdar kurtǝ Kǝli",
+  "day": "Ashina | {n} vǝr pathlu tara kwacini | {n} Vǝr hang tara kwacini",
+  "submit": "Na dar",
+  "close": "Harti",
+  "tryAgainLater": "UsƐ ɓǝla jakti nkǝrti 'ya gadawm ahǝla saka nkidu laka"
 }
