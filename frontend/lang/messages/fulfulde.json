@@ -1,13 +1,26 @@
 {
-	"selectLanguage": "USSENI A SUƁA ƊEMNGAL MA",
-	"infoSectors": {
-		"food": "NYAAMDU",
-		"shelter": "BUKKAARU",
-		"nonfoodItems": "KARE KILLANTA KO LAATAY NYAAMDU",
-		"health": "NJAMU",
-		"waterSanitation": "NDIYAM BEE SIWAAKU",
-		"wellbeing": "JOONDE JAM",
-		"protection": "FADDAAGO",
-		"education": "ANNDAL"
-	}
+  "selectLanguage": "Usseni suptu ɗemngal gotel.",
+  "infoSectors": {
+    "food": "Nyaamdu",
+    "shelter": "Bukkaaru",
+    "nonfoodItems": "Kare ko laatay nyaamdu",
+    "health": "Njamu",
+    "waterSanitation": "Ndiyam & hakkilgo bee njamu e siwaaku",
+    "wellbeing": "Ngeɗam",
+    "protection": "Faddol",
+    "education": "Janngirde"
+  },
+  "information": "Bayaanuuji",
+  "feedback": "Jawaabu",
+  "feedbackInstruction": "Usseni ɓiɗɗugo kuuje koosugo daande ngam a` koosa jawaabu. To a` ɗo yiɗi, a` accan lammba ko ɓe tawtata ma haa nder lellal man.",
+  "feedbackSuccess": "Usseko mon bee jawaabuuji mon!",
+  "announcements": "Andinnirgo",
+  "articles": "Binndi",
+  "recordings": "Hoosugo dannde",
+  "sync": "Howugo chamen ngam",
+  "unsyncedRecordings": "Soynde howugo chamen gam hoosugo dannde",
+  "day": "Hannde| {n} nyalɗe saali | {n} nyaladeeji ko saali",
+  "submit": "Yerɓu yeeso",
+  "close": "Maɓɓu",
+  "tryAgainLater": "Usseni foondu ɗum fahin yeeso"
 }

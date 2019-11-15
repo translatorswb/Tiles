@@ -1,13 +1,26 @@
 {
-	"selectLanguage": "USI CAƊIBA MYA GINYI",
-	"infoSectors": {
-		"food": "SUR SIM",
-		"shelter": "SHANGUDI",
-		"nonfoodItems": "KARI AI SUR SIM MAI",
-		"health": "LAPIYAKUR UDZU",
-		"waterSanitation": "IMI AGA SAHU IVI",
-		"wellbeing": "LAPIYAKUR",
-		"protection": "LAGURI SURPURI UDZU",
-		"education": "THLIDIBU NTSINSILKUR"
-	}
+  "selectLanguage": "Manki ncaba mya ginyi",
+  "infoSectors": {
+    "food": "Sursim",
+    "shelter": "Zalli nda nur mjir filia",
+    "nonfoodItems": "Suku kra sursim",
+    "health": "Lapiyakur udzu",
+    "waterSanitation": "Imi aga lagur surpia",
+    "wellbeing": "Lapiyakur",
+    "protection": "Ɓulakir",
+    "education": "Ntsinsilkur"
+  },
+  "information": "Labar",
+  "feedback": "Shina ndir",
+  "feedbackInstruction": "Cinna sur hu ɗahu kuga fia shoɗa ginyi. Ma naga'yu, nagu acittu ngeri labar arkra ngu kuku mji ara thlian.",
+  "feedbackSuccess": "Usi aga labar duga shina'iya!",
+  "announcements": "Wakirwa",
+  "articles": "Rubutsini",
+  "recordings": "Fu ndir aga sur hu ɗahu",
+  "sync": "iri anwa tutuku aku latu",
+  "unsyncedRecordings": "hu ɗahu kuku a'i anwa tutuku aku latu mai",
+  "day": "Ashina | {n} latu akuba | {n} latu'er akuba",
+  "submit": "Hamtsini",
+  "close": "Ghadia",
+  "tryAgainLater": "Manki ɓura iri askari kushu"
 }
