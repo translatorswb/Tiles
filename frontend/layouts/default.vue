@@ -1,44 +1,44 @@
 <template>
-  <v-app>
-    <TheHeader />
-    <v-content>
-      <v-container
-        class="main-container"
-        :class="$vuetify.breakpoint.xs ? 'px-4' : 'px-8'"
-        fluid
-      >
-        <nuxt />
-      </v-container>
-    </v-content>
-  </v-app>
+	<v-app>
+		<TheHeader />
+		<v-content>
+			<v-container
+				class="main-container"
+				:class="$vuetify.breakpoint.xs ? 'px-4' : 'px-8'"
+				fluid
+			>
+				<nuxt />
+			</v-container>
+		</v-content>
+	</v-app>
 </template>
 
 <script>
 import { mapActions } from "vuex";
 import TheHeader from "@/components/TheHeader.vue";
 export default {
-  components: {
-    TheHeader
-  },
-  methods: {
-    ...mapActions(["updateOnlineStatus"])
-  },
-  mounted() {
-    window.addEventListener("online", () => {
-      this.updateOnlineStatus(true);
-      console.log("Online 🥳");
-    });
-    window.addEventListener("offline", () => {
-      this.updateOnlineStatus(false);
-      console.log("Offline 😱");
-    });
-    this.updateOnlineStatus(navigator.onLine);
-  }
+	components: {
+		TheHeader
+	},
+	methods: {
+		...mapActions(["updateOnlineStatus"])
+	},
+	mounted() {
+		window.addEventListener("online", () => {
+			this.updateOnlineStatus(true);
+			console.log("Online 🥳");
+		});
+		window.addEventListener("offline", () => {
+			this.updateOnlineStatus(false);
+			console.log("Offline 😱");
+		});
+		this.updateOnlineStatus(navigator.onLine);
+	}
 };
 </script>
 
 <style scoped>
 .main-container {
-  max-width: 1024px;
+	max-width: 1024px;
 }
 </style>
