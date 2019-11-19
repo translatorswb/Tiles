@@ -11,14 +11,14 @@ PouchDB.plugin(pa);
 // PouchDB.plugin(pd);
 
 Vue.use(pouchVue, {
-	pouch: PouchDB,
-	defaultDB: `${process.env.databaseBaseUrl}`,
-	optionDB: {
-		fetch(url, opts) {
-			opts.credentials = "include";
-			return PouchDB.fetch(url, opts);
-		},
-		auto_compaction: true
-	}
-	// debug: "*"
+  pouch: PouchDB,
+  defaultDB: `${process.env.databaseBaseUrl}`,
+  optionDB: {
+    fetch(url, opts) {
+      opts.credentials = "include";
+      return PouchDB.fetch(url, opts);
+    },
+    auto_compaction: true
+  }
+  // debug: "*"
 });
