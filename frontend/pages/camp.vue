@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <TheCampSwitcher />
-  </div>
+	<div>
+		<TheCampSwitcher />
+	</div>
 </template>
 
 <script>
 import TheCampSwitcher from "@/components/TheCampSwitcher.vue";
 export default {
-  components: {
-    TheCampSwitcher
-  }
+	components: {
+		TheCampSwitcher
+	}
 };
 </script>

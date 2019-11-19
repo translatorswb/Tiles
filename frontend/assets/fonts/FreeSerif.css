@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "FreeSerif";
+	src: url("FreeSerif.woff") format("woff"),
+		url("FreeSerif.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "FreeSerif";
+	src: url("FreeSerifBold.woff") format("woff"),
+		url("FreeSerifBold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
