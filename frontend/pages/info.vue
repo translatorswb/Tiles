@@ -1,15 +1,15 @@
 <template>
-	<div>
-		<VTitle>
-			<template v-slot:title>
-				{{ $t("information") }}
-			</template>
-			<template v-slot:title-append>
-				<PlayButtonInstruction :src="audioSrc" />
-			</template>
-		</VTitle>
-		<InformationArticleList />
-	</div>
+  <div>
+    <VTitle>
+      <template v-slot:title>
+        {{ $t("information") }}
+      </template>
+      <template v-slot:title-append>
+        <PlayButtonInstruction :src="audioSrc" />
+      </template>
+    </VTitle>
+    <InformationArticleList />
+  </div>
 </template>
 
 <script>
@@ -18,18 +18,18 @@ import VTitle from "@/components/VTitle";
 import PlayButtonInstruction from "@/components/PlayButtonInstruction";
 import InformationArticleList from "@/components/InformationArticleList.vue";
 export default {
-	components: { VTitle, PlayButtonInstruction, InformationArticleList },
-	computed: {
-		...mapGetters(["hasAudioInstruction"]),
-		locale() {
-			return this.$i18n.locale;
-		},
-		audioSrc() {
-			const key = "info";
-			return this.hasAudioInstruction(key, this.locale)
-				? `/audio/${key}/${this.locale}.mp3`
-				: null;
-		}
-	}
+  components: { VTitle, PlayButtonInstruction, InformationArticleList },
+  computed: {
+    ...mapGetters(["hasAudioInstruction"]),
+    locale() {
+      return this.$i18n.locale;
+    },
+    audioSrc() {
+      const key = "info";
+      return this.hasAudioInstruction(key, this.locale)
+        ? `/audio/${key}/${this.locale}.mp3`
+        : null;
+    }
+  }
 };
 </script>
