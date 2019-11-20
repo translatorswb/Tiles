@@ -2,8 +2,8 @@
   <div class="mb-4">
     <VBorderCard :color="color">
       <template v-slot:card-media>
-        <div class="announcement-item-icon">
-          <i :class="item.icon" class="primary--text x-large"></i>
+        <div class="mr-4">
+          <i :class="icon" class="primary--text x-large"></i>
         </div>
       </template>
       <template v-slot:card-title>
@@ -69,6 +69,12 @@ export default {
     },
     secondaryColor() {
       return this.getLocaleColor("secondary", this.$i18n.locale);
+    },
+    icon() {
+      const snakeCase = this.item.icon.toLowerCase().replace(/ /g, "-");
+      return `humanitarianicons-${snakeCase[0].toUpperCase()}${snakeCase.slice(
+        1
+      )}`;
     }
   }
 };
