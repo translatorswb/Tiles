@@ -87,8 +87,8 @@ export const langInfo = {
     rtl: false,
     code: "waha",
     color: {
-      primary: "",
-      secondary: ""
+      primary: "#2BBFFF",
+      secondary: "#000000"
     }
   },
   en: {
