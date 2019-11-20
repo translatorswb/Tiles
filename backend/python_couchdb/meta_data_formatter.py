@@ -115,6 +115,9 @@ def create_meta_data_articles_dict(df: pd.DataFrame, camp_id: int):
     meta_data_dict = extract_and_add_data_to_meta_data_dict(
         df=df, item_type="Sector", meta_data_dict=meta_data_dict
     )
+    meta_data_dict = extract_and_add_data_to_meta_data_dict(
+        df=df, item_type="Icon", meta_data_dict=meta_data_dict
+    )
     meta_data_dict["createdOn"] = utils.create_json_datetime_now()
     return meta_data_dict
 

@@ -5,7 +5,6 @@ from cloudant.replicator import Replicator
 from utils import (
     connect_to_couch,
     get_document_directories,
-    add_attachments_to_document,
     update_or_add_document,
     delete_documents_removed_from_google_drive,
     add_users_to_db,

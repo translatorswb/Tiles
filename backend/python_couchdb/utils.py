@@ -15,7 +15,7 @@ from meta_data_formatter import (
     extract_articles_meta_data,
 )
 
-ACCEPTABLE_FILE_TYPES = ["md", "mp3", "png"]
+ACCEPTABLE_FILE_TYPES = ["md", "mp3", "png", "jpg"]
 
 
 def connect_to_couch(username, password, url):
