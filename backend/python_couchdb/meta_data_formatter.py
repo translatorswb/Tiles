@@ -40,10 +40,10 @@ def extract_and_add_data_to_meta_data_dict(
         print(f"There was no information for {item_type}")
 
 
-def get_icons_mapper():
-    with open(os.path.join(BASE_DIR, "icons", "icons.json"), "r") as icons_file:
-        icons = json.load(icons_file)
-    return {icon["iconName"]: icon["iconId"] for icon in icons}
+# def get_icons_mapper():
+#     with open(os.path.join(BASE_DIR, "icons", "icons.json"), "r") as icons_file:
+#         icons = json.load(icons_file)
+#     return {icon["iconName"]: icon["iconId"] for icon in icons}
 
 
 def will_article_be_displayed_for_this_camp(df: pd.DataFrame, camp_id: int):
@@ -89,7 +89,6 @@ def create_meta_data_announcements_dict(df: pd.DataFrame, camp_id: int):
             )
         )
     )
-    meta_data_dict["icon"] = get_icons_mapper()[meta_data_dict["icon"]]
     meta_data_dict["createdOn"] = utils.create_json_datetime_now()
     return meta_data_dict
 
