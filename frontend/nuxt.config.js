@@ -21,7 +21,7 @@ export default {
   loading: { color: "#fff" },
   css: [
     "@/assets/fonts/Humanitarian-Icons.css",
-    "@/assets/fonts/FreeSerif.css",
+    "@/assets/fonts/fonts.css",
     "@/assets/scss/index.scss"
   ],
   plugins: [
