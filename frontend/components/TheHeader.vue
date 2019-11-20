@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app dark color="primary">
+  <v-app-bar app dark :color="bgColor">
     <v-toolbar-items v-if="showBack">
       <TheHeaderBackButton />
     </v-toolbar-items>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import TheHeaderBackButton from "@/components/TheHeaderBackButton.vue";
 import TheHeaderLanguage from "@/components/TheHeaderLanguage.vue";
 import TheHeaderCamp from "@/components/TheHeaderCamp.vue";
@@ -26,6 +27,7 @@ export default {
     TheHeaderSync
   },
   computed: {
+    ...mapGetters(["getLocaleColor"]),
     routeName() {
       return this.getRouteBaseName(this.$route);
     },
@@ -37,6 +39,13 @@ export default {
     },
     showCamp() {
       return ["language", "camp"].includes(this.routeName);
+    },
+    bgColor() {
+      if (["index", "language", "camp"].includes(this.routeName)) {
+        return this.getLocaleColor("primary");
+      } else {
+        return this.getLocaleColor("primary", this.$i18n.locale);
+      }
     }
   }
 };

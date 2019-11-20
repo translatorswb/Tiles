@@ -3,6 +3,7 @@
     v-if="audioId"
     :src="src"
     :requires-init="true"
+    :color="color"
     @init="initAudio"
   />
 </template>
@@ -29,6 +30,10 @@ export default {
     database: {
       type: String,
       required: true
+    },
+    color: {
+      type: String,
+      default: ""
     }
   },
   data() {

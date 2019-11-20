@@ -2,9 +2,9 @@
   <div>
     <v-row align="stretch" class="pb-6">
       <v-col cols="12">
-        <VBorderCard>
+        <VBorderCard :color="color">
           <template v-slot:card-media>
-            <v-icon x-large left class="primary--text">{{
+            <v-icon x-large left :style="{ color }">{{
               icon.information
             }}</v-icon>
           </template>
@@ -12,20 +12,26 @@
             {{ $t("information") }}
           </template>
           <template v-slot:card-actions>
-            <PlayButtonInstruction :src="audioSrc('information')" />
-            <NextButton :to="localePath('info')" />
+            <PlayButtonInstruction
+              :color="secondaryColor"
+              :src="audioSrc('information')"
+            />
+            <NextButton :color="color" :to="localePath('info')" />
           </template>
         </VBorderCard>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="12">
-        <VTitle>
+        <VTitle :color="color">
           <template v-slot:title>
             {{ $t("announcements") }}
           </template>
           <template v-slot:title-append>
-            <PlayButtonInstruction :src="audioSrc('announcement')" />
+            <PlayButtonInstruction
+              :color="secondaryColor"
+              :src="audioSrc('announcement')"
+            />
           </template>
         </VTitle>
       </v-col>
@@ -61,9 +67,15 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["hasAudioInstruction"]),
+    ...mapGetters(["hasAudioInstruction", "getLocaleColor"]),
     locale() {
       return this.$i18n.locale;
+    },
+    color() {
+      return this.getLocaleColor("primary", this.$i18n.locale);
+    },
+    secondaryColor() {
+      return this.getLocaleColor("secondary", this.$i18n.locale);
     }
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <div class="mb-4">
-    <VBorderCard>
+    <VBorderCard :color="color">
       <template v-slot:card-media>
         <div class="announcement-item-icon">
           <i :class="item.icon" class="primary--text x-large"></i>
@@ -14,6 +14,7 @@
           :doc-id="item._id"
           :audio-id="item.hasAudio"
           :database="localDB"
+          :color="secondaryColor"
         />
         <NextButton
           :to="
@@ -22,6 +23,7 @@
               params: { id: `articles_${item._id}` }
             })
           "
+          :color="color"
         />
       </template>
     </VBorderCard>
@@ -29,7 +31,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import { getDatabaseName } from "@/utils/pouchdb-utils";
 import VBorderCard from "@/components/VBorderCard.vue";
 import PlayButtonArticle from "@/components/PlayButtonArticle.vue";
@@ -49,8 +51,15 @@ export default {
   },
   computed: {
     ...mapState(["selectedCamp"]),
+    ...mapGetters(["getLocaleColor"]),
     localDB() {
       return getDatabaseName("local", this.selectedCamp, "articles");
+    },
+    color() {
+      return this.getLocaleColor("primary", this.$i18n.locale);
+    },
+    secondaryColor() {
+      return this.getLocaleColor("secondary", this.$i18n.locale);
     }
   }
 };

@@ -1,15 +1,18 @@
 <template>
-  <v-card tile class="border-card primary--text border-left">
+  <v-card
+    tile
+    :style="{
+      'border-left': `8px solid ${borderColor}`,
+      padding: '16px'
+    }"
+  >
     <div class="d-flex">
       <slot name="card-media" />
       <div>
-        <div
-          class="accent--text"
-          :class="$vuetify.breakpoint.xs ? 'title' : 'headline'"
-        >
+        <div :class="$vuetify.breakpoint.xs ? 'title' : 'headline'">
           <slot name="card-title" />
         </div>
-        <div class="black--text">
+        <div>
           <slot name="card-subtitle" />
         </div>
       </div>
@@ -21,13 +24,20 @@
   </v-card>
 </template>
 
-<style scoped>
-.border-card {
-  padding: 16px;
-}
-
-.border-left {
-  border-left: 8px solid #e8991c !important;
-  padding-left: 16px;
-}
-</style>
+<script>
+import { mapState } from "vuex";
+export default {
+  props: {
+    color: {
+      type: String,
+      default: ""
+    }
+  },
+  computed: {
+    ...mapState(["colors"]),
+    borderColor() {
+      return this.color || this.colors.primary;
+    }
+  }
+};
+</script>

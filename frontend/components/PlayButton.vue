@@ -1,5 +1,5 @@
 <template>
-  <v-btn class="mx-2" fab dark color="tertiary" @click="playAudio">
+  <v-btn class="mx-2" fab dark :color="buttonColor" @click="playAudio">
     <v-icon dark>{{ audioIcon }}</v-icon>
     <audio
       ref="audio"
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import { mdiVolumeHigh, mdiPause } from "@mdi/js";
 export default {
   props: {
@@ -23,6 +24,10 @@ export default {
     requiresInit: {
       type: Boolean,
       default: false
+    },
+    color: {
+      type: String,
+      default: ""
     }
   },
   data() {
@@ -35,6 +40,10 @@ export default {
     };
   },
   computed: {
+    ...mapState(["colors"]),
+    buttonColor() {
+      return this.color || this.colors.secondary;
+    },
     audioIcon() {
       return this.isPlaying ? this.icon.pause : this.icon.play;
     }

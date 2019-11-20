@@ -39,10 +39,14 @@
         >
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" dark @click="dialog = false"
+          <v-btn :color="colors.primary" dark @click="dialog = false"
             ><v-icon dark left>{{ icon.cancel }}</v-icon> Cancel</v-btn
           >
-          <v-btn v-if="isOnline" color="primary" dark @click="switchCamp"
+          <v-btn
+            v-if="isOnline"
+            :color="colors.primary"
+            dark
+            @click="switchCamp"
             ><v-icon dark left>{{ icon.confirm }}</v-icon> Confirm</v-btn
           >
         </v-card-actions>
@@ -74,7 +78,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["isOnline", "selectedCamp", "camps"]),
+    ...mapState(["isOnline", "selectedCamp", "camps", "colors"]),
     currentCampName() {
       return this.getCampName(this.currentCamp);
     },

@@ -21,7 +21,7 @@ export default {
   loading: { color: "#fff" },
   css: [
     "@/assets/fonts/Humanitarian-Icons.css",
-    "@/assets/fonts/FreeSerif.css",
+    "@/assets/fonts/fonts.css",
     "@/assets/scss/index.scss"
   ],
   plugins: [
@@ -60,16 +60,16 @@ export default {
     icons: {
       iconfont: "mdiSvg"
     },
-    theme: {
-      themes: {
-        light: {
-          primary: "#E8991C",
-          accent: "#9E6100",
-          secondary: "#E8E3D9",
-          tertiary: "#4A637A"
-        }
-      }
-    },
+    // theme: {
+    //   themes: {
+    //     light: {
+    //       primary: "#E8991C",
+    //       accent: "#9E6100",
+    //       secondary: "#E8E3D9",
+    //       tertiary: "#4A637A"
+    //     }
+    //   }
+    // },
     treeShake: true
   },
   build: {

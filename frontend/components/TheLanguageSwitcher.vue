@@ -15,20 +15,26 @@
         <div
           v-for="lang in Object.values(langInfo)"
           :key="lang.code"
-          class="rotate-text accent--text"
+          class="rotate-text"
         >
           {{ $t("selectLanguage", lang.code) }}
         </div>
       </div>
     </v-col>
     <v-col v-for="lang in Object.values(langInfo)" :key="lang.code" cols="12">
-      <VBorderCard>
+      <VBorderCard :color="getLocaleColor('primary', lang.code)">
         <template v-slot:card-title>
           {{ lang.name }}
         </template>
         <template v-slot:card-actions>
-          <PlayButtonInstruction :src="audioSrc(lang.code)" />
-          <NextButton :to="to(lang.code)" />
+          <PlayButtonInstruction
+            :src="audioSrc(lang.code)"
+            :color="getLocaleColor('secondary', lang.code)"
+          />
+          <NextButton
+            :to="to(lang.code)"
+            :color="getLocaleColor('primary', lang.code)"
+          />
         </template>
       </VBorderCard>
     </v-col>
@@ -49,7 +55,7 @@ export default {
   },
   computed: {
     ...mapState(["langInfo"]),
-    ...mapGetters(["hasAudioInstruction"])
+    ...mapGetters(["hasAudioInstruction", "getLocaleColor"])
   },
   methods: {
     audioSrc(locale) {
