@@ -1,8 +1,6 @@
 <template>
   <article v-if="article" class="article markdown text-container">
-    <h1
-      class="article-title flex-grow-1 accent--text font-weight-bold my-6 headline"
-    >
+    <h1 class="article-title flex-grow-1 font-weight-bold my-6 headline">
       {{ article.title[$i18n.locale] }}
     </h1>
     <div v-if="author" class="mb-4">

@@ -23,7 +23,11 @@ export const state = () => ({
     { key: "wellbeing", icon: "humanitarianicons-Environment" },
     { key: "protection", icon: "humanitarianicons-Protection" },
     { key: "education", icon: "humanitarianicons-Education" }
-  ]
+  ],
+  colors: {
+    primary: "#E8991C",
+    secondary: "#9E6100"
+  }
 });
 
 export const mutations = {
@@ -62,5 +66,14 @@ export const getters = {
 
   hasAudioInstruction: state => (key, code) => {
     return state.audioInstructions[key][code];
+  },
+
+  getLocaleColor: state => (key, code) => {
+    if (code) {
+      const color = state.langInfo[code].color[key];
+      if (color) return color;
+    }
+    if (key === "primary") return state.colors.primary;
+    if (key === "secondary") return state.colors.secondary;
   }
 };

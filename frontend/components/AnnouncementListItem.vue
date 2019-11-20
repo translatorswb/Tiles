@@ -1,6 +1,6 @@
 <template>
   <div class="mb-4">
-    <VBorderCard>
+    <VBorderCard :color="color">
       <template v-slot:card-media>
         <div class="announcement-item-icon">
           <i :class="item.icon" class="primary--text x-large"></i>
@@ -17,6 +17,7 @@
           :doc-id="item._id"
           :audio-id="item.hasAudio"
           :database="localDB"
+          :color="secondaryColor"
         />
         <NextButton
           :to="
@@ -25,6 +26,7 @@
               params: { id: `announcements_${item._id}` }
             })
           "
+          :color="color"
         />
       </template>
     </VBorderCard>
@@ -33,7 +35,7 @@
 
 <script>
 import dayjs from "dayjs";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import { getDatabaseName } from "@/utils/pouchdb-utils";
 import VBorderCard from "@/components/VBorderCard.vue";
 import PlayButtonArticle from "@/components/PlayButtonArticle.vue";
@@ -53,6 +55,7 @@ export default {
   },
   computed: {
     ...mapState(["selectedCamp"]),
+    ...mapGetters(["getLocaleColor"]),
     fromNow() {
       console.log(+this.item.createdOn);
       console.log(dayjs(+this.item.createdOn));
@@ -60,6 +63,12 @@ export default {
     },
     localDB() {
       return getDatabaseName("local", this.selectedCamp, "announcements");
+    },
+    color() {
+      return this.getLocaleColor("primary", this.$i18n.locale);
+    },
+    secondaryColor() {
+      return this.getLocaleColor("secondary", this.$i18n.locale);
     }
   }
 };

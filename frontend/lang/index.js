@@ -13,52 +13,92 @@ export const langInfo = {
   hausa: {
     name: "Hausa",
     rtl: false,
-    code: "hausa"
+    code: "hausa",
+    color: {
+      primary: "#199403",
+      secondary: "#F40B02"
+    }
   },
   kanuri: {
     name: "Kanuri",
     rtl: false,
-    code: "kanuri"
+    code: "kanuri",
+    color: {
+      primary: "#F7F704",
+      secondary: "#26C604"
+    }
   },
   shuwa: {
     name: "Shuwa Arabic  شُوَ أرَبِيك",
     rtl: true,
-    code: "shuwa"
+    code: "shuwa",
+    color: {
+      primary: "#0F4EA6",
+      secondary: "#ACB1C3"
+    }
   },
   marghi: {
     name: "Marghi",
     rtl: false,
-    code: "marghi"
+    code: "marghi",
+    color: {
+      primary: "#000000",
+      secondary: "#6F4E37"
+    }
   },
   bura: {
     name: "Bura-Pabir",
     rtl: false,
-    code: "bura"
+    code: "bura",
+    color: {
+      primary: "#DA3C51",
+      secondary: "#000000"
+    }
   },
   mandara: {
     name: "Mandara",
     rtl: false,
-    code: "mandara"
+    code: "mandara",
+    color: {
+      primary: "#436ABD",
+      secondary: "#000000"
+    }
   },
   fulfulde: {
     name: "Fulfulde",
     rtl: false,
-    code: "fulfulde"
+    code: "fulfulde",
+    color: {
+      primary: "#619EEB",
+      secondary: "#D52122"
+    }
   },
   kibaku: {
     name: "Kibaku",
     rtl: false,
-    code: "kibaku"
+    code: "kibaku",
+    color: {
+      primary: "#E62128",
+      secondary: "#CFD245"
+    }
   },
   waha: {
     name: "Waha",
     rtl: false,
-    code: "waha"
+    code: "waha",
+    color: {
+      primary: "",
+      secondary: ""
+    }
   },
   en: {
     name: "English",
     rtl: false,
-    code: "en"
+    code: "en",
+    color: {
+      primary: "#06247D",
+      secondary: "#CF152B"
+    }
   }
 };
 

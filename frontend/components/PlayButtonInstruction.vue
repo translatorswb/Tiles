@@ -1,5 +1,5 @@
 <template>
-  <PlayButton v-if="src" :src="src" />
+  <PlayButton v-if="src" :src="src" :color="color" />
 </template>
 
 <script>
@@ -13,6 +13,10 @@ export default {
     src: {
       type: String,
       required: false
+    },
+    color: {
+      type: String,
+      default: ""
     }
   }
 };
