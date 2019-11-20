@@ -23,6 +23,14 @@
     </v-col>
     <v-col v-for="lang in Object.values(langInfo)" :key="lang.code" cols="12">
       <VBorderCard :color="getLocaleColor('primary', lang.code)">
+        <template v-slot:card-media>
+          <v-img
+            max-width="120"
+            aspect-ratio="1"
+            :src="require(`@/assets/images/${lang.code}.jpg`)"
+            class="grey lighten-2 mr-4"
+          ></v-img>
+        </template>
         <template v-slot:card-title>
           {{ lang.name }}
         </template>
