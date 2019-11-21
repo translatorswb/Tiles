@@ -5,7 +5,7 @@
         {{ $t("information") }}
       </template>
       <template v-slot:title-append>
-        <PlayButtonInstruction :src="audioSrc" />
+        <PlayButtonInstruction :color="secondaryColor" :src="audioSrc" />
       </template>
     </VTitle>
     <InformationArticleList />
@@ -20,7 +20,7 @@ import InformationArticleList from "@/components/InformationArticleList.vue";
 export default {
   components: { VTitle, PlayButtonInstruction, InformationArticleList },
   computed: {
-    ...mapGetters(["hasAudioInstruction"]),
+    ...mapGetters(["hasAudioInstruction", "getLocaleColor"]),
     locale() {
       return this.$i18n.locale;
     },
@@ -29,6 +29,9 @@ export default {
       return this.hasAudioInstruction(key, this.locale)
         ? `/audio/${key}/${this.locale}.mp3`
         : null;
+    },
+    secondaryColor() {
+      return this.getLocaleColor("secondary", this.$i18n.locale);
     }
   }
 };
