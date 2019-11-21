@@ -79,7 +79,8 @@ Uploading markdown files is basically the same as the .mp3 files. They must be l
 - Mandara = `mandara.md`
 - Bura = `bura.md`
 - Marghi = `marghi.md`
-- Shuwa = `shuwa.md`
+- Shuwa_Arabic = `shuwa_arabic.md`
+- Shuwa_Latin = `shuwa_latin.md`
 - Kanuri = `kanuri.md`
 - Hausa = `hausa.md`
 
