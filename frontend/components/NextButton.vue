@@ -1,6 +1,6 @@
 <template>
-  <v-btn class="mx-2" fab dark :color="buttonColor" @click="navigateTo">
-    <v-icon dark>{{ nextIcon }}</v-icon>
+  <v-btn class="mx-2" fab x-large dark :color="buttonColor" @click="navigateTo">
+    <v-icon x-large dark>{{ nextIcon }}</v-icon>
   </v-btn>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   computed: {
     ...mapState(["colors"]),
     buttonColor() {
-      return this.color || this.colors.primary;
+      return this.color || this.colors.secondary;
     }
   },
   methods: {

@@ -1,16 +1,16 @@
 <template>
   <v-btn text color="white" @click="goBack">
-    <v-icon>{{ icon.back }}</v-icon>
+    <v-icon x-large>{{ icon.back }}</v-icon>
   </v-btn>
 </template>
 
 <script>
-import { mdiChevronLeftCircle } from "@mdi/js";
+import { mdiChevronLeft } from "@mdi/js";
 export default {
   data() {
     return {
       icon: {
-        back: mdiChevronLeftCircle
+        back: mdiChevronLeft
       }
     };
   },

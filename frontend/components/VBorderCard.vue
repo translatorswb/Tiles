@@ -1,6 +1,7 @@
 <template>
   <v-card
     tile
+    flat
     :style="{
       'border-left': `8px solid ${borderColor}`,
       padding: '16px'

@@ -2,8 +2,8 @@
   <div class="mb-4">
     <VBorderCard :color="color">
       <template v-slot:card-media>
-        <div class="mr-4">
-          <i :class="icon" class="primary--text x-large"></i>
+        <div class="mr-2">
+          <i :class="icon" class="x-large" :style="{ color }"></i>
         </div>
       </template>
       <template v-slot:card-title>
@@ -23,7 +23,7 @@
               params: { id: `articles_${item._id}` }
             })
           "
-          :color="color"
+          :color="secondaryColor"
         />
       </template>
     </VBorderCard>
