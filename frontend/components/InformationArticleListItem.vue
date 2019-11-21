@@ -2,7 +2,7 @@
   <div class="mb-4">
     <VBorderCard :color="color">
       <template v-slot:card-media>
-        <div class="mr-4">
+        <div class="mr-2">
           <i :class="icon" class="x-large" :style="{ color }"></i>
         </div>
       </template>

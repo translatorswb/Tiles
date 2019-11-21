@@ -4,7 +4,7 @@
       <v-col cols="12">
         <VBorderCard :color="color">
           <template v-slot:card-media>
-            <v-icon x-large left :style="{ color }">{{
+            <v-icon size="48" left :style="{ color }">{{
               icon.information
             }}</v-icon>
           </template>

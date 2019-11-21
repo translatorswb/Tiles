@@ -1,6 +1,6 @@
 <template>
-  <v-btn class="mx-2" fab dark :color="buttonColor" @click="playAudio">
-    <v-icon dark>{{ audioIcon }}</v-icon>
+  <v-btn class="mx-2" fab x-large dark :color="buttonColor" @click="playAudio">
+    <v-icon x-large dark>{{ audioIcon }}</v-icon>
     <audio
       ref="audio"
       :src="src"
