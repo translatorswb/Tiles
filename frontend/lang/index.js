@@ -24,8 +24,8 @@ export const langInfo = {
     rtl: false,
     code: "kanuri",
     color: {
-      primary: "#F7F704",
-      secondary: "#26C604"
+      primary: "#26C604",
+      secondary: "#F7F704"
     }
   },
   shuwa: {
@@ -33,8 +33,8 @@ export const langInfo = {
     rtl: true,
     code: "shuwa",
     color: {
-      primary: "#0F4EA6",
-      secondary: "#ACB1C3"
+      primary: "#ACB1C3",
+      secondary: "#0F4EA6"
     }
   },
   marghi: {
@@ -60,8 +60,8 @@ export const langInfo = {
     rtl: false,
     code: "mandara",
     color: {
-      primary: "#436ABD",
-      secondary: "#000000"
+      primary: "#000000",
+      secondary: "#436ABD"
     }
   },
   fulfulde: {
@@ -87,8 +87,8 @@ export const langInfo = {
     rtl: false,
     code: "waha",
     color: {
-      primary: "#2BBFFF",
-      secondary: "#000000"
+      primary: "#000000",
+      secondary: "#2BBFFF"
     }
   },
   en: {

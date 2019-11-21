@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import { mdiChevronLeft } from "@mdi/js";
+import { mdiChevronLeftCircleOutline } from "@mdi/js";
 export default {
   data() {
     return {
       icon: {
-        back: mdiChevronLeft
+        back: mdiChevronLeftCircleOutline
       }
     };
   },

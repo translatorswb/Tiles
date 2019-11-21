@@ -84,8 +84,6 @@ Uploading markdown files is basically the same as the .mp3 files. They must be l
 - Kanuri = `kanuri.md`
 - Hausa = `hausa.md`
 
-_NOTE: for Shuwa, Virgina told us it would be ok to have the text side by side. i.e. Latin text followed by the Arabic text see example in_ `articles/safe_water_hygine/shuwa.md`
-
 ### 5) Meta data
 
 The meta data sheet must be included in every directory. This sheet contains important information for the Articles and Announcements.
