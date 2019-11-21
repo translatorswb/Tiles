@@ -69,10 +69,9 @@ export default {
       return this.getLocaleColor("secondary", this.$i18n.locale);
     },
     icon() {
-      const snakeCase = this.item.icon.toLowerCase().replace(/ /g, "-");
-      return `humanitarianicons-${snakeCase[0].toUpperCase()}${snakeCase.slice(
-        1
-      )}`;
+      return `humanitarianicons-${this.item.icon
+        .toLowerCase()
+        .replace(/ /g, "-")}`;
     }
   }
 };
