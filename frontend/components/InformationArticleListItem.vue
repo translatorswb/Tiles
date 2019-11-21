@@ -23,7 +23,7 @@
               params: { id: `articles_${item._id}` }
             })
           "
-          :color="color"
+          :color="secondaryColor"
         />
       </template>
     </VBorderCard>

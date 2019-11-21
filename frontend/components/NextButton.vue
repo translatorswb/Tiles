@@ -26,7 +26,7 @@ export default {
   computed: {
     ...mapState(["colors"]),
     buttonColor() {
-      return this.color || this.colors.primary;
+      return this.color || this.colors.secondary;
     }
   },
   methods: {

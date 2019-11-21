@@ -16,7 +16,7 @@
               :color="secondaryColor"
               :src="audioSrc('information')"
             />
-            <NextButton :color="color" :to="localePath('info')" />
+            <NextButton :color="secondaryColor" :to="localePath('info')" />
           </template>
         </VBorderCard>
       </v-col>

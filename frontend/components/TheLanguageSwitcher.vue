@@ -41,7 +41,7 @@
           />
           <NextButton
             :to="to(lang.code)"
-            :color="getLocaleColor('primary', lang.code)"
+            :color="getLocaleColor('secondary', lang.code)"
           />
         </template>
       </VBorderCard>
