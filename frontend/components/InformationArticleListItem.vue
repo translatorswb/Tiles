@@ -3,7 +3,7 @@
     <VBorderCard :color="color">
       <template v-slot:card-media>
         <div class="mr-4">
-          <i :class="icon" class="primary--text x-large"></i>
+          <i :class="icon" class="x-large" :style="{ color }"></i>
         </div>
       </template>
       <template v-slot:card-title>
