@@ -57,8 +57,6 @@ export default {
     ...mapState(["selectedCamp"]),
     ...mapGetters(["getLocaleColor"]),
     fromNow() {
-      console.log(+this.item.createdOn);
-      console.log(dayjs(+this.item.createdOn));
       return dayjs().diff(dayjs(+this.item.createdOn), "day");
     },
     localDB() {
