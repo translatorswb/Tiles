@@ -7,9 +7,7 @@
       <img alt="logo" class="article-author-logo" :src="author" />
     </div>
     <div v-if="recording" class="mb-4">
-      <audio style="width: 100%" :src="recording.src" controls>
-        Sorry, your browser doesn't support embedded audios.
-      </audio>
+      <PlayButton :src="recording.src" :color="secondaryColor" />
     </div>
     <div class="article-content" v-html="content"></div>
   </article>
@@ -28,8 +26,12 @@ import {
   getAssets
 } from "@/utils/pouchdb-utils";
 import objectURLsMixin from "@/mixins/objectURLs-mixin";
+import PlayButton from "@/components/PlayButton";
 
 export default {
+  components: {
+    PlayButton
+  },
   mixins: [objectURLsMixin],
   data() {
     return {
@@ -44,9 +46,12 @@ export default {
   },
   computed: {
     ...mapState(["selectedCamp"]),
-    ...mapGetters(["isLangRtl"]),
+    ...mapGetters(["isLangRtl", "getLocaleColor"]),
     localDB() {
       return getDatabaseName("local", this.selectedCamp, this.databaseType);
+    },
+    secondaryColor() {
+      return this.getLocaleColor("secondary", this.$i18n.locale);
     }
   },
   watch: {
