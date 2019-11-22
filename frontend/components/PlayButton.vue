@@ -14,7 +14,7 @@
 
 <script>
 import { mapState } from "vuex";
-import { mdiVoice, mdiPause } from "@mdi/js";
+import { mdiPlay, mdiPause } from "@mdi/js";
 export default {
   props: {
     src: {
@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       icon: {
-        play: mdiVoice,
+        play: mdiPlay,
         pause: mdiPause
       },
       isPlaying: false
