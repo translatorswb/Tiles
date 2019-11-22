@@ -1,2 +1,2 @@
 /* eslint-disable */
-workbox.routing.registerNavigationRoute("/index.html");
+// workbox.routing.registerNavigationRoute("/index.html");

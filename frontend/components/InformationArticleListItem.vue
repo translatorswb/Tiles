@@ -17,12 +17,12 @@
           :color="secondaryColor"
         />
         <NextButton
-          :to="
-            localePath({
-              name: 'article-id',
-              params: { id: `articles_${item._id}` }
-            })
-          "
+          :to="{
+            path: localePath({
+              name: 'article'
+            }),
+            query: { id: `articles_${item._id}` }
+          }"
           :color="secondaryColor"
         />
       </template>

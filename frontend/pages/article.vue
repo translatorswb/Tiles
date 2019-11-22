@@ -57,9 +57,9 @@ export default {
     }
   },
   created() {
-    const splitIndex = this.$route.params.id.indexOf("_");
-    this.databaseType = this.$route.params.id.slice(0, splitIndex);
-    this.id = this.$route.params.id.slice(splitIndex + 1);
+    const splitIndex = this.$route.query.id.indexOf("_");
+    this.databaseType = this.$route.query.id.slice(0, splitIndex);
+    this.id = this.$route.query.id.slice(splitIndex + 1);
     this.getArticle();
   },
   methods: {
