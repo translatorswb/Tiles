@@ -1,8 +1,8 @@
 <template>
-  <v-app-bar app dark :color="bgColor">
-    <v-toolbar-items v-if="showBack">
-      <TheHeaderBackButton />
-    </v-toolbar-items>
+  <v-app-bar app dark :color="bgColor" height="72">
+    <div v-if="showBack">
+      <TheHeaderBackButton :color="secondaryColor" />
+    </div>
 
     <div class="flex-grow-1"></div>
     <v-toolbar-items>
@@ -32,7 +32,7 @@ export default {
       return this.getRouteBaseName(this.$route);
     },
     showBack() {
-      return !["index", "language", "camp", "welcome"].includes(this.routeName);
+      return !["index", "language", "camp"].includes(this.routeName);
     },
     showLanguage() {
       return !["index", "language", "camp"].includes(this.routeName);
@@ -40,11 +40,17 @@ export default {
     showCamp() {
       return ["language", "camp"].includes(this.routeName);
     },
+    color() {
+      return this.getLocaleColor("primary", this.$i18n.locale);
+    },
+    secondaryColor() {
+      return this.getLocaleColor("secondary", this.$i18n.locale);
+    },
     bgColor() {
       if (["index", "language", "camp"].includes(this.routeName)) {
         return this.getLocaleColor("primary");
       } else {
-        return this.getLocaleColor("primary", this.$i18n.locale);
+        return this.color;
       }
     }
   }
