@@ -1,5 +1,12 @@
 <template>
-  <v-btn class="mx-2" fab x-large dark :color="buttonColor" @click="navigateTo">
+  <v-btn
+    class="mx-2"
+    fab
+    x-large
+    dark
+    :color="buttonColor"
+    @click.stop="navigateTo"
+  >
     <v-icon x-large dark>{{ nextIcon }}</v-icon>
   </v-btn>
 </template>
