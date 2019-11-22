@@ -21,30 +21,36 @@
         </div>
       </div>
     </v-col>
-    <v-col v-for="lang in Object.values(langInfo)" :key="lang.code" cols="12">
-      <VBorderCard :color="getLocaleColor('primary', lang.code)">
-        <template v-slot:card-media>
-          <v-img
-            max-width="120"
-            aspect-ratio="1"
-            :src="require(`@/assets/images/${lang.code}.jpg`)"
-            class="grey lighten-2 mr-4"
-          ></v-img>
-        </template>
-        <template v-slot:card-title>
-          {{ lang.name }}
-        </template>
-        <template v-slot:card-actions>
-          <PlayButtonInstruction
-            :src="audioSrc(lang.code)"
-            :color="getLocaleColor('secondary', lang.code)"
-          />
-          <NextButton
-            :to="to(lang.code)"
-            :color="getLocaleColor('secondary', lang.code)"
-          />
-        </template>
-      </VBorderCard>
+    <v-col
+      v-for="(lang, i) in Object.values(langInfo)"
+      :key="lang.code"
+      cols="12"
+    >
+      <div @click="clicked(i)" ref="langCard">
+        <VBorderCard :color="getLocaleColor('primary', lang.code)">
+          <template v-slot:card-media>
+            <v-img
+              max-width="120"
+              aspect-ratio="1"
+              :src="require(`@/assets/images/${lang.code}.jpg`)"
+              class="grey lighten-2 mr-4"
+            ></v-img>
+          </template>
+          <template v-slot:card-title>
+            {{ lang.name }}
+          </template>
+          <template v-slot:card-actions>
+            <PlayButtonInstruction
+              :src="audioSrc(lang.code)"
+              :color="getLocaleColor('secondary', lang.code)"
+            />
+            <NextButton
+              :to="to(lang.code)"
+              :color="getLocaleColor('secondary', lang.code)"
+            />
+          </template>
+        </VBorderCard>
+      </div>
     </v-col>
   </v-row>
 </template>
@@ -74,10 +80,49 @@ export default {
     },
     to(locale) {
       return this.localePath("welcome", locale);
+    },
+    clicked(i) {
+      const buttons = this.$refs.langCard[i].querySelectorAll("button");
+      buttons.forEach(button => {
+        button.classList.add("jello-horizontal");
+        setTimeout(() => {
+          button.classList.remove("jello-horizontal");
+        }, 1000);
+      });
     }
   }
 };
 </script>
+
+<style>
+.jello-horizontal {
+  animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+</style>
 
 <style scoped>
 img {
