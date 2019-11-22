@@ -49,6 +49,10 @@ export default function({ app, route, query, store, redirect }) {
     }
   } else if (isCampRoute) {
   } else if (!query.camp) {
-    redirect(route.path, { camp: selectedCamp });
+    if (query) {
+      redirect(route.path, { ...query, camp: selectedCamp });
+    } else {
+      redirect(route.path, { camp: selectedCamp });
+    }
   }
 }

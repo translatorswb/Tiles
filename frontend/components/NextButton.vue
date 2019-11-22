@@ -10,8 +10,8 @@ import { mdiChevronRight } from "@mdi/js";
 export default {
   props: {
     to: {
-      type: String,
-      required: false
+      type: [String, Object],
+      required: true
     },
     color: {
       type: String,
@@ -31,11 +31,7 @@ export default {
   },
   methods: {
     navigateTo() {
-      if (this.to) {
-        this.$router.push(this.to);
-      } else {
-        this.$emit("click");
-      }
+      this.$router.push(this.to);
     }
   }
 };
