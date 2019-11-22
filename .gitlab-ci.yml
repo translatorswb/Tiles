@@ -6,7 +6,7 @@ build:
     - hash=`git describe --always`
     - echo "\"$hash\"" > assets/gitHash.json
     - yarn install
-    - yarn generate
+    - yarn build
   only:
     - master
   artifacts:
