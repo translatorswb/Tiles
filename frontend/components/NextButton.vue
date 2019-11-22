@@ -11,7 +11,7 @@ export default {
   props: {
     to: {
       type: [String, Object],
-      required: true
+      default: ""
     },
     color: {
       type: String,
@@ -31,7 +31,11 @@ export default {
   },
   methods: {
     navigateTo() {
-      this.$router.push(this.to);
+      if (this.to) {
+        this.$router.push(this.to);
+      } else {
+        this.$emit("click");
+      }
     }
   }
 };
