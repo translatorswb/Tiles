@@ -94,7 +94,9 @@ export default {
 
         // Get markdown file
         const rtl = this.isLangRtl(this.$i18n.locale);
-        const converter = new showdown.Converter();
+        const converter = new showdown.Converter({
+          tables: true
+        });
         const DOMPurify = createDOMPurify(window);
         let clean;
         if (rtl) {
