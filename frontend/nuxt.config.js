@@ -33,9 +33,6 @@ export default {
   router: {
     middleware: "redirect"
   },
-  // env: {
-  //   databaseBaseUrl: process.env.DATABASE_BASE_URL || "http://localhost:5984"
-  // },
   env: {
     databaseBaseUrl:
       process.env.DATABASE_BASE_URL || "https://tiles-couchdb.pngk.org"
@@ -60,16 +57,6 @@ export default {
     icons: {
       iconfont: "mdiSvg"
     },
-    // theme: {
-    //   themes: {
-    //     light: {
-    //       primary: "#E8991C",
-    //       accent: "#9E6100",
-    //       secondary: "#E8E3D9",
-    //       tertiary: "#4A637A"
-    //     }
-    //   }
-    // },
     treeShake: true
   },
   build: {
