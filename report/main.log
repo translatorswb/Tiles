@@ -1,0 +1,1122 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.1)  13 DEC 2019 11:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 5 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(./preamble/preamble.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count87
+\uc@combtoks=\toks16
+\uc@combtoksb=\toks17
+\uc@temptokena=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/palatino.sty
+Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/footmisc/footmisc.sty
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks19
+\footnotemargin=\dimen103
+\c@pp@next@reset=\count88
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen104
+\Hy@linkcounter=\count89
+\Hy@pagecounter=\count90
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count91
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count92
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen105
+\Fld@menulength=\count93
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count94
+\c@Item=\count95
+\c@Hfootnote=\count96
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count97
+\c@bookmark@seq@number=\count98
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen108
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen109
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count99
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count100
+\leftroot@=\count101
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count102
+\DOTSCASE@=\count103
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen110
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
+\dotsspace@=\muskip11
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
+\tag@help=\toks22
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
+\andhelp@=\toks23
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks24
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
+\MT@toks=\toks26
+\MT@count=\count111
+LaTeX Info: Redefining \textls on input line 793.
+\MT@outer@kern=\dimen117
+LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
+\MT@listname@count=\count112
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 913.
+LaTeX Info: Redefining \lslig on input line 913.
+\MT@outer@space=\skip47
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip48
+\f@nch@O@elh=\skip49
+\f@nch@O@erh=\skip50
+\f@nch@O@olh=\skip51
+\f@nch@O@orh=\skip52
+\f@nch@O@elf=\skip53
+\f@nch@O@erf=\skip54
+\f@nch@O@olf=\skip55
+\f@nch@O@orf=\skip56
+)
+(/usr/share/texlive/texmf-dist/tex/latex/vmargin/vmargin.sty
+Package: vmargin 2004/07/15 V2.5 set document margins (VK)
+
+Package: vmargin 2004/07/15 V2.5 set document margins (VK)
+\PaperWidth=\dimen118
+\PaperHeight=\dimen119
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen122
+\captionmargin@=\dimen123
+\captionwidth=\dimen124
+\caption@tempdima=\dimen125
+\caption@indent=\dimen126
+\caption@parindent=\dimen127
+\caption@hangindent=\dimen128
+)
+\c@ContinuedFloat=\count113
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count114
+\c@subtable=\count115
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/02/08 v0.21.1 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2301.
+LaTeX Info: Redefining \cref on input line 2301.
+LaTeX Info: Redefining \Cref on input line 2301.
+LaTeX Info: Redefining \crefrange on input line 2301.
+LaTeX Info: Redefining \Crefrange on input line 2301.
+LaTeX Info: Redefining \cpageref on input line 2301.
+LaTeX Info: Redefining \Cpageref on input line 2301.
+LaTeX Info: Redefining \cpagerefrange on input line 2301.
+LaTeX Info: Redefining \Cpagerefrange on input line 2301.
+LaTeX Info: Redefining \labelcref on input line 2301.
+LaTeX Info: Redefining \labelcpageref on input line 2301.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count116
+\float@exts=\toks27
+\float@box=\box28
+\@float@everytoks=\toks28
+\@floatcapt=\box29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip57
+\enit@outerparindent=\dimen129
+\enit@toks=\toks29
+\enit@inbox=\box30
+\enitdp@description=\count117
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+
+(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count118
+\c@@ppsavesec=\count119
+\c@@ppsaveapp=\count120
+)) (./main.aux
+(./cover.aux)
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `sub@@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:final_tiles_ui' multiply defined.
+
+
+LaTeX Warning: Label `fig:final_tiles_ui@cref' multiply defined.
+
+(./appendix.aux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 27.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring ON on input line 27.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count121
+)
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
+
+(./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+LaTeX Info: Redefining \microtypecontext on input line 27.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
+)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count122
+\scratchdimen=\dimen130
+\scratchbox=\box32
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen131
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks31
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\openout2 = `cover.aux'.
+
+
+(./cover.tex
+LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <10.95> not available
+(Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <20.74> not available
+(Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 5.
+<images/woman_using_TILES.JPG, id=56, 961.5925pt x 641.39626pt>
+File: images/woman_using_TILES.JPG Graphic file (type jpg)
+<use images/woman_using_TILES.JPG>
+Package pdftex.def Info: images/woman_using_TILES.JPG  used on input line 9.
+(pdftex.def)             Requested size: 240.39754pt x 160.34866pt.
+<images/PNGK_logo.png, id=58, 480.8364pt x 123.3408pt>
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 14.
+(pdftex.def)             Requested size: 85.35826pt x 21.8955pt.
+ [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/woman_using_TILES
+.JPG> <./images/PNGK_logo.png>])
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 32.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 36.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 38.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+<images/gubio_camp_tents.JPG, id=69, 1373.13pt x 915.42pt>
+File: images/gubio_camp_tents.JPG Graphic file (type jpg)
+<use images/gubio_camp_tents.JPG>
+Package pdftex.def Info: images/gubio_camp_tents.JPG  used on input line 60.
+(pdftex.def)             Requested size: 686.56332pt x 457.70888pt.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+<images/GSS_camp_tents.jpg, id=70, 4047.12pt x 3035.34pt>
+File: images/GSS_camp_tents.jpg Graphic file (type jpg)
+<use images/GSS_camp_tents.jpg>
+Package pdftex.def Info: images/GSS_camp_tents.jpg  used on input line 60.
+(pdftex.def)             Requested size: 2023.55508pt x 1517.6663pt.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 64.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 70.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.70 	\item [\textsc{Fenced camps}]
+                                    These camps are surrounded by a fence an...
+[1
+
+ <./images/gubio_camp_tents.JPG> <./images/GSS_camp_tents.jpg>]
+<images/Fenced_idp_helecopter.png, id=82, 609.27625pt x 492.84125pt>
+File: images/Fenced_idp_helecopter.png Graphic file (type png)
+<use images/Fenced_idp_helecopter.png>
+Package pdftex.def Info: images/Fenced_idp_helecopter.png  used on input line 7
+9.
+(pdftex.def)             Requested size: 304.63737pt x 246.42001pt.
+<images/teachers_village_gate.png, id=83, 803.0pt x 602.25pt>
+File: images/teachers_village_gate.png Graphic file (type png)
+<use images/teachers_village_gate.png>
+Package pdftex.def Info: images/teachers_village_gate.png  used on input line 7
+9.
+(pdftex.def)             Requested size: 401.49902pt x 301.12425pt.
+<images/GSS_camp_helecopter.png, id=84, 621.32124pt x 349.305pt>
+File: images/GSS_camp_helecopter.png Graphic file (type png)
+<use images/GSS_camp_helecopter.png>
+Package pdftex.def Info: images/GSS_camp_helecopter.png  used on input line 90.
+
+(pdftex.def)             Requested size: 310.65987pt x 174.65207pt.
+<images/GSS_camp_people_leaving.png, id=85, 622.325pt x 376.40625pt>
+File: images/GSS_camp_people_leaving.png Graphic file (type png)
+<use images/GSS_camp_people_leaving.png>
+Package pdftex.def Info: images/GSS_camp_people_leaving.png  used on input line
+ 90.
+(pdftex.def)             Requested size: 311.16173pt x 188.20265pt.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 99.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [2 <./images/Fenced_idp_helecopter.png> <./images/teachers_village_gate.png> <
+./images/GSS_camp_helecopter.png> <./images/GSS_camp_people_leaving.png>]
+<images/teachers_village_above.png, id=96, 725.71124pt x 666.49pt>
+File: images/teachers_village_above.png Graphic file (type png)
+<use images/teachers_village_above.png>
+Package pdftex.def Info: images/teachers_village_above.png  used on input line 
+102.
+(pdftex.def)             Requested size: 362.85474pt x 333.24419pt.
+<images/GSS_camp_office_inside.jpg, id=97, 4047.12pt x 3035.34pt>
+File: images/GSS_camp_office_inside.jpg Graphic file (type jpg)
+<use images/GSS_camp_office_inside.jpg>
+Package pdftex.def Info: images/GSS_camp_office_inside.jpg  used on input line 
+120.
+(pdftex.def)             Requested size: 2023.55508pt x 1517.6663pt.
+<images/bakassi_camp_office.jpg, id=98, 4047.12pt x 3035.34pt>
+File: images/bakassi_camp_office.jpg Graphic file (type jpg)
+<use images/bakassi_camp_office.jpg>
+Package pdftex.def Info: images/bakassi_camp_office.jpg  used on input line 120
+.
+(pdftex.def)             Requested size: 2023.55508pt x 1517.6663pt.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 121.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [3 <./images/teachers_village_above.png>]
+<images/wakane_camp_office.jpg, id=104, 2023.56pt x 1517.67pt>
+File: images/wakane_camp_office.jpg Graphic file (type jpg)
+<use images/wakane_camp_office.jpg>
+Package pdftex.def Info: images/wakane_camp_office.jpg  used on input line 131.
+
+(pdftex.def)             Requested size: 1011.77753pt x 758.83315pt.
+<images/wakane_camp_office_inside.png, id=105, 875.27pt x 490.83376pt>
+File: images/wakane_camp_office_inside.png Graphic file (type png)
+<use images/wakane_camp_office_inside.png>
+Package pdftex.def Info: images/wakane_camp_office_inside.png  used on input li
+ne 131.
+(pdftex.def)             Requested size: 437.63393pt x 245.41628pt.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 141.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [4 <./images/GSS_camp_office_inside.jpg> <./images/bakassi_camp_office.jpg> <.
+/images/wakane_camp_office.jpg> <./images/wakane_camp_office_inside.png>]
+<images/gwoza_down_gsm_tower.png, id=113, 596.2275pt x 389.455pt>
+File: images/gwoza_down_gsm_tower.png Graphic file (type png)
+<use images/gwoza_down_gsm_tower.png>
+Package pdftex.def Info: images/gwoza_down_gsm_tower.png  used on input line 15
+2.
+(pdftex.def)             Requested size: 298.11302pt x 194.72702pt.
+<images/gwoza_down_gsm_tower_hele.png, id=114, 679.53876pt x 653.44125pt>
+File: images/gwoza_down_gsm_tower_hele.png Graphic file (type png)
+<use images/gwoza_down_gsm_tower_hele.png>
+Package pdftex.def Info: images/gwoza_down_gsm_tower_hele.png  used on input li
+ne 152.
+(pdftex.def)             Requested size: 339.76855pt x 326.71982pt.
+<images/user_testing/woman_with_TILES.JPG, id=115, 1373.13pt x 915.42pt>
+File: images/user_testing/woman_with_TILES.JPG Graphic file (type jpg)
+<use images/user_testing/woman_with_TILES.JPG>
+Package pdftex.def Info: images/user_testing/woman_with_TILES.JPG  used on inpu
+t line 174.
+(pdftex.def)             Requested size: 686.56332pt x 457.70888pt.
+<images/user_testing/man_with_TILES.JPG, id=116, 1373.13pt x 915.42pt>
+File: images/user_testing/man_with_TILES.JPG Graphic file (type jpg)
+<use images/user_testing/man_with_TILES.JPG>
+Package pdftex.def Info: images/user_testing/man_with_TILES.JPG  used on input 
+line 174.
+(pdftex.def)             Requested size: 686.56332pt x 457.70888pt.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 175.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [5 <./images/gwoza_down_gsm_tower.png> <./images/gwoza_down_gsm_tower_hele.png
+>]
+<images/user_testing/group_with_tiles.jpg, id=123, 4047.12pt x 3035.34pt>
+File: images/user_testing/group_with_tiles.jpg Graphic file (type jpg)
+<use images/user_testing/group_with_tiles.jpg>
+Package pdftex.def Info: images/user_testing/group_with_tiles.jpg  used on inpu
+t line 189.
+(pdftex.def)             Requested size: 2023.55508pt x 1517.6663pt.
+<images/user_testing/kid_sun_using_TILES.png, id=124, 1742.51pt x 975.645pt>
+File: images/user_testing/kid_sun_using_TILES.png Graphic file (type png)
+<use images/user_testing/kid_sun_using_TILES.png>
+Package pdftex.def Info: images/user_testing/kid_sun_using_TILES.png  used on i
+nput line 189.
+(pdftex.def)             Requested size: 871.25288pt x 487.8213pt.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 199.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [6 <./images/user_testing/woman_with_TILES.JPG> <./images/user_testing/man_wit
+h_TILES.JPG> <./images/user_testing/group_with_tiles.jpg> <./images/user_testin
+g/kid_sun_using_TILES.png>]
+<images/user_testing/TILES_old_language_select.png, id=137, 587.19376pt x 780.9
+175pt>
+File: images/user_testing/TILES_old_language_select.png Graphic file (type png)
+
+<use images/user_testing/TILES_old_language_select.png>
+Package pdftex.def Info: images/user_testing/TILES_old_language_select.png  use
+d on input line 221.
+(pdftex.def)             Requested size: 293.59616pt x 390.4578pt.
+<images/user_testing/TILES_old_welcome_page.png, id=138, 589.20125pt x 781.9212
+5pt>
+File: images/user_testing/TILES_old_welcome_page.png Graphic file (type png)
+<use images/user_testing/TILES_old_welcome_page.png>
+Package pdftex.def Info: images/user_testing/TILES_old_welcome_page.png  used o
+n input line 221.
+(pdftex.def)             Requested size: 294.5999pt x 390.95967pt.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 222.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [7]
+<images/user_testing/TILES_final.png, id=144, 595.22375pt x 782.925pt>
+File: images/user_testing/TILES_final.png Graphic file (type png)
+<use images/user_testing/TILES_final.png>
+Package pdftex.def Info: images/user_testing/TILES_final.png  used on input lin
+e 230.
+(pdftex.def)             Requested size: 297.61115pt x 391.46155pt.
+<images/user_testing/TILES_final_welcome.png, id=145, 587.19376pt x 780.9175pt>
+
+File: images/user_testing/TILES_final_welcome.png Graphic file (type png)
+<use images/user_testing/TILES_final_welcome.png>
+Package pdftex.def Info: images/user_testing/TILES_final_welcome.png  used on i
+nput line 230.
+(pdftex.def)             Requested size: 293.59616pt x 390.4578pt.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 231.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [8 <./images/user_testing/TILES_old_language_select.png> <./images/user_testin
+g/TILES_old_welcome_page.png>]
+<images/user_testing/smart_phone_tiles.png, id=153, 550.055pt x 462.72874pt>
+File: images/user_testing/smart_phone_tiles.png Graphic file (type png)
+<use images/user_testing/smart_phone_tiles.png>
+Package pdftex.def Info: images/user_testing/smart_phone_tiles.png  used on inp
+ut line 247.
+(pdftex.def)             Requested size: 275.02682pt x 231.3638pt.
+<images/user_testing/typical_phone.png, id=154, 717.68124pt x 749.80125pt>
+File: images/user_testing/typical_phone.png Graphic file (type png)
+<use images/user_testing/typical_phone.png>
+Package pdftex.def Info: images/user_testing/typical_phone.png  used on input l
+ine 247.
+(pdftex.def)             Requested size: 358.83974pt x 374.8997pt.
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 248.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+[9 <./images/user_testing/TILES_final.png> <./images/user_testing/TILES_final_w
+elcome.png>]
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 249.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [10 <./images/user_testing/smart_phone_tiles.png> <./images/user_testing/typic
+al_phone.png>]
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 285.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [11]
+\openout2 = `appendix.aux'.
+
+ (./appendix.tex
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 11.
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ppl/b/n/10 Location
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ppl/b/n/10 Location
+ []
+
+
+Underfull \hbox (badness 2744) in paragraph at lines 11--11
+[]\OT1/ppl/b/n/10 GSM Net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ppl/b/n/10 Camp
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ppl/b/n/10 Number of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]\OT1/ppl/m/n/10 (+20) Giubio
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]\OT1/ppl/m/n/10 (-15) 11$[]$54'12.3"N
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]\OT1/ppl/m/n/10 (+20) Permanent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]\OT1/ppl/m/n/10 (+20) Fenced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\OT1/ppl/m/n/10 (+20) Bakassi
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\OT1/ppl/m/n/10 (-15) 11$[]$47'27.8"N
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\OT1/ppl/m/n/10 (+20) Permanent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\OT1/ppl/m/n/10 (+20) Fenced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]\OT1/ppl/m/n/10 (-15) 11$[]$50'33.2"N
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]\OT1/ppl/m/n/10 (+20) Permanent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]\OT1/ppl/m/n/10 (+20) Fenced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]\OT1/ppl/m/n/10 (+20) Temporary
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 16--16
+[]\OT1/ppl/m/n/10 (+20) 20 Hous-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]\OT1/ppl/m/n/10 (-15) 11$[]$04'14.8"N
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]\OT1/ppl/m/n/10 (+20) Temporary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]\OT1/ppl/m/n/10 (-15) 11$[]$06'21.0"N
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]\OT1/ppl/m/n/10 (+20) Permanent
+ []
+
+
+Overfull \hbox (5.11465pt too wide) in paragraph at lines 9--20
+ [][] 
+ []
+
+)
+File: images/PNGK_logo.png Graphic file (type png)
+<use images/PNGK_logo.png>
+Package pdftex.def Info: images/PNGK_logo.png  used on input line 285.
+(pdftex.def)             Requested size: 35.56593pt x 9.12218pt.
+ [12
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 287.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 287.
+ (./main.aux (./cover.aux) (./appendix.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 287.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 287.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 5AE687351B2C1283A0BDD169B651AA8E;883.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 287.
+ ) 
+Here is how much of TeX's memory you used:
+ 12517 strings out of 494880
+ 204830 string characters out of 6179601
+ 321592 words of memory out of 5000000
+ 15496 multiletter control sequences out of 15000+600000
+ 28353 words of font info for 136 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 44i,14n,47p,672b,798s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino
+/uplri8a.pfb>
+Output written on main.pdf (13 pages, 21900885 bytes).
+PDF statistics:
+ 212 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 25318 words of extra memory for PDF output out of 29859 (max. 10000000)
+
