@@ -1,17 +1,19 @@
 <template>
-  <article v-if="article" class="article markdown text-container">
-    <h1 class="article-title flex-grow-1 font-weight-bold my-6 headline">
-      {{ article.title[$i18n.locale] }}
-    </h1>
-    <div v-if="author" class="mb-4">
-      <img alt="logo" class="article-author-logo" :src="author" />
-    </div>
-    <div v-if="recording" class="mb-4">
-      <PlayButton :src="recording.src" :color="secondaryColor" />
-    </div>
-    <div class="article-content" v-html="content"></div>
-  </article>
-  <article v-else class="text-container">{{ error }}</article>
+  <div>
+    <article v-if="article" class="article markdown text-container">
+      <h1 class="article-title flex-grow-1 font-weight-bold my-6 headline">
+        {{ article.title[$i18n.locale] }}
+      </h1>
+      <div v-if="author" class="mb-4">
+        <img alt="logo" class="article-author-logo" :src="author" />
+      </div>
+      <div v-if="recording" class="mb-4">
+        <PlayButton :src="recording.src" :color="secondaryColor" />
+      </div>
+      <div class="article-content" v-html="content"></div>
+    </article>
+    <article v-else class="text-container">{{ error }}</article>
+  </div>
 </template>
 
 <script>

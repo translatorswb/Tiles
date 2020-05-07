@@ -1,0 +1,65 @@
+% ************************ Font, typesetting **************************************
+
+\usepackage[utf8x]{inputenc}
+\usepackage{palatino}
+\usepackage[bottom]{footmisc}
+\usepackage{hyperref}
+
+\usepackage{amsmath}
+
+
+% for beautiful typesetting
+\usepackage{microtype}
+
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+%  \setmarginsrb{leftmargin}{topmargin}{rightmargin}{bottommargin}
+\setmarginsrb{2.5 cm}{1.5 cm}{2.5 cm}{1.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+% images
+\usepackage{graphicx}
+
+\usepackage{subcaption}
+\usepackage{cleveref}
+\captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
+\usepackage{float}
+\usepackage{enumitem}
+
+\newenvironment{longdescription}
+  {\begin{description}[style=unboxed]}
+  {\end{description}}
+
+% ************************ Coloring *******************************************
+\usepackage{xcolor}
+
+\definecolor{black}{rgb}{0.0, 0.0, 0.0}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={black}
+}
+
+% ************************ Header/footer ***************************************
+
+%\setlength{\headheight}{2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{TILES Feasibility Study}
+
+\cfoot{\thepage}
+\rfoot{\href{https://www.pngk.org/}{\includegraphics[width=1.25cm]{images/PNGK_logo.png}}}
+
+
+\newcommand{\appendixpagenumbering}{
+  \break
+  \pagenumbering{arabic}
+  \renewcommand{\thepage}{\thesection-\arabic{page}}
+}
+
+%  Appendix
+\usepackage[toc,page]{appendix}
+
